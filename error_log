@@ -1,0 +1,37 @@
+[02-Dec-2016 12:23:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+Stack trace:
+#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
+#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
+#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
+#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
+#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
+[02-Dec-2016 12:24:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+Stack trace:
+#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
+#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
+#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
+#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
+#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
+[02-Dec-2016 12:29:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+Stack trace:
+#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
+#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
+#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
+#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
+#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
+[02-Dec-2016 12:41:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+Stack trace:
+#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
+#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
+#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
+#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
+#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
+[02-Dec-2016 12:41:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+Stack trace:
+#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
+#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
+#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
+#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
+#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
+[07-Dec-2016 06:37:54 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 589824 bytes) in /home/owebcom/public_html/vendor/composer/ClassLoader.php on line 412
+[07-Dec-2016 06:39:28 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 589824 bytes) in /home/owebcom/public_html/vendor/composer/ClassLoader.php on line 412

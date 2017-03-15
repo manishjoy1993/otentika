@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Otentika_Adminhtml::admin">
+                <resource id="Otentika_ShippingSetting::shippingsetting" title="ShippingSetting" sortOrder="40">
+                    <resource id="Otentika_ShippingSetting::manage" title="ShippingSetting Module" sortOrder="10">
+						<resource id="Otentika_ShippingSetting::save" title="Save ShippingSetting" sortOrder="10" />
+                        <resource id="Otentika_ShippingSetting::news_delete" title="Delete ShippingSetting" sortOrder="20" />
+					</resource>
+                </resource>
+                <resource id="Otentika_Adminhtml::stores">
+                    <resource id="Otentika_Adminhtml::stores_settings">
+                        <resource id="Otentika_Adminhtml::config">
+                            <resource id="Otentika_ShippingSetting::config_shippingsetting" title="ShippingSetting Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
