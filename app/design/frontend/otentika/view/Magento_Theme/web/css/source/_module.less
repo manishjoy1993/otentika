@@ -57,7 +57,7 @@
 @filter-link: @color-gray-darken4;
 @filter-link-hover: darken(@filter-link, 30%);
 @filter-quantity: @color-gray52;
-
+@header-link-hover-orange:#f95318;
 //
 //  Common
 //  _____________________________________________
@@ -72,6 +72,9 @@
         .ie9 & {
             .lib-css(background-color, @page__background-color);
             min-height: 0;
+        }
+        .nav-sections{
+        background: #f95318;
         }
     }
 
@@ -92,8 +95,9 @@
 
     .header.panel {
         > .header.links {
+            
             .lib-list-inline();
-            float: right;
+            float: left;
             font-size: 0;
             margin-left: auto;
             margin-right: @indent__base;
@@ -102,17 +106,19 @@
                 font-size: @font-size__base;
                 margin: 0 0 0 15px;
 
-                > a {
+                > a { 
+
                     .lib-link(
                     @_link-color: @header-panel__text-color,
                     @_link-text-decoration: none,
                     @_link-color-visited: @header-panel__text-color,
                     @_link-text-decoration-visited: none,
-                    @_link-color-hover: @header-panel__text-color,
-                    @_link-text-decoration-hover: underline,
+                    @_link-color-hover: @header-link-hover-orange,
+                    @_link-text-decoration-hover: none,
                     @_link-color-active: @header-panel__text-color,
-                    @_link-text-decoration-active: underline
+                    @_link-text-decoration-active: none
                     );
+                    color: grey;
                 }
             }
         }
@@ -120,6 +126,9 @@
 
     .header {
         &.content:extend(.abs-add-clearfix all) {
+             @media(min-width:768px){
+                display: none;
+             }
             padding-top: @indent__s;
             position: relative;
         }
@@ -217,6 +226,11 @@
     }
 
     .footer {
+        ul{
+        }
+        li{
+            color:#878787;
+        }
         &.content {
             border-top: 1px solid @footer-links-separator-border-color;
             padding-top: @indent__base;
@@ -261,11 +275,19 @@
     }
 
     .copyright {
+                .footerHr{
+                width:100%;
+                border-bottom: 0px solid #878787;
+                opacity: 0.1;
+                }
+                span{
+                    margin-right: 980px;
+                }
         .lib-css(background-color, @copyright__background-color);
         .lib-css(color, @color-white);
         display: block;
-        padding: @indent__s;
-        text-align: center;
+        padding: 10px 30px;
+        text-align: left;
     }
 
     .page-header,
@@ -441,7 +463,8 @@
     }
 
     .navigation ul {
-        padding: 0 8px;
+        padding: 16px;
+        background: #f95318;
     }
 
     .page-header {
@@ -552,8 +575,9 @@
         &.panel {
             > .header.links {
                 .lib-list-inline();
-                float: right;
+                float: left;
                 margin-left: auto;
+                font-weight: 800;
 
                 > li {
                     margin: 0 0 0 15px;
@@ -573,6 +597,9 @@
                 }
 
                 > .authorization-link {
+                    & a{
+                        color: grey;
+                    }
                     &:after {
                         content: attr(data-label);
                         display: inline-block;
@@ -588,10 +615,14 @@
 
         &.content:extend(.abs-add-clearfix-desktop all) {
             padding: @indent__l @indent__base 0;
-        }
+/*            display: none;
+*/        }
     }
 
     .logo {
+        @media(min-width:768px){
+            display: none;
+        }
         margin: -8px auto @indent__m 0;
 
         img {
@@ -655,8 +686,10 @@
     }
 
     .footer {
+        color:#ededed;
         &.content {
             border-top: none;
+            float: right;
 
             .block {
                 float: right;
@@ -690,5 +723,15 @@
                 }
             }
         }
+    }
+    .navigation .level0 > .level-top{
+        color: #fff;
+    }
+    .level-top .ui-corner-all span img{
+        margin-bottom: -46px;
+        margin-top: -25px;
+    }
+    .page-header .switcher .options .action.toggle, .page-footer .switcher .options .action.toggle{
+        color: grey;
     }
 }
