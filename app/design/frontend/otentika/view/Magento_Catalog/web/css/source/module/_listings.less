@@ -40,7 +40,11 @@
             
             .products-grid & {
                 display: inline-block;
-                width: 100%/2;
+                width: 100%/2 - 2%;
+                @media(max-width: 1032px){
+                    margin: 1%;
+                }
+                    
                 background: #F6F6F6;
                 text-align: center;
             }
@@ -215,7 +219,7 @@
 
     .column.main {
         .product {
-            @media(min-width: 768px){
+            @media(min-width: 1072px){
                 &-items {
                     margin-left: -@indent__base;
                 }
@@ -449,7 +453,10 @@
     .page-products.page-layout-3columns {
         .products-grid {
             .product-item {
-                width: 100%/3;
+                width: 100%/3 - 2%;
+                @media(max-width: 1032px){
+                    margin: 1%;
+                }
             }
         }
     }
@@ -463,7 +470,10 @@
     .page-products {
         .products-grid {
             .product-item {
-                width: 100%/3;
+                width: 100%/3 - 2%;
+                @media(max-width: 1032px){
+                    margin: 1%;
+                }
             }
         }
     }
@@ -552,6 +562,11 @@
                     }
                 }
             }
+        }
+    }
+    .products-list {
+        .product-image-wrapper {
+            width: 240px;
         }
     }
 }

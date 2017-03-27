@@ -227,7 +227,10 @@
     }
 
     .modes {
-        display: inline-block;
+        @media(min-width: 1024px){
+            display: inline-block;
+        }
+            
         float: right;
         margin-right: @indent__base;
 
