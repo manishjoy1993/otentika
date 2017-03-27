@@ -1,0 +1,16 @@
+#price-slider.ui-slider-horizontal .ui-slider-handle{
+    height: 15px;
+    width:3px;
+    margin-top: -3.5px;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+#price-slider.ui-slider-horizontal{
+	border-radius: 0;
+}
+#price-slider .ui-slider-range{
+	background: #f95318;
+	height: 10px;
+	position: absolute;
+}

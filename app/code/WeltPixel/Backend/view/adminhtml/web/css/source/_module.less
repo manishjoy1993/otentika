@@ -1,0 +1,36 @@
+@xmagestore_store_color: #FFF;
+
+#nav {
+    li.item-base {
+        > a {
+            &:before {
+                content: '';
+                background-image: url("../Excellence_Base/images/menu-icon.png");
+                background-repeat: no-repeat;
+                background-size: 70px;
+                background-position: center;
+                height: 50px;
+            }
+            > span {
+                font-size: 0px;
+            }
+        }
+        .submenu {
+            .submenu-title {
+                background-image: url("../Excellence_Base/images/excellence-mega-store-logo-black.png");
+                background-repeat: no-repeat;
+                padding-left: 80px;
+                height: 80px;
+                font-size: 0px;
+                margin-bottom: 15px;
+                background-size: 250px;
+            }
+            .item-pearl-theme-options {
+                display: none;
+                &.parent {
+                    display: block
+                }
+            }
+        }
+    }
+}
