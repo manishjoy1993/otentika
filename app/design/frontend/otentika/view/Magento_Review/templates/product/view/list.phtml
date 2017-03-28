@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * @description:
+ *
+ */
+?>
+<?php
+    $_items = $block->getReviewsCollection()->getItems();
+    $format = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
+?>
+<?php if (count($_items)):?>
+<div class="block review-list" id="customer-reviews">
+    <div class="block-content">
+        <div class="toolbar review-toolbar">
+            <?php echo $block->getChildHtml('toolbar') ?>
+        </div>
+        <ol class="items review-items">
+        <?php $active = 1; ?>
+        <?php foreach ($_items as $_review):?>
+            <li class="item review-item <?php if($active <= 2) {echo "active";} ?>" itemscope itemprop="review" itemtype="http://schema.org/Review">
+                <div class="review-title" itemprop="name"><?php echo $block->escapeHtml($_review->getNickname()) ?></div>
+                <?php if (count($_review->getRatingVotes())): ?>
+                    <div class="review-ratings">
+                    <?php foreach ($_review->getRatingVotes() as $_vote): ?>
+                    <div class="rating-summary item" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                        <div class="rating-result" title="<?php /* @escapeNotVerified */ echo $_vote->getPercent() ?>%">
+	                        <meta itemprop="worstRating" content = "1"/>
+	                        <meta itemprop="bestRating" content = "100"/>
+                            <span style="width:<?php /* @escapeNotVerified */ echo $_vote->getPercent() ?>%">
+                                <span itemprop="ratingValue"><?php /* @escapeNotVerified */ echo $_vote->getPercent() ?>%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <div class="content-review" itemprop="description">
+                    <?php echo nl2br($block->escapeHtml($_review->getDetail())) ?>
+                </div>
+            </li>
+            <?php $active++; ?>
+        <?php endforeach; ?>
+        </ol>
+        <?php if (count($_items) > 2):?>
+            <script type="text/javascript">
+                require([
+                    'jquery'
+                ], function ($) {
+                    $('#load-more-review').click(function(){
+                        $(".review-item.active").last().next().addClass('active');
+                        $(".review-item.active").last().next().addClass('active');
+                        if($(".review-item.active").length == <?php echo count($_items) ?>){
+                            $(this).fadeOut();
+                        }
+                    });
+                });
+            </script>
+            <div class="load-more-review">
+                <a class="action" id="load-more-review" href="javascript:void(0);"><?php echo __('Load More') ?></a>
+            </div>
+        <?php endif;?>
+        <div class="toolbar review-toolbar">
+            <?php echo $block->getChildHtml('toolbar') ?>
+        </div>
+    </div>
+</div>
+<?php endif;?>
