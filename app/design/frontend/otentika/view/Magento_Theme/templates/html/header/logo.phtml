@@ -11,19 +11,60 @@
  */
 ?>
 <?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
-<span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+<div  class="nav-toggle1"><div><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></div></div>
 <?php if ($block->isHomePage()):?>
-    <strong class="logo main-logo">
-<?php else: ?>
-    <a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
-<?php endif ?>
-        <img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
-             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
-             <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
-             <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
-        />
-<?php if ($block->isHomePage()):?>
-    </strong>
-<?php else:?>
-    </a>
+	<strong class="logo main-logo">
+	<?php else: ?>
+		<a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+		<?php endif ?>
+		<img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+		alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+		<?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+		<?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+		/>
+		<?php if ($block->isHomePage()):?>
+		</strong>
+	<?php else:?>
+	</a>
 <?php endif?>
+
+<?php
+/**
+ * Top menu for store
+ *
+ * @var $block \Magento\Theme\Block\Html\Topmenu
+ */
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$appState = $objectManager->get('\Magento\Framework\App\State');
+$logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
+
+?>
+
+<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<div class="mobileMenu">
+	<nav class="navigation" data-action="navigation">
+		<ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+			<?php /* @escapeNotVerified */ echo $_menu; ?>
+			<?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
+			<li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
+				<a href="#" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+					<span>Contact Us</span>
+				</a>
+			</li>
+
+		</ul>
+	</nav>
+</div>
+
+<script>
+	require(['jquery'], function($) {
+            $(document).on("load",function(event){
+
+            	$(".nav-toggle1").on('click',function(){
+            		$(".mobileMenu").toggle();
+
+            	});
+            });            
+        });
+    </script> 

@@ -169,6 +169,23 @@
                 }
             }
         }
+        .minicart-wrapper{
+            display: none;
+        }
+        .link.wishlist{
+            float: right;
+            width: 23px;
+            margin: -14px 3px;
+        }
+        .minicart-search{
+            .minicart-wrapper{
+                display: block;
+            }
+        }
+        .block-search.action.search:before{
+                font-size: 18px;
+
+        }
     }
 
     .header {
@@ -601,14 +618,27 @@
                 /*background: rgba(128, 128, 128, 0.1);*/
                 width: 19%;
                 .banner2_elmnt{
-                    background: rgba(128, 128, 128, 0.1);
-                    margin-top: -2px;
-                    margin-bottom: 3px;
+                  background: rgba(128, 128, 128, 0.1);
+                  margin-top: 0px;
+                  margin-bottom: 2px;
+                  height: 410px;
                 }
                 .baner2_title{
                     font-size: 26px;
                     text-align: center;
                     font-weight: 600;
+                    position: relative;
+                    top: 26px;
+
+                     @media(min-width:1014px){
+                        font-size: 21px;
+                     }
+                     @media(max-width:1014px) and (min-width: 847px){
+                        font-size: 19px;
+                     }
+                     @media(max-width: 847px) and (min-width: 768px){
+                        font-size: 16px;
+                     }
                 }
                 .banner2_hr{
                     border-top: 2px solid orangered;
@@ -622,9 +652,27 @@
                     color: gray;
                     font-size: 12px;
                     padding: 23px;
+                    position: absolute;
+                    @media(max-width: 1133px){
+                        font-size: 12px;
+                        left: 133px;
+                    }
+                    @media(max-width: 1133px) and (min-width: 1048px){
+                        font-size: 11px;
+                        left: 133px;
+                    }
+                    @media(max-width: 1048px) and (min-width: 987px){
+                       font-size: 11px;
+                        left: 127px;
+                    }
+                    @media(max-width: 987px) and (min-width: 911px){
+                       font-size: 10px;
+                        left: 126px;
+                    }
                 }
                 .banner2_img{
-                    height: 213px;
+                    position: relative;
+                    top: 68px;
                 }
                 .banner3image{
                         padding: 23px 0px 0px;
@@ -680,20 +728,45 @@
                     width: 20%;  
                     padding-left: 39px;
                     .banner3_title{
-                        font-size: 26px;
+                        font-size: 22px;
                         font-weight: 600;
                         margin-bottom: 0px;
+                        position: absolute;
+                        top: 871px;
+                        @media(min-width:1014px){
+                            font-size: 21px;
+                        }
+                        @media(max-width:1014px) and (min-width: 847px){
+                            font-size: 19px;
+                            
+                        }
+                        @media(max-width: 847px) and (min-width: 768px){
+                            font-size: 16px;
+
+                        }
                     }
                     .banner3_hr_right{
                         border-top: 2px solid orangered;
-                        padding: 0px 0px -4px;
                         width: 25px;
                         margin-left: 0px;
+                        position: relative;
+                        top: 64px;
+                        left: 3px;
+
+                        @media(max-width:1014px) and (min-width: 847px){
+                            top: 58px;
+                            
+                        }
+                        @media(max-width: 847px) and (min-width: 768px){
+                            top: 52px;
+                           
+                        }
                     }
                     .banner3_discrp_right{
                         color: gray;
                         font-size: 12px;
                         position: absolute;
+                        top: 963px;
                         }
                     .banner3_elmnt{
                         margin-top: 134px;
@@ -1284,16 +1357,23 @@
     }
     .switcher.store.switcher-store{
         float: left;
-        margin: 0px 6px 0px 159px;
+        position: relative;
+        left: 121px;
     }
     .switcher.language.switcher-language{
         float: left;
+        position: relative;
+        left: 113px;
     }
 
     .header.content{
         @media(min-width:768px){
            
         }
+    }
+    .page-header .switcher .options .action.toggle:after, .page-footer .switcher .options .action.toggle:after{
+            color: #f95318;
+            content: '\e607';
     }
 
 }
