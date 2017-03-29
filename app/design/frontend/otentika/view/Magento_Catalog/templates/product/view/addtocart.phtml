@@ -16,6 +16,8 @@
         <?php if ($block->shouldRenderQuantity()): ?>
         <div class="field qty">
             <div class="control">
+                <span class="qty-btn qty-inc">+</span>
+                <span class="qty-btn qty-dec">-</span>
                 <input type="number"
                        name="qty"
                        id="qty"
@@ -24,6 +26,7 @@
                        title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
                        data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
                        />
+                
             </div>
         </div>
         <?php endif; ?>
@@ -59,3 +62,20 @@
     }
 </script>
 <?php endif; ?>
+
+<!-- Qty Manipulation Script -->
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        $(".box-tocart .field.qty .qty-inc").click(function(){
+            var value = parseInt($(".box-tocart .field.qty .input-text.qty").val());
+            value += 1;
+            $(".box-tocart .field.qty .input-text.qty").val(value);
+        });
+        $(document).on("click", ".box-tocart .field.qty .qty-inc", function(){
+            if(($(".box-tocart .field.qty .input-text.qty").val() - 1) > 0)
+                $(".box-tocart .field.qty .input-text.qty").val($(".box-tocart .field.qty .input-text.qty").val() - 1);
+        });
+    });
+</script>
