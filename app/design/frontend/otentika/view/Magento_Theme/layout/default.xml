@@ -9,10 +9,10 @@
 
             <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="footer-container" template="subscribe.phtml"/>
             <block class="Magento\Cms\Block\Block" name="Promo">
-            <arguments>
-                <argument name="block_id" xsi:type="string">body_content</argument>
-            </arguments>
-        </block>
+		    <arguments>
+		        <argument name="block_id" xsi:type="string">body_content</argument>
+		    </arguments>
+		</block>
         </referenceContainer>
         <referenceContainer name="content">
             <container name="otentika.header" after="top.links">
@@ -27,7 +27,7 @@
          <move element="otentika.header" destination="header.panel" />
          <referenceBlock name="top.search" after="minicart" />
 
-
+            <!-- <move element="wish-list-link" destination="header.panel" /> -->
 
         <move element="Promo" destination="content" />
         <!-- <move element="copyright" destination="footer-container" /> -->
