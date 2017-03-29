@@ -21,7 +21,7 @@
         <referenceBlock name="product.attributes.info" remove="true"/>
     	
 		<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details.info" template="product/view/details.phtml">
-            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.info" template="product/view/attribute.phtml" group="detailed_info">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.info" template="product/view/attribute.phtml" group="detailed_info" before="product.info.description.info">
                 <arguments>
                     <argument name="at_call" xsi:type="string">getDescription</argument>
                     <argument name="at_code" xsi:type="string">description</argument>
@@ -30,20 +30,28 @@
                     <argument name="title" translate="true" xsi:type="string">Description</argument>
                 </arguments>
             </block>
-            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes.info" as="additional" template="product/view/attributes.phtml" group="detailed_info">
+            
+        </block>
+
+        <referenceBlock name="product.attributes" remove="true" />
+
+        <referenceBlock name="product.info.details.info">
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes.test" as="additional.test" template="product/view/attributes.phtml" group="detailed_info">
                 <arguments>
                     <argument translate="true" name="title" xsi:type="string">Features</argument>
                 </arguments>
             </block>
-        </block>
 
-        <referenceBlock name="product.info.details.info">
           <block class="Magento\Catalog\Block\Product\View" name="shippinginfo.tab" as="shippinginfo" template="product/view/shipping-payment-tab.phtml" group="detailed_info" after="-" >
              <arguments>
                 <argument translate="true" name="title" xsi:type="string">Shipping &amp; Payment</argument>
              </arguments>
           </block>
         </referenceBlock>
+
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View" name="product.bottom.banner" template="product/view/product-view-bottom.phtml" after="product.info.details" />
+        </referenceContainer>
 
     </body>
 </page>
