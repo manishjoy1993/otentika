@@ -141,6 +141,8 @@
     }
 
     .header.panel {
+        text-transform: uppercase;
+        font-weight: 600;
         > .header.links {
             
             .lib-list-inline();
@@ -150,13 +152,14 @@
             margin-right: @indent__base;
 
             > li {
-                font-size: @font-size__base;
+                font-size: 12px;
+                font-weight: 600;
                 margin: 0 0 0 15px;
 
                 > a { 
 
                     .lib-link(
-                    @_link-color: @header-panel__text-color,
+                    @_link-color: #000,
                     @_link-text-decoration: none,
                     @_link-color-visited: @header-panel__text-color,
                     @_link-text-decoration-visited: none,
@@ -165,7 +168,6 @@
                     @_link-color-active: @header-panel__text-color,
                     @_link-text-decoration-active: none
                     );
-                    color: grey;
                 }
             }
         }
@@ -175,7 +177,10 @@
         .link.wishlist{
             float: right;
             width: 23px;
-            margin: -14px 3px;
+            margin: -12px 20px;
+            img{
+                height: 14px;
+            }
         }
         .minicart-search{
             .minicart-wrapper{
@@ -185,6 +190,13 @@
         .block-search.action.search:before{
                 font-size: 18px;
 
+        }
+        .switcher {
+            strong {
+                font-size: 12px;
+                font-weight: 600;
+                color: #000;
+            }
         }
     }
 
@@ -352,42 +364,7 @@
                 opacity: 0.1;
                 }
                 span{
-                    color: #878787;
-                    font-size: 14px;
-                    margin-bottom: 15px;
-                    display: block;
-                    width: 250px;
-                    float: left;
-                    margin-right:0px;
-                }
-                .footer-logo-block{
-                    width: 185px;
-                    float: right;
-                    .twitter{
-                        float:right;
-                        width:auto;
-                        margin-right:5px;
-                        img{
-                            width: 26px;
-                        }
-                        
-                    }
-                    .facebook{
-                        width:75px;
-                        img{
-                            width: 11px;
-                        }
-                    }
-                    .wync{
-                    img{
-                            width: 26px;
-                        }   
-                    }
-                }
-                .flogo{
-                    width:50px;
-                    float: right;
-                    text-align:center;
+                    margin-right: 980px;
                 }
         .lib-css(background-color, @copyright__background-color);
         .lib-css(color, @color-white);
@@ -1136,9 +1113,7 @@
         }
 
         .switcher {
-            float: right;
-            margin-left: 15px;
-            margin-right: -6px;
+            margin: 0 10px;
             .lib-vendor-prefix-order(1);
 
         }
@@ -1233,9 +1208,16 @@
                 float: left;
                 margin-left: auto;
                 font-weight: 800;
+                margin: 6px 0;
+                padding-right: 25px;
+                border-right: 2px solid #ccc;
 
                 > li {
                     margin: 0 0 0 15px;
+
+                    &:nth-child(1){
+                        margin: 0;
+                    }
 
                     &.welcome,
                     > a {
@@ -1253,7 +1235,7 @@
 
                 > .authorization-link {
                     & a{
-                        color: grey;
+                        color: #000;
                     }
                     &:after {
                         content: attr(data-label);
@@ -1266,6 +1248,9 @@
                     display: none;
                 }
             }
+        }
+        .switcher{
+            padding: 4px 0;
         }
 
         &.content:extend(.abs-add-clearfix-desktop all) {
@@ -1379,30 +1364,6 @@
                 }
             }
         }
-
-        .footer_nav_css{
-            color: #efefef;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .footer_nav_css span{
-            display: block;
-            border-bottom: 2px solid #f95318;
-            width: 40px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .content .links li a {
-            color: #878787;
-            font-weight:600;
-        }
-        .content .links li a:hover {
-            color: #878787;
-            font-weight:600;
-        }
     }
     .navigation .level0 > .level-top{
         color: #fff;
@@ -1411,18 +1372,19 @@
         margin-bottom: -46px;
         margin-top: -25px;
     }
-    .page-header .switcher .options .action.toggle, .page-footer .switcher .options .action.toggle{
+    /*.page-header .switcher .options .action.toggle, .page-footer .switcher .options .action.toggle{
         color: grey;
-    }
-    .switcher.store.switcher-store{
+    }*/
+    /*.switcher.store.switcher-store{
         float: left;
         position: relative;
         left: 121px;
-    }
+    }*/
     .switcher.language.switcher-language{
         float: left;
         position: relative;
-        left: 113px;
+        /*left: 113px;*/
+        padding-left: 25px;
     }
 
     .header.content{
@@ -1431,8 +1393,12 @@
         }
     }
     .page-header .switcher .options .action.toggle:after, .page-footer .switcher .options .action.toggle:after{
-            color: #f95318;
-            content: '\e607';
+        color: #f95318 !important;
+        content: '\e607';
+    }
+    .page-header .switcher .options .action.toggle.active:after, .page-footer .switcher .options .action.toggle.active:after{
+        color: #f95318 !important;
+        content: '\e618';
     }
 
 }
