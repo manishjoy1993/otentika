@@ -50,7 +50,8 @@
                                        data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_item); ?>'
                                        class="action towishlist" data-action="add-to-wishlist"
                                        title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
-                                        
+                                        <img class="wishlist-passive" src="<?php echo $block->getViewFileUrl('images/catalog/product/fav/wishlist.png') ?>">
+                                        <img class="wishlist-active" src="<?php echo $block->getViewFileUrl('images/catalog/product/fav/wishlist-active.png') ?>">
                                     </a>
                                 <?php endif; ?>
                             </div>
