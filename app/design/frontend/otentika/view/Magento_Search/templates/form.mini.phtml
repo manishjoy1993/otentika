@@ -62,9 +62,6 @@ $helper = $this->helper('Magento\Search\Helper\Data');
   <li class="link wishlist" data-bind="scope: 'wishlist'">
               <a href="<?php /* @escapeNotVerified */ echo $block->getUrl('wishlist') ?>">
               <img src="<?php echo $block->getViewFileUrl('images/home/wishlist.png'); ?>">
-                  <!-- ko if: wishlist().counter -->
-                  <span data-bind="text: wishlist().counter" class="counter qty"></span>
-                  <!-- /ko -->
               </a>
           </li>
           <script type="text/x-magento-init">
