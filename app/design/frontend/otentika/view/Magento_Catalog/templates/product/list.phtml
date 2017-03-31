@@ -51,15 +51,18 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                 if ($block->getMode() == 'grid') {
                 ?>
                 <div class="product-item-info" data-container="product-grid">
-                    <strong class="product name product-item-name">
-                        <a class="product-item-link"
-                           href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
-                            <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
-                        </a>
-                    </strong>
-                    <strong class="product name product-item-name">
-                        <p><?php echo $_product->getShortDescription(); ?></p>
-                    </strong>
+                    <div class="top-info">
+                        <strong class="product name product-item-name title">
+                            <a class="product-item-link"
+                               href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
+                                <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                            </a>
+                        </strong>
+                        <strong class="product name product-item-name">
+                            <p><?php echo $_product->getShortDescription(); ?></p>
+                        </strong>
+                    </div>
+                        
                     <?php
                     $productImage = $block->getImage($_product, $image);
                     if ($pos != null) {
@@ -82,15 +85,17 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
 
                     </div>
                     <div class="product-item-info-hover" data-container="product-grid">
-                        <strong class="product name product-item-name">
-                            <a class="product-item-link"
-                               href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
-                                <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
-                            </a>
-                        </strong>
-                        <strong class="product name product-item-name short-description">
-                            <p><?php echo $_product->getShortDescription(); ?></p>
-                        </strong>
+                        <div class="top-info">
+                            <strong class="product name product-item-name title">
+                                <a class="product-item-link"
+                                   href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
+                                    <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                </a>
+                            </strong>
+                            <strong class="product name product-item-name short-description">
+                                <p><?php echo $_product->getShortDescription(); ?></p>
+                            </strong>
+                        </div>
                         <div class="hover-actions">
                             <table>
                                 <tr>
