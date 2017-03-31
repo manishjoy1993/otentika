@@ -116,6 +116,9 @@
             }
         }
     }
+    .navigation .level0 > .level-top{
+        text-transform: uppercase !important;
+    }
     .breadcrumbs{
         display: none;
     }
@@ -141,6 +144,8 @@
     }
 
     .header.panel {
+        text-transform: uppercase;
+        font-weight: 600;
         > .header.links {
             
             .lib-list-inline();
@@ -150,13 +155,14 @@
             margin-right: @indent__base;
 
             > li {
-                font-size: @font-size__base;
+                font-size: 12px;
+                font-weight: 600;
                 margin: 0 0 0 15px;
 
                 > a { 
 
                     .lib-link(
-                    @_link-color: @header-panel__text-color,
+                    @_link-color: #000,
                     @_link-text-decoration: none,
                     @_link-color-visited: @header-panel__text-color,
                     @_link-text-decoration-visited: none,
@@ -165,7 +171,6 @@
                     @_link-color-active: @header-panel__text-color,
                     @_link-text-decoration-active: none
                     );
-                    color: grey;
                 }
             }
         }
@@ -175,7 +180,10 @@
         .link.wishlist{
             float: right;
             width: 23px;
-            margin: -14px 3px;
+            margin: -12px 20px;
+            img{
+                height: 17px;
+            }
         }
         .minicart-search{
             .minicart-wrapper{
@@ -185,6 +193,13 @@
         .block-search.action.search:before{
                 font-size: 18px;
 
+        }
+        .switcher {
+            strong {
+                font-size: 12px;
+                font-weight: 600;
+                color: #000;
+            }
         }
     }
 
@@ -352,42 +367,7 @@
                 opacity: 0.1;
                 }
                 span{
-                    color: #878787;
-                    font-size: 14px;
-                    margin-bottom: 15px;
-                    display: block;
-                    width: 250px;
-                    float: left;
-                    margin-right:0px;
-                }
-                .footer-logo-block{
-                    width: 185px;
-                    float: right;
-                    .twitter{
-                        float:right;
-                        width:auto;
-                        margin-right:5px;
-                        img{
-                            width: 26px;
-                        }
-                        
-                    }
-                    .facebook{
-                        width:75px;
-                        img{
-                            width: 11px;
-                        }
-                    }
-                    .wync{
-                    img{
-                            width: 26px;
-                        }   
-                    }
-                }
-                .flogo{
-                    width:50px;
-                    float: right;
-                    text-align:center;
+                    margin-right: 980px;
                 }
         .lib-css(background-color, @copyright__background-color);
         .lib-css(color, @color-white);
@@ -567,554 +547,429 @@
             .lib-css(background-color, @copyright__background-color);
         }
     }
+    .copyright {
+        .footer-logo-block {
+            width: 185px;
+            float: right;
+        }
 
-    .column.main{
-        .main_Border{
-            margin-bottom: 124px;
-            border: 12px solid orangered;
-            height: 509px;
-            border-bottom: 0;
-            margin-top: 47px;
-            .banner1{
-                width: 31%;
-                float: right;
-                padding-right: 73px;
-                margin-top: -60px;
-            }
-            .ethenic{
-                @media(min-width:1266px){
-                   padding: 210px 177px;
-                }
-                @media(max-width:1266px) and (min-width: 1156px){
-                       padding: 200px 102px;
-                }
-                @media(max-width:1156px) and (min-width: 1097px){
-                       padding: 179px 60px;
-                }
-                @media(max-width:1097px) and (min-width: 1073px){
-                       padding: 179px 44px;
-                }
-                @media(max-width:1073px) and (min-width: 1060px){
-                       padding: 157px 35px;
-                }
-                @media(max-width:1060px) and (min-width: 1059px){
-                        padding: 171px 242px
-                }
-                @media(max-width:1059px) and (min-width: 1012px){
-                        padding: 171px 221px;
-                }
-                @media(max-width:1012px) and (min-width: 946px){
-                        padding: 171px 175px;
-                }
-                @media(max-width:946px) and (min-width: 908px){
-                            padding: 151px 149px;
-                }
-                @media(max-width:946px) and (min-width: 860px){
-                            padding: 151px 112px;
-                }
-                @media(max-width:860px) and (min-width: 804px){
-                            padding: 125px 77px;
-                }
-                @media(max-width:804px) and (min-width: 768px){
-                            padding: 115px 52px;
-                }
-                /*@media(max-width: 768px){
-                            padding: 115px 52px;
-                }*/
-                .ethenic_title{
-                    @media(min-width:1060px){
-                    font-weight: 900;
-                    font-size: 74px;
-                    }
-                    @media(max-width:1060px) and (min-width: 768px){
-                    font-weight: 900;
-                    font-size: 46px;
-                    }
-                }
-                .action.tocart.primary{
-                    padding: 10px 30px;
-                    margin-top: -24px;
-                    font-size: 1.3rem;
-                    border-radius: 0; 
-                    line-height: 1;
-                    padding-bottom: 8px; 
-                    padding-top: -1px; 
-                    white-space: nowrap;
-                    .shop_btn{
-                        margin-bottom: 5px;
-                    }
+        .wyncImag {
+            width: 26px;
+        }
+
+        .wync {
+            margin-left: 52px;
+            margin-top: 3px;
+        }
+
+        .twitter {
+            float: right;
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .twiImag {
+            width: 26px;
+        }
+
+        .facebook {
+            width: 35px;
+            float: right;
+        }
+
+        .fbImag {
+            width: 11px;
+        }
+    }
+    .footer.content {
+        .links {
+            .footer_nav_css{
+                span {
+                    display: block;
+                    border-bottom: 2px solid #f95318;
+                    width: 40px;
+                    margin-top: 15px;
+                    margin-bottom: 15px;
                 }
             }
         }
-        .bannerMain{
-            padding: 0px 121px;
-            .banner2{
-                float: left;
-                /*background: rgba(128, 128, 128, 0.1);*/
-                width: 19%;
-                .banner2_elmnt{
-                  background: rgba(128, 128, 128, 0.1);
-                  margin-top: 0px;
-                  margin-bottom: 2px;
-                  height: 410px;
-                }
-                .baner2_title{
-                    font-size: 26px;
-                    text-align: center;
+    }
+    .cms-index-index {
+        .panel.header,
+        nav.navigation{
+            max-width: 1060px !important;
+            margin: 0 auto !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .page-main{
+            max-width:100%;
+            padding: 0;
+            .column.main{
+                h1 {
+                    font-size: 21px;
                     font-weight: 600;
-                    position: relative;
-                    top: 26px;
-
-                     @media(min-width:1014px){
-                        font-size: 21px;
-                     }
-                     @media(max-width:1014px) and (min-width: 847px){
-                        font-size: 19px;
-                     }
-                     @media(max-width: 847px) and (min-width: 768px){
-                        font-size: 16px;
-                     }
                 }
-                .banner2_hr{
-                    border-top: 2px solid orangered;
-                    padding: 0px 0px -4px;
-                    padding: 3px;
-                    width: 20px;
-                    margin-bottom: 0px;
+                hr{
+                    border-top: 2px solid #f95318;
+                    box-shadow: none;
                 }
-                .banner2_descrp{
-                    text-align: center;
-                    color: gray;
-                    font-size: 12px;
-                    padding: 23px;
-                    position: absolute;
-                    @media(max-width: 1133px){
-                        font-size: 12px;
-                        left: 133px;
-                    }
-                    @media(max-width: 1133px) and (min-width: 1048px){
-                        font-size: 11px;
-                        left: 133px;
-                    }
-                    @media(max-width: 1048px) and (min-width: 987px){
-                       font-size: 11px;
-                        left: 127px;
-                    }
-                    @media(max-width: 987px) and (min-width: 911px){
-                       font-size: 10px;
-                        left: 126px;
-                    }
+                button{
+                    text-transform: uppercase;
+                    border-radius: 0;
                 }
-                .banner2_img{
-                    position: relative;
-                    top: 68px;
+                padding-bottom: 0 !important;
+                .banner4imageDtls2, .banner3_discrp_right p, .banner5dt2, .banner3_discrp_right {
+                    color: #878787;
                 }
-                .banner3image{
-                        padding: 23px 0px 0px;
+                .home-top-banner{
+                    background: url(../images/home/banners/gradient.png);
+                    background-repeat: repeat-x;
+                    background-position: 0 390px;
+                    margin-top: 50px;
+                    .main_Border{
+                        width: 1060px;
+                        margin: 0px auto;
+                        border: 12px solid #eb966d;
+                        border-bottom: 0;
                         position: relative;
-                    .imgb3Detail{
-                        position: absolute;
-                        top: 179px;
-                        left: 61px;
-                        font-size: 12px;
-                        color: grey;
-                    }
-                    .imgb3{
-                       height: 193px;
-                       padding-bottom: 18px;
-                       position: relative;
-                    }
-
-                }
-                .banner4image{
-                    .imgb4{
-                        height: 185px;
-                        position: relative;
-                    }
-                    .banner4imageDtls1{
-                            position: absolute;
-                            top: 1555px;
-                            left: 193px;
-                            font-size: 19px;
-                            font-weight: 600;
-
-                    }
-                    .banner4imageDtls2{
-                        position: absolute;
-                        top: 1620px;
-                        left: 192px;
-                        font-size: 11px;
-                        color: grey;
-                    }
-                }
-            }
-            .banner3{
-                width: 78%;
-                float: right; 
-                /*background: rgba(128, 128, 128, 0.09);*/
-                .banner3Body{
-                    background: rgba(128, 128, 128, 0.09);
-                    float: left;
-                    width: 100%;
-                    margin-bottom: 5px;
-                }
-                .banner3_div{
-                    float: left;  
-                    width: 20%;  
-                    padding-left: 39px;
-                    .banner3_title{
-                        font-size: 22px;
-                        font-weight: 600;
-                        margin-bottom: 0px;
-                        position: absolute;
-                        top: 871px;
-                        @media(min-width:1014px){
-                            font-size: 21px;
-                        }
-                        @media(max-width:1014px) and (min-width: 847px){
-                            font-size: 19px;
-                            
-                        }
-                        @media(max-width: 847px) and (min-width: 768px){
-                            font-size: 16px;
-
-                        }
-                    }
-                    .banner3_hr_right{
-                        border-top: 2px solid orangered;
-                        width: 25px;
-                        margin-left: 0px;
-                        position: relative;
-                        top: 64px;
-                        left: 3px;
-
-                        @media(max-width:1014px) and (min-width: 847px){
-                            top: 58px;
-                            
-                        }
-                        @media(max-width: 847px) and (min-width: 768px){
-                            top: 52px;
-                           
-                        }
-                    }
-                    .banner3_discrp_right{
-                        color: gray;
-                        font-size: 12px;
-                        position: absolute;
-                        top: 963px;
-                        }
-                    .banner3_elmnt{
-                        margin-top: 134px;
-                        width: 45%;
-                        .action.tocart.primary{
-                            padding: 10px 30px;
-                            font-size: 1.3rem;
-                            border-radius: 0;
-                            line-height: 1;
-                            padding-top: -1px;
-                            float: left; 
-                        }
-                        .banner3_btn{
+                        height: 450px;
+                        .banner1 {
+                            width: 31%;
                             float: right;
+                            padding-right: 73px;
+                            margin-top: -60px;
                         }
-                    }
-                }
-                .banner3_share_icn{
-                        float: right;
-                        img{
-                            width: 94%;
-                            float: right;
-                        }
-                    }
-                    .banner5{
-                        .bannerImg5{
-                        float: left;
-                        width: 65%;
-                        height: 406px;
-                        padding-top: 20px;
-                        position: relative;
-                    }
-                    .bannerImg5Round{
-                                width: 86px;
-                                height: 86px;
-                                background: black;
-                                border-radius: 50px;
-                                color: white;
-                                position: absolute;
-                                top: 1304px;
-                                left: 397px;
-                        }
-                        .bannerImg5Dtls{
+                        .ethenic {
                             position: absolute;
-                            top: 1326px;
-                            color: white;
-                            left: 410px;
-                            font-size: 33px;
-                        }
-                        .banner5dt1{
-                                position: absolute;
-                                top: 1555px;
-                                left: 404px;
-                                font-size: 19px;
-                                font-weight: 600;
-                        }
-                        .banner5dt2{
-                            position: absolute;
-                            top: 1620px;
-                            left: 404px;
-                            font-size: 11px;
-                            color: grey;
-                        }
-                    .bannerImg6{
-                        float: right;
-                        width: 31%;
-                        height: 406px;
-                        padding-top: 20px;
-                    }
-                    .banner6dt1{
-                            position: absolute;
-                            top: 1331px;
-                            left: 944px;
-                            font-size: 19px;
-                            font-weight: 600;
-                            hr{
-                                border-top: 2px solid orangered;
-                                width: 25px;
-                                margin-left: 0px;
+                            left: 12%;
+                            top: 25%;
+                            padding: 0;
+                            .ethenic_title{
+                                font-weight: 900;
+                                font-size: 74px;
                             }
-                    }
-                    .banner6dt2{
-                        position: absolute;
-                        top: 1602px;
-                        left: 948px;
-                        font-size: 11px;
-                        color: grey;
-                    }
-
-                }
-                    
-            }
-            .banner7{
-                    width: 99.5%;
-                    background: orangered;
-                    float: left;
-                    padding: 0px 2px;
-                    height: 289px;
-                    margin-bottom: 96px;
-                    margin-top: 20px;
-                    .banner7image{
-                        height: 289px;
-                    }
-                    .banner7emnt{
-                        float: right;
-                        padding: 7% 11%;
-                        color: white;
-                        h1{
-                            font-weight: 400;
-                        }
-                        span{
-                            font-size: 12px;
-                        }
-                    }
-                    .banner7btn{
-                        margin-top: 20px;
-                        .action.tocart.primary{
-                                border: 1px solid;
+                            .action.tocart.primary {
+                                padding: 10px 30px;
+                                margin-top: -24px;
+                                font-size: 1.3rem;
                                 border-radius: 0;
+                                line-height: 1;
+                                padding-bottom: 8px;
+                                white-space: nowrap;
+                                margin-left: 7px;
+                                .shop_btn {
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .home-middle-container {
+                    max-width: 860px;
+                    margin: 0px auto;
+                    margin-top: 85px;
+                    .main-first {
+                        .main-first-left {
+                            background: #f5f5f5;
+                            float: left;
+                            width: 215px;
+                            .baner2_title {
+                                width: 140px;
+                                margin: 55px auto 25px;
+                                line-height: 30px;
+                                text-align: center;
+                            }
+                            .banner2_hr {
+                                width: 40px;
+                            }
+                            .banner2_descrp {
+                                width: 160px;
+                                text-align: center;
+                                margin: 0 auto;
+                                color: #878787;
+                            }
+                            .banner2_img {
+                                width: 160px;
+                                margin: 25px 27.5px -5px;
+                                text-align: center;
+                            }
+                        }
+
+                        .main-first-right {
+                            float: right;
+                            background: #f5f5f5;
+                            width: ~'calc(100% - 30px - 215px)';
+                            margin-left: 30px;
+                            .banner3Body {
+                                background: url(../images/home/banners/bg.png) no-repeat;
+                                background-size: contain;
+                                background-position: center right;
+                                height: 384px;
+                                .banner3_div {
+                                    max-width: 300px;
+                                    float: left;
+                                    .banner3_title {
+                                        margin: 55px 25px 25px;
+                                        width: 254px;
+                                        line-height: 30px;
+                                        text-align: left;
+                                    }
+                                    .banner3_hr_right {
+                                        width: 40px;
+                                        margin: 0;
+                                        margin-left: 25px;
+                                    }
+                                    .banner3_discrp_right, .banner3_elmnt {
+                                        margin-left: 25px;
+                                    }
+                                    .banner3_discrp_right {
+                                        margin-top: 25px;
+                                    }
+                                    .banner3_elmnt {
+                                        margin-top: 100px;
+                                        div {
+                                            display: inline-block;
+                                        }
+                                        .button a{
+                                            background-image: none;
+                                            background: #f95318;
+                                            border: 1px solid #f95318;
+                                            color: #ffffff;
+                                            cursor: pointer;
+                                            display: inline-block;
+                                            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                                            font-weight: 600;
+                                            padding: 7px 15px;
+                                            font-size: 12px;
+                                            box-sizing: border-box;
+                                            vertical-align: middle;
+                                            text-transform: uppercase;
+                                        }
+                                        .share {
+                                            height: 32px;
+                                            margin-left: 25px;
+                                            .banner3_btn {
+                                                display: block;
+                                                height: 22px;
+                                                .banner3_img {
+                                                    margin-bottom: -6px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .banner3_share_icn {
+                                    float: right;
+                                    height: 100%;
+                                    img {
+                                        height: 100%;
+                                    }
+                                }
+                            }
                         }
                     }
 
-            }
-        }
-        .products_banner{
-            background: lightgray;
-            float: left;
-            width: 100%;
-            margin: 0px -74px;
-            padding: 77px;
-            margin-bottom: -23px;
-            .products-left{
-                    float: left;
-                    padding: 0px 122px;
-                    .product1{
-                        float: left;
-                        background: white;
-                        padding: 42px 40px 0px;
-                        img{
-                            margin-bottom: -5px;
-                        }
-                        .product1Title{
-                            font-size: 12px;
-                            font-weight: 600;
-                            hr{
-                                border-top: 2px solid orangered;
-                                padding: 3px;
-                                width: 20px;
-                                margin: 8px 0px;
+                    .main-second {
+                        margin-top: 30px;
+                        &-left {
+                            float: left;
+                            .main-second-left-top {
+                                width: 215px;
+                                .banner3image {
+                                    background: url(../images/home/banners/b3.png);
+                                    height: 171px;
+                                    padding: 0;
+                                    background-size: contain;
+                                    .imgb3Detail {
+                                        font-size: 12px;
+                                        color: #878787;
+                                        text-align: center;
+                                        padding-top: 135px;
+                                    }
+                                }
+                            }
+                            .main-second-left-bottom {
+                                width: 215px;
+                                margin-top: 25px;
+                                .banner4image {
+                                    background: url(../images/home/banners/b4.png) no-repeat;
+                                    background-color: #f5f5f5;
+                                    height: 171px;
+                                    padding: 0;
+                                    background-size: contain;
+                                    background-position: bottom;
+                                    text-align: center;
+                                    .banner4imageDtls1 {
+                                        padding-top: 35px;
+                                        h1 {
+                                            margin-bottom: 5px;
+                                            line-height: 25px;
+                                            font-size: 21px;
+                                        }
+                                    }
+                                }
                             }
                         }
-                        .product1dtl{
-                            font-size: 22px;
-                            font-weight: 600;
-                            padding: 29px 2px;
+                        &-middle {
+                            float: left;
+                            width: ~'calc(100% - 90px - 355px)';
+                            margin-left: 30px;
+                            &-content{
+                                background: url(../images/home/banners/b5.png) no-repeat;
+                                height: 338px;
+                                padding: 0;
+                                background-size: contain;
+                                background-position: center right;
+                                background-color: #f5f5f5;
+                                padding-top: 30px;
+                                .bannerImg5Dtls {
+                                    background: black;
+                                    border-radius: 50px;
+                                    color: white;
+                                    font-size: 33px;
+                                    width: 86px;
+                                    height: 86px;
+                                    margin-left: 30px;
+                                    position: relative;
+                                    & span {
+                                        margin: 22px;
+                                        line-height: 86px;
+                                        sup {
+                                            position: absolute;
+                                            top: 37px;
+                                            right: 10px;
+                                            font-size: 18px;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                }
+                                .banner5dt1, .banner5dt2 {
+                                    margin-left: 30px;
+                                }
+                                .banner5dt1 {
+                                    margin-top: 125px;
+                                    h1 {
+                                        margin-bottom: 5px;
+                                        line-height: 25px;
+                                    }
+                                }
+                            }
+                        }
+                        &-right {
+                            margin-left: 30px;
+                            float: right;
+                            &-content {
+                                background: url(../images/home/banners/b6.png) no-repeat;
+                                height: 323px;
+                                background-size: contain;
+                                padding: 45px 15px 0;
+                                width: 140px;
+                                background-position: center;
+                                background-color: #f5f5f5;
+                                .banner6dt1 h1{
+                                    margin-bottom: 20px; 
+                                }
+                                .banner6dt1 hr{
+                                    width: 40px;
+                                    margin: 0;
+                                }
+                                .banner6dt2 {
+                                    margin-top: 200px;
+                                    color: #878787;
+                                }
+                            }
                         }
                     }
-                    .product2{
-                        float: right;
-                        .products-grid.grid{
-                                padding: 0px 1px;
-                                ol{
-                                    width: 111%;
-                                    li{
-                                        background: white;
-                                        width: 30%;
-                                        text-align: center;
-                                        border-right: 1px solid #e4e4e4;
-                                        margin-left:0px;
-                                        .action.tocart.primary{
-                                            display: none;
-                                        } 
-                                         .product-item-actions{
-                                            .actions-secondary{
-                                                .action.tocompare{
+                        
+                    .banner7 {
+                        width: 100%;
+                        background: #f95318;
+                        float: left;
+                        padding: 0px 2px;
+                        height: 289px;
+                        margin-bottom: 96px;
+                        margin-top: 20px;
+                        .banner7image {
+                            height: 289px;
+                            margin-left: 4%;
+                        }
+                        .banner7emnt{
+                            float: right;
+                            padding: 9% 5%;
+                            color: #ffffff;
+                            h1 {
+                                font-weight: 400;
+                                margin: -31px 0px 36px -2px;
+                            }
+                            span {
+                                font-size: 12px;
+                            }
+                            .banner7btn {
+                                margin-top: 20px;
+                                .action.tocart.primary {
+                                    border: 1px solid;
+                                    border-radius: 0;
+                                    border: 1px solid #fa865c;
+                                }
+                            }
+                        }
+                    }
+                }
+                .home-bottom-container{
+                    background:#f9f9f9;
+                    padding: 85px 0;
+                    .home-bottom-container-content{
+                        max-width: 860px;
+                        margin: 0px auto;
+                        .product-bottom-banner-container{
+                            margin: 0 !important;
+                            background: #fff;
+                            padding-bottom: 0;
+                            .product-bottom-banner{
+                                padding: 0;
+                                .left-banner {
+                                    padding-bottom: 0;
+                                    .banner-image img {
+                                        max-height: 191px
+                                    }
+                                }
+                                .right-banner {
+                                    .product-item {
+                                        height: 314px;
+                                        .action.towishlist {
+                                            padding: 0 5px;
+                                            &:before {
+                                                color: #f95318;
+                                                content: none;
+                                            }
+                                            .wishlist-active {
+                                                display: none;
+                                            }
+                                            &:hover {
+                                                .wishlist-active {
+                                                    display: block;
+                                                }
+                                                .wishlist-passive {
                                                     display: none;
                                                 }
                                             }
-                                        } 
+                                        }
+                                            
                                     }
                                 }
-                                
-                        }
-                    }
-            }
-        }
-        .main-about-banner{
-            .top-banner-about-us{
-                .aboutUsB1{
-                    img{
-                        width: 47%;
-                        position: relative;
-                        top: -52px;
-                        left: 590px;
-                    }
-                }
-                .bannerInfoAbt{
-                    position: absolute;
-                    top: 314px;
-                    left: 457px;
-                    font-size: 61px;
-                    font-weight: 700;
-                }
-            }
-            .bottom-banner-about{
-                .editorImg{
-                    width: 104px;
-                    height: 107px;
-                    border-radius: 95px;
-                    position: relative;
-                    border: 5px solid #f95318;
-                    left: 243px;
-                    img{
-                        width: 85px;
-                        position: absolute;
-                        top: 11px;
-                        left: 9px;
-                    }
-                }
-                .detailsAbout{
-                    strong{
-                        color: #f95318;
-                        font-size: 17px;
-                        font-weight: 600;
-                    }
-                    p{
-                        position: absolute;
-                        top: 641px;
-                        width: 55%;
-                        left: 453px;
-                    }
-                }
-                .bannerEditorTitle{
-                        position: relative;
-                        margin-bottom: 223px;
-                    .hrBanner{
-                        border: 4px solid #f95318;
-                        border-bottom: 0;
-                        border-radius: 0;
-                        border-left: 0;
-                        height: 262px;
-                        border-top: 0;
-                        position: absolute;
-                        top: 0px;
-                        left: 298px;
-                    }
-                    .bannerEditorDescrp{
-                        p{
-                            left: 261px;
-                            position: absolute;
-                            background: white;
-                            top: 9px;
-                        }
-                    }
-                }
-            }
-            .last-banner{
-                    background: rgba(128, 128, 128, 0.05);
-                    margin: -39px -28px;
-                    height: 372px;
-                    margin-top: 0px;
-                    .bannerlastImg{
-                        img{
-                            position: relative;
-                            left: 289px;
-                            width: 6%;
-                            top: 39px;
-                        }
-                    }
-                    .horizontalDesc{
-                        position: absolute;
-                        top: 1001px;
-                        left: 420px;
-                        font-size: 69px;
-                        font-weight: 900;
-                    }
-                    .seprateLastBanner{
-                            border: 1px solid rgba(143, 143, 143, 0.15);
-                            border-bottom: 0;
-                            border-radius: 0;
-                            border-left: 0;
-                            height: 309px;
-                            border-top: 0;
-                            position: absolute;
-                            top: 1028px;
-                            left: 822px;
-                    }
-                    .detailsOflstbnr{
-                        position: relative;
-                        bottom: 121px;
-                        left: 907px;
-                        width: 385px;
-                        h4{
-                            color: #f95318;
-                            font-size: 11px;
-                            font-weight: 600;
-                            margin-bottom: 0px;
-                        }
-                        .phara1{
-                            strong{
-                                font-size: 20px;
-                                font-weight: 600;
-                            }
-                            .phara2{
-                                font-size: 12px;
-                                color: grey;
                             }
                         }
                     }
+                }
+                    
             }
         }
-        
     }
+
+    
 
     .navigation ul {
         padding: 16px;
@@ -1136,9 +991,7 @@
         }
 
         .switcher {
-            float: right;
-            margin-left: 15px;
-            margin-right: -6px;
+            margin: 0 10px;
             .lib-vendor-prefix-order(1);
 
         }
@@ -1233,9 +1086,16 @@
                 float: left;
                 margin-left: auto;
                 font-weight: 800;
+                margin: 6px 0;
+                padding-right: 25px;
+                border-right: 2px solid #ccc;
 
                 > li {
                     margin: 0 0 0 15px;
+
+                    &:nth-child(1){
+                        margin: 0;
+                    }
 
                     &.welcome,
                     > a {
@@ -1253,7 +1113,7 @@
 
                 > .authorization-link {
                     & a{
-                        color: grey;
+                        color: #000;
                     }
                     &:after {
                         content: attr(data-label);
@@ -1266,6 +1126,9 @@
                     display: none;
                 }
             }
+        }
+        .switcher{
+            padding: 4px 0;
         }
 
         &.content:extend(.abs-add-clearfix-desktop all) {
@@ -1379,30 +1242,6 @@
                 }
             }
         }
-
-        .footer_nav_css{
-            color: #efefef;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .footer_nav_css span{
-            display: block;
-            border-bottom: 2px solid #f95318;
-            width: 40px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .content .links li a {
-            color: #878787;
-            font-weight:600;
-        }
-        .content .links li a:hover {
-            color: #878787;
-            font-weight:600;
-        }
     }
     .navigation .level0 > .level-top{
         color: #fff;
@@ -1411,18 +1250,19 @@
         margin-bottom: -46px;
         margin-top: -25px;
     }
-    .page-header .switcher .options .action.toggle, .page-footer .switcher .options .action.toggle{
+    /*.page-header .switcher .options .action.toggle, .page-footer .switcher .options .action.toggle{
         color: grey;
-    }
-    .switcher.store.switcher-store{
+    }*/
+    /*.switcher.store.switcher-store{
         float: left;
         position: relative;
         left: 121px;
-    }
+    }*/
     .switcher.language.switcher-language{
         float: left;
         position: relative;
-        left: 113px;
+        /*left: 113px;*/
+        padding-left: 25px;
     }
 
     .header.content{
@@ -1431,8 +1271,12 @@
         }
     }
     .page-header .switcher .options .action.toggle:after, .page-footer .switcher .options .action.toggle:after{
-            color: #f95318;
-            content: '\e607';
+        color: #f95318 !important;
+        content: '\e607';
+    }
+    .page-header .switcher .options .action.toggle.active:after, .page-footer .switcher .options .action.toggle.active:after{
+        color: #f95318 !important;
+        content: '\e618';
     }
 
 }

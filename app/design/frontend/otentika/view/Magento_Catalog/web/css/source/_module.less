@@ -38,16 +38,20 @@
             .banner{
                 .left {
                     float: left;
-                    .button-container a{
-                        color: #fff;
-                        background: #f95318;
-                        padding: 12px 24px;
-                        font-size: 11px;
-                        font-weight: 700;
-                        &:hover{
-                            text-decoration: none;
+                    .button-container {
+                        margin-left: 6px;
+                        a{
+                            color: #fff;
+                            background: #f95318;
+                            padding: 12px 24px;
+                            font-size: 11px;
+                            font-weight: 600;
+                            &:hover{
+                                text-decoration: none;
+                            }
                         }
                     }
+                        
                     .banner-text{
                         font-size: 4.5em;
                         @media (min-width: 768px) and (max-width: 941px) {
@@ -63,16 +67,17 @@
                     .stripes {
                         position: absolute;
                         div{
-                            height: 3px;
                             background: #f95318;
                             float: right;
                             &.upper{
                                 width: 100px;
+                                height: 5px;
                             }
                             &.lower{
-                                width: 150px;
+                                width: 160px;
                                 margin-top: 5px;
                                 clear: both;
+                                height: 4px;
                             }
                         }
                     }
@@ -1048,7 +1053,8 @@
             padding: 0;
             max-width: @main-content-max-width;
             .columns{
-                padding: 0 12%;
+                max-width: 1060px;
+                margin: 0 auto;
             }
         }
         .banner-container{

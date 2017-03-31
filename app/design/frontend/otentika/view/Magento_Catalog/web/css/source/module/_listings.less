@@ -48,6 +48,9 @@
                 background: #F6F6F6;
                 text-align: center;
             }
+            .top-info{
+                margin: 0 25px;
+            }
             
             &:extend(.abs-add-box-sizing all);
 
@@ -59,6 +62,9 @@
                 display: block;
                 hyphens: auto;
                 margin: @indent__xs 0;
+                &.product-item-name.title{
+                    margin-top: 25px;
+                }
                 word-wrap: break-word;
             }
 
@@ -174,14 +180,17 @@
                 .price-label {
                     .lib-css(color, @text__color__muted);
                     font-size: @font-size__s;
+                    display: none;
                 }
             }
 
             .old-price {
                 margin: @indent__xs 0;
+                margin-left: 5px;
                 
                 .price {
-                    font-weight: normal;
+                    font-weight: 600;
+                    text-decoration: line-through;
                 }
             }
 
