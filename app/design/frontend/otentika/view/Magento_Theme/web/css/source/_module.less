@@ -938,9 +938,25 @@
                                 .right-banner {
                                     .product-item {
                                         height: 314px;
-                                        .action.towishlist:before {
-                                            color: #f95318;
+                                        .action.towishlist {
+                                            padding: 0 5px;
+                                            &:before {
+                                                color: #f95318;
+                                                content: none;
+                                            }
+                                            .wishlist-active {
+                                                display: none;
+                                            }
+                                            &:hover {
+                                                .wishlist-active {
+                                                    display: block;
+                                                }
+                                                .wishlist-passive {
+                                                    display: none;
+                                                }
+                                            }
                                         }
+                                            
                                     }
                                 }
                             }
