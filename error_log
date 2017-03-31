@@ -35,3 +35,27 @@ Stack trace:
 #4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
 [07-Dec-2016 06:37:54 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 589824 bytes) in /home/owebcom/public_html/vendor/composer/ClassLoader.php on line 412
 [07-Dec-2016 06:39:28 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 589824 bytes) in /home/owebcom/public_html/vendor/composer/ClassLoader.php on line 412
+[29-Mar-2017 09:57:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[30-Mar-2017 19:56:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[31-Mar-2017 10:00:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6

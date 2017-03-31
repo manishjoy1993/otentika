@@ -258,7 +258,7 @@
 	margin-top: 25px;
 }
 .banner3_title{
-	       margin: 55px 5% 25px;
+	       margin: 55px 25px 25px;
     width: 254px;
     text-align: left;
 }
@@ -298,6 +298,18 @@
 	    margin: 22px;
     line-height: 86px;
 }
+.banner3_discrp_right,
+.banner3_elmnt{
+	margin-left: 25px;
+}
+.banner3_hr_right{
+	width: 40px;
+	margin: 0;
+	margin-left: 25px;
+}
+.banner3_img{
+	margin-left: 25px;
+}
 </style>
 <div class="home-top-banner">
 	<div class="main_Border"><img class="banner1" src="<?php echo $block->getViewFileUrl('images/home/banners/girlHome.png'); ?>" alt="" />
@@ -328,7 +340,7 @@
 				                Rejurvenate your skin at discount of over 30% on new O'Tentika products
 				            </p>
 				            <div class="banner3_elmnt">
-				                <button class="action tocart primary">
+				                <button onclick="window.location.href='<?php echo $block->getUrl('products.html') ?>'" class="action tocart primary">
 				                    Products
 				                </button>
 				                <a class="banner3_btn" href="#">
