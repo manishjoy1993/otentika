@@ -1,0 +1,66 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$appState = $objectManager->get('\Magento\Framework\App\State');
+$logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
+
+?>
+
+<div class="level0 nav-1 first level-top ui-menu-item menu-logo" role="presentation">
+    <a href="#" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+        <span>
+            <img src="<?php /* @escapeNotVerified */ echo $logo->getLogoSrc() ?>"
+             alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
+             <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
+             <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
+            />
+        </span>
+    </a>
+</div>
+<div id="checkout" data-bind="scope:'checkout'" class="checkout-container">
+    <div id="checkout-loader" data-role="checkout-loader" class="loading-mask" data-mage-init='{"checkoutLoader": {}}'>
+        <div class="loader">
+            <img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 alt="<?php /* @escapeNotVerified */ echo __('Loading...'); ?>"
+                 style="position: absolute;">
+        </div>
+    </div>
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#checkout": {
+                "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout();?>
+            }
+        }
+    </script>
+    <script>
+        window.checkoutConfig = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($block->getCheckoutConfig()); ?>;
+        // Create aliases for customer.js model from customer module
+        window.isCustomerLoggedIn = window.checkoutConfig.isCustomerLoggedIn;
+        window.customerData = window.checkoutConfig.customerData;
+    </script>
+    <script>
+        require([
+            'mage/url',
+            'Magento_Ui/js/block-loader'
+        ], function(url, blockLoader) {
+            blockLoader("<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-1.gif'); ?>");
+            return url.setBaseUrl('<?php /* @escapeNotVerified */ echo $block->getBaseUrl();?>');
+        })
+    </script>
+</div>
+<script type="text/javascript">
+    require(['jquery'], function($) {
+        $(document).on("click", ".row", function() {
+            $("input[type='radio']").each(function(){
+                $(this).closest("tr").find(".selectColorTag").removeClass('active');
+            });
+            $("input[type='radio']:checked").closest("tr").find(".selectColorTag").addClass('active');
+        });
+    });
+</script>
