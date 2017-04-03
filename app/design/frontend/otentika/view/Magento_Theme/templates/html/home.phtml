@@ -3,7 +3,7 @@
 	<div class="main_Border"><img class="banner1" src="<?php echo $block->getViewFileUrl('images/home/banners/girlHome.png'); ?>" alt="" />
 	<div class="ethenic">
 		<h1 class="ethenic_title">ETHNIC BEAUTY</h1>
-		<button class="action tocart primary" title="Add to Cart" type="submit"> <span class="shop_btn">Shop Now</span> </button></div>
+		<button class="action tocart primary" title="Add to Cart" type="submit"> <span onclick="window.location.href= '<?php echo $block->getUrl('products.html'); ?>'" class="shop_btn">Shop Now</span> </button></div>
 	</div>
 </div>
 <div class="home-middle-container">
@@ -29,7 +29,7 @@
 				            </p>
 				            <div class="banner3_elmnt">
 				            	<div class="button">
-				            		<a href="#">Products</a>
+				            		<a href="<?php echo $block->getUrl('products.html'); ?>">Products</a>
 				            		<!-- <button class="action tocart primary">
 					                    Products
 					                </button> -->
