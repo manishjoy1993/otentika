@@ -12,7 +12,7 @@
     <a href="#"
        class="action towishlist"
        data-post='<?php /* @escapeNotVerified */ echo $block->getWishlistParams(); ?>'
-       data-action="add-to-wishlist"><span><?php /* @escapeNotVerified */ echo __('Add to Favourites') ?></span></a>
+       data-action="add-to-wishlist"><span class="wishlist-icon"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/fav/wishlist-active.png'); ?>"></span><span><?php /* @escapeNotVerified */ echo __('Add to Favourites') ?></span></a>
 <?php endif; ?>
 <script type="text/x-magento-init">
     {

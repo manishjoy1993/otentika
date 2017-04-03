@@ -57,10 +57,12 @@
 .minicart-wrapper .action.showcart:before,
 .minicart-wrapper .action.showcart.active:before{
     font-size: 18px;
+    color: #000 !important;
 }
 .block-search .action.search:before,
 .block-search .action.search.active:before{
     font-size: 18px !important;
+    color: #000 !important;
 }
 
 .lib-icon-font(
@@ -134,6 +136,13 @@
         .lib-css(content, @_icon-font-content);
     }
 }
+
+.catalog-product-view {
+    .product-social-links .action.towishlist:before, .block-bundle-summary .action.towishlist:before, .product-item .action.towishlist:before, .table-comparison .action.towishlist:before{
+        content: none;
+    }
+}
+    
 
 .lib-icon-font-symbol(
     @_icon-font-content,

@@ -117,6 +117,29 @@
     }
 
     .catalog-product-view{
+        .breadcrumbs {
+            display: block;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            background: #f5f5f5;
+            margin: 0;
+            margin-bottom: 25px;
+            max-width: 100%;
+            z-index: 5;
+            .items {
+                max-width: 1060px;
+                margin: 0 auto;
+            }
+        }
+        .page-wrapper .nav-sections {
+            margin-bottom: 0;
+        }
+        .panel.header, nav.navigation {
+            max-width: 1060px !important;
+            margin: 0 auto !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
         .breadcrumbs .item:not(:last-child):after {
 
         }
@@ -126,6 +149,26 @@
                 position: absolute;
                 bottom: 15px;
                 left: 15px;
+            }
+        }
+        .product-bottom-banner-container{
+            .action.towishlist {
+                padding: 0 5px;
+                &:before {
+                    color: #f95318;
+                    content: none;
+                }
+                .wishlist-active {
+                    display: none;
+                }
+                &:hover {
+                    .wishlist-active {
+                        display: block;
+                    }
+                    .wishlist-passive {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -294,7 +337,7 @@
             }
             .load-more-review{
                 
-                background: #ccc;
+                background: #eee;
                 text-align: center;
                 .action {
                     font-size: 12px;
@@ -334,6 +377,7 @@
             color: #777;
             a {
                 color: #f95318;
+                font-weight: 600;
                 text-transform: uppercase;
             }
         }
@@ -481,8 +525,8 @@
                 }
                 
             }
-            .reviews-actions{
-                margin-top: 10px;
+            .rating-summary{
+                margin-bottom: 10px;
                 
             }
         }
@@ -600,11 +644,11 @@
                     
                     cursor: pointer;
                     &.qty-inc{
-                        left: 0;
+                        right: 0;
                         padding: 7.5px 5px;
                     }
                     &.qty-dec{
-                        right: 0;
+                        left: 0;
                         padding: 7.5px 6px;
                     }
                 }
@@ -647,6 +691,11 @@
 
         .action {
             margin-right: 5%;
+        }
+
+        .wishlist-icon img {
+            margin-bottom: -3px;
+            margin-right: 10px;
         }
     }
 
@@ -922,8 +971,10 @@
                         }
                     } 
                 }
+        
             }
         }
+
         .product-social-links,
         .product-reviews-summary,
         .load-more-review,
@@ -1005,6 +1056,7 @@
                 }
             }
         }
+
     }
 
     .product-social-links {
@@ -1264,6 +1316,10 @@
                     padding: 35px 0;
                 }
             }
+        }
+        .load-more-review {
+            margin-left: -12.5%;
+            margin-right: -12.5%;
         }
     }
 
