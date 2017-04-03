@@ -96,6 +96,8 @@
         );
     }
 
+
+
     &:hover {
         &:after {
             .lib-css(color, @_icon-font-color-hover);
@@ -107,6 +109,11 @@
             .lib-css(color, @_icon-font-color-active);
         }
     }
+}
+
+.breadcrumbs .item:not(:last-child):after {
+    content: '\e693';
+    transform: rotate(-45deg);
 }
 
 .lib-icon-font-size(

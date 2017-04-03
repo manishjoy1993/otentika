@@ -115,7 +115,7 @@ $_helper = $this->helper('Magento\Catalog\Helper\Output');
                                         </td>
                                     <?php endif; ?>
                                     <td><div title="<?php echo $block->escapeHtml(__('Add to Wishlist')); ?>" class="add-to-wishlist"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/wishlist.png'); ?>"></div></td>
-                                    <td><div class="quick-view" title="<?php echo $block->escapeHtml(__('Quick View')); ?>"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/quick-view.png'); ?>"></div></td>
+                                    <td><div link="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="quick-view" title="<?php echo $block->escapeHtml(__('Quick View')); ?>"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/quick-view.png'); ?>"></div></td>
                                 </tr>
                             </table>
                         </div>
@@ -224,7 +224,8 @@ require([
         $(this).closest("div.product-item-info").find('.action.towishlist').click();
     });
     $('.hover-actions .quick-view').click(function(){
-        $(this).closest("div.product-item-info").find('.weltpixel-quickview.weltpixel_quickview_button_v2').click();
+        // $(this).closest("div.product-item-info").find('.weltpixel-quickview.weltpixel_quickview_button_v2').click();
+        window.location.href = $(this).attr('link');
     });
 });
 </script>
