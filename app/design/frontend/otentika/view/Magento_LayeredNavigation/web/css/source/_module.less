@@ -3,6 +3,7 @@
 //  * See COPYING.txt for license details.
 //  */
 
+@border__color: rgba(204,204,204, 0.5);
 //
 //  Common
 //  _____________________________________________
@@ -43,7 +44,7 @@
 
                 .lib-css(background-color, @toolbar-element-background);
                 .lib-css(box-shadow, @_shadow);
-                border: 1px solid @border-color__base;
+                border: 1px solid @border__color;
                 border-radius: 3px;
                 font-weight: 400;
                 left: 0;
@@ -74,14 +75,14 @@
         }
 
         .block-subtitle {
-            border-bottom: @border-width__base solid @border-color__base;
+            border-bottom: @border-width__base solid @border__color;
             font-size: @font-size__base;
             font-weight: @font-weight__semibold;
             line-height: 1em;
             padding: 25px 15px 25px;
         }
         .category-name{
-            border-bottom: 1px solid #cccccc;
+            border-bottom: 1px solid @border__color;
             font-size: 14px;
             font-weight: 600;
             line-height: 1em;
@@ -146,7 +147,7 @@
             margin: 0;
 
             &-item {
-                border-bottom: @border-width__base solid @border-color__base;
+                border-bottom: @border-width__base solid @border__color;
                 padding-bottom: @indent__s;
             }
 
