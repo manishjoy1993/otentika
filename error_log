@@ -83,3 +83,115 @@ Stack trace:
 #3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
 #4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
 #5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 10:32:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 15:08:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 15:08:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 15:08:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 15:09:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 15:09:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 15:09:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 23:11:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 23:11:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[01-Apr-2017 23:29:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[02-Apr-2017 14:37:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[02-Apr-2017 15:44:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[03-Apr-2017 01:15:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
+[03-Apr-2017 02:01:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml:6
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Interceptor), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/var/generation/Magento/Catalog/Block/Product/View/Interceptor.php(544): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Catalog\Block\Product\View\Interceptor->fetchView('/home/owebcom/p...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#5  in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/category-link.phtml on line 6
