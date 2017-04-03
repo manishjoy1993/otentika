@@ -1002,12 +1002,17 @@
                     text-align: center;
                     padding-bottom: 200px;
                     padding-top: 210px;
-                    .main-text h1 {
-                        color: #fff;
-                        font-weight: 700;
-                        font-size: 60px;
-                        margin-bottom: 20px;
+                    .main-text {
+                        max-width: 500px;
+                        margin: 0 auto;
+                        h1 {
+                            color: #fff;
+                            font-weight: 700;
+                            font-size: 60px;
+                            margin-bottom: 20px;
+                        }
                     }
+                        
                     .dots div {
                         height: 6px;
                         width: 6px;
@@ -1021,6 +1026,7 @@
                         color: #fff;
                         font-weight: 700;
                         font-family: 'Roboto', sans-serif;
+                        margin-bottom: 30px;
                     }
                     .button a {
                         background-image: none;
@@ -1147,7 +1153,7 @@
                         width: ~'calc(100% - 300px)';
                         float: left;
                         &-content {
-                            padding: 17px 0;
+                            padding: 30px 0 17px;
                             padding-left: 10%;
                             .heading {
                                 font-size: 26px;
@@ -1170,11 +1176,15 @@
                             }
                             .text {
                                 margin-top: 15px;
+                                font-size: 15px;
+                                font-weight: 500;
+                                font-family: initial;
                                 .read-more {
                                     color: #f95318;
                                     font-weight: 600;
                                     text-transform: uppercase;
-                                    font-size: 11px;
+                                    font-size: 9px;
+                                    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
                                 }
                             }
                         }
@@ -1318,7 +1328,7 @@
                                 }
                             }
                             .content {
-                                max-width: 155px;
+                                max-width: 140px;
                                 margin: 0 auto;
                                 padding: 41px 30px;
                                 border: 1px solid #f95318;
@@ -1327,6 +1337,9 @@
                                     margin-top: 5px;
                                     font-weight: 600;
                                     font-family: initial;
+                                }
+                                .text {
+                                    font-size: 12px;
                                 }
                             }
                             .button {
