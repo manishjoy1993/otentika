@@ -969,7 +969,391 @@
         }
     }
 
-    
+    /*Special Offer Page*/
+    .cms-special-offer{
+        .panel.header,
+        nav.navigation{
+            max-width: 1060px !important;
+            margin: 0 auto !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .page-wrapper .nav-sections {
+            margin-bottom: 0;
+            z-index: 1;
+        }
+        .page-main{
+            max-width:100%;
+            padding: 0;
+            z-index: 2;
+            .column.main {
+                margin-bottom: 100px;
+            }
+            .main-banner {
+                background: url(../images/special/main-back-2.png) no-repeat;
+                background-size: cover;
+                background-position: center;
+                margin: 0 auto;
+                background-color: #252a2f;
+                &-content {
+                    margin: 0 auto;
+                    max-width: 1060px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    padding-bottom: 200px;
+                    padding-top: 210px;
+                    .main-text h1 {
+                        color: #fff;
+                        font-weight: 700;
+                        font-size: 60px;
+                        margin-bottom: 20px;
+                    }
+                    .dots div {
+                        height: 6px;
+                        width: 6px;
+                        background: #f95318;
+                        border-radius: 4px;
+                        display: inline-block;
+                        margin: 0 5px;
+                    }
+                    .offer h3 {
+                        font-size: 45px;
+                        color: #fff;
+                        font-weight: 700;
+                        font-family: 'Roboto', sans-serif;
+                    }
+                    .button a {
+                        background-image: none;
+                        background: #f95318;
+                        border: 1px solid #f95318;
+                        color: #ffffff;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-weight: 600;
+                        padding: 12px 35px;
+                        font-size: 11px;
+                        box-sizing: border-box;
+                        vertical-align: middle;
+                        text-transform: uppercase;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .top-banner{
+                background: #F4F4F4;
+                height: 375px;
+                &-content {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    background: #fff;
+                    height: 397px;
+                    -webkit-box-shadow: 0px 9px 31px 6px rgba(71,70,71,0.19);
+                    -moz-box-shadow: 0px 9px 31px 6px rgba(71,70,71,0.19);
+                    box-shadow: 0px 9px 31px 6px rgba(71,70,71,0.19);
+
+
+                    .left-banner{
+                        background: url(../images/special/top-left.png) no-repeat;
+                        background-size: 300px;
+                        background-position: center;
+                        width: 50%;
+                        float: left;
+                        text-align: center;
+                        background-origin: content-box;
+                        padding: 80px 0 130px;
+                        .heading {
+                            margin-top: 0;
+                            color: #f95318;
+                            font-size: 16px;
+                            opacity: 0.6;
+                        }
+                        .main-heading {
+                            text-transform: uppercase;
+                            font-size: 32px;
+                            font-weight: 600;
+                            letter-spacing: 24px;
+                        }
+                    }
+                    .right-banner {
+                        width: 50%;
+                        float: left;
+                        height: 300px;
+                        text-align: center;
+                        padding: 30px 0 67px;
+                        .day-num {
+                            height: 100%;
+                            img {
+                                height: 100%;
+                            }
+                            span {
+                                font-size: 210px;
+                                font-weight: 200;
+                                color: #000;
+                            }
+                        }
+                        .days span, .days-left {
+                            text-transform: uppercase;
+                            font-size: 50px;
+                            font-weight: 600;
+                            color: #000;
+                            letter-spacing: 35px;
+                        }
+                        .days span {
+                            div {
+                                height: 5px;
+                                background: #f95318;
+                                width: 265px;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
+            .middle-banner {
+                margin-top: 35px;
+                &-content {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    .left-banner {
+                        background: url(../images/special/middle-left.png) no-repeat;
+                        float: left;
+                        width: 300px;
+                        text-align: center;
+                        padding-top: 90px;
+                        padding-bottom: 90px;
+                        background-size: contain;
+                        &-content {
+                            max-width: 200px;
+                            margin: 0 auto;
+                            .heading {
+                                font-size: 26px;
+                                font-weight: 600;
+                                color: #fff;
+                                text-transform: uppercase;
+                                margin-bottom: 15px;
+                            }
+                            .text {
+                                color: #fff;
+                                font-weight: 600;
+                                font-size: 15px;
+                            }
+                        }
+                           
+                    }
+                    .right-banner {
+                        width: ~'calc(100% - 300px)';
+                        float: left;
+                        &-content {
+                            padding: 17px 0;
+                            padding-left: 10%;
+                            .heading {
+                                font-size: 26px;
+                                font-weight: 600;
+                                margin-bottom: 12px;
+                            }
+                            .date {
+                                font-size: 12px;
+                                color: #8f8f8f;
+                                font-weight: 600;
+                                margin-bottom: 15px;
+                            }
+                            .dots div {
+                                height: 6px;
+                                width: 6px;
+                                background: #e02b27;
+                                border-radius: 3px;
+                                display: inline-block;
+                                margin: 0 5px;
+                            }
+                            .text {
+                                margin-top: 15px;
+                                .read-more {
+                                    color: #f95318;
+                                    font-weight: 600;
+                                    text-transform: uppercase;
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .bottom-banner {
+                margin-top: 100px;
+                &-content {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    .banner-div {
+                        background: grey;
+                        width: 32%;
+                        float: left;
+                        height: 320px;
+                        text-align: center;
+                        &.left-banner {
+                            background: #d1d1d1;
+                            .background {
+                                background: url(../images/special/bottom-left.png) no-repeat;
+                                background-size: cover;
+                                height: 65%;
+                            }
+                            .star-div {
+                                .star {
+                                    width: 42px;
+                                    height: 42px;
+                                    background: #f95318;
+                                    border-radius: 22px;
+                                    margin: 0 auto;
+                                    margin-top: -22px;
+                                    img {
+                                        height: 14px;
+                                        margin: 13px 0;
+                                    }
+                                   /* &:before {
+                                        -webkit-font-smoothing: antialiased;
+                                        font-size: 10px;
+                                        line-height: 22px;
+                                        color: inherit;
+                                        content: '\e625';
+                                        font-family: 'luma-icons';
+                                        margin: 0;
+                                        vertical-align: top;
+                                        display: inline-block;
+                                        font-weight: normal;
+                                        overflow: hidden;
+                                        speak: none;
+                                        text-align: center;
+                                    }*/
+                                }
+                            }
+                            .content {
+                                max-width: 200px;
+                                margin: 0 auto;
+                                .heading {
+                                    font-weight: 600;
+                                    font-size: 22px;
+                                }
+                                .text {
+                                    font-size: 12px;
+                                    color: #f95318;
+                                }
+                            }
+                        }
+                        &.middle-banner{
+                            margin: 0 2%;
+                            background: url(../images/special/bottom-middle.png) no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                            background-color: #d1d1d1;
+                            .background {
+                                float: left;
+                                width: ~'calc(100% - 125px)';
+                                height: 100%;
+                                background: #000;
+                                opacity: 0.3
+                            }
+                            .middle-banner-content {
+                                float: right;
+                                height: 100%;
+                                background: #f95318;
+                                width: 125px;
+                                color: #fff;
+                                position: relative;
+
+                                & .top {
+                                    text-align: left;
+                                    padding: 0 15px;
+                                    h3 {
+                                        line-height: 22px;
+                                    }
+                                    h2 {
+                                        margin: 0;
+                                        font-weight: 600;
+                                        font-size: 34px;
+                                    }
+                                }
+                                & .bottom {
+                                    position: absolute;
+                                    width: 100%;
+                                    bottom: 0;
+                                    .offer {
+                                        border-top: 1px solid;
+                                        border-color: rgba(255, 255, 255, 0.25);
+                                        padding: 22px 0;
+                                        .amt {
+                                            font-size: 30px;
+                                            font-weight: 600;
+                                        }
+                                        sup {
+                                            font-weight: 600;
+                                            font-size: 14px;
+                                            top: -12px;
+                                        }
+                                        .label {
+                                            text-transform: uppercase;
+                                            font-weight: 600;
+                                            font-size: 13px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.right-banner{
+                            background: #666872;
+                            color: #fff;
+                            padding: 50px 0;
+                            height: 220px;
+                            .heading {
+                                text-transform: uppercase;
+                                font-weight: 700;
+                                font-size: 16px;
+                                width: 130px;
+                                margin: 0 auto;
+                                margin-bottom: -12px;
+                                span {
+                                    background: #666872;
+                                    padding: 0 12px;
+                                }
+                            }
+                            .content {
+                                max-width: 155px;
+                                margin: 0 auto;
+                                padding: 41px 30px;
+                                border: 1px solid #f95318;
+                                h2 {
+                                    margin-bottom: 10px;
+                                    margin-top: 5px;
+                                    font-weight: 600;
+                                    font-family: initial;
+                                }
+                            }
+                            .button {
+                                margin-top: -17px;
+                                a {
+                                    background-image: none;
+                                    background: #f95318;
+                                    border: 1px solid #f95318;
+                                    color: #ffffff;
+                                    cursor: pointer;
+                                    display: inline-block;
+                                    font-weight: 600;
+                                    padding: 10px 30px;
+                                    font-size: 9px;
+                                    box-sizing: border-box;
+                                    vertical-align: middle;
+                                    text-transform: uppercase;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*Special Offer Page*/
 
     .navigation ul {
         padding: 16px;
