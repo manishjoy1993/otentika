@@ -9,9 +9,7 @@
 ?>
 
 <div class="block newsletter">
-    <h2>Et mi eget ornare.</h2>
-    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus gravida et mi eget ornare. In ultrices velit ac elementum sagittis. </h4>
-    <div class="title"><strong>free subscription</strong></div>
+<?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-left')->toHtml(); ?>
     <div class="content">
         <form class="form subscribe"
             novalidate

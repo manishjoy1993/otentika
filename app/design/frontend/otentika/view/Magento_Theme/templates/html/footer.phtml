@@ -9,33 +9,6 @@
 ?>
 <div class="footer-container">
     <div class="footer">
-    <div  class="footer links">
-    	<div class='footer_nav_css'>
-	    	<?php echo __('NAVIGATION');?>
-	    	<span></span>
-	    </div>
-
-
-		<ul class="footer links">
-		    <li class="nav item"><a href="{{store url="about-us"}}"><?php echo __('The Brands')?></a></li>
-		    <li class="nav item"><a href="{{store url="customer-service"}}"><?php echo __('Products')?></a></li>
-		    <li class="nav item"><a href="{{store url="about-us"}}"><?php echo __("What's New")?></a></li>
-		    <li class="nav item"><a href="{{store url="customer-service"}}"><?php echo __('Contact Us')?></a></li>
-		    <li class="nav item"><a href="{{store url="about-us"}}"><?php echo __('Login')?></a></li>
-		    <li class="nav item"><a href="{{store url="customer-service"}}"><?php echo __('Sign Up')?></a></li>
-		</ul>
-    </div>
-    <div  class="footer links">
-    	<div class='footer_nav_css'><?php echo __('More')?><span></span></div>
-		<ul>
-		    <li class="nav item"><a href="{{store url="about-us"}}"><?php echo __('Shipping & Delivery')?></a></li>
-		    <li class="nav item"><a href="{{store url="customer-service"}}"><?php echo __('Return & Exchanges')?></a></li>
-		    <li class="nav item"><a href="{{store url="about-us"}}"><?php echo __('Customer Services')?></a></li>
-		    <li class="nav item"><a href="{{store url="customer-service"}}"><?php echo __('Sitemap')?></a></li>
-		    <li class="nav item"><a href="{{store url="about-us"}}"><?php echo __('Privacy Policy')?></a></li>
-		</ul>
-    </div>
-	    
-		
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-right')->toHtml(); ?>
     </div>
 </div>
