@@ -1,0 +1,87 @@
+<div class="home-top-banner">
+<div class="main_Border"><img class="banner1" src="{{media url="otentika/home/girlHome.png"}}" alt="" />
+<div class="ethenic">
+<h1 class="ethenic_title">ETHNIC BEAUTY</h1>
+<button class="action tocart primary" title="Add to Cart" type="submit"> <span class="shop_btn" onclick="window.location.href= '&lt;?php echo $block-&gt;getUrl('products.html'); ?&gt;'">Shop Now</span> </button></div>
+</div>
+</div>
+<div class="home-middle-container">
+<div class="middle-main">
+<div class="main-first">
+<div class="main-first-left">
+<div class="banner2_elmnt">
+<h1 class="baner2_title">NEW FORMULA</h1>
+<hr class="banner2_hr" />
+<p class="banner2_descrp">More that two decades in the making</p>
+<img class="banner2_img" src="{{media url="otentika/home/bottle.png"}}" alt="" /></div>
+</div>
+<div class="main-first-right">
+<div class="banner3Body">
+<div class="banner3_div">
+<h1 class="banner3_title">LET YOUR <br />SKIN GLOW</h1>
+<hr class="banner3_hr_right" />
+<p class="banner3_discrp_right">Rejurvenate your skin at discount of over 30% on new O'Tentika products</p>
+<div class="banner3_elmnt">
+<div class="button"><a href="{{store url="products.html"}}">Products</a> <!-- <button class="action tocart primary">
+					                    Products
+					                </button> --></div>
+<div class="share"><a class="banner3_btn" href="#"> <img class="banner3_img" src="{{media url="otentika/home/share.png"}}" alt="" /> </a></div>
+</div>
+</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div style="clear: both;"></div>
+<div class="main-second">
+<div class="main-second-left">
+<div class="main-second-left-top">
+<div class="banner3image">
+<div class="imgb3Detail"><span> 56 Products </span></div>
+</div>
+</div>
+<div class="main-second-left-bottom">
+<div class="banner4image">
+<div class="banner4imageDtls1">
+<h1>NEW YORK <br /> EXCLUSIVE</h1>
+</div>
+<div class="banner4imageDtls2"><span> Beneficial only today </span></div>
+</div>
+</div>
+</div>
+<div class="main-second-middle">
+<div class="main-second-middle-content">
+<div class="bannerImg5Round"></div>
+<div class="bannerImg5Dtls"><span> 70 <sup> % </sup> </span></div>
+<div class="banner5dt1">
+<h1>DISCOUNTS <br /> FOR MEN</h1>
+</div>
+<div class="banner5dt2"><span> Only until 1 December </span></div>
+</div>
+</div>
+<div class="main-second-right">
+<div class="main-second-right-content">
+<div class="banner6dt1">
+<h1>BRIGHTENING <br /> SKIN MILK</h1>
+<hr /></div>
+<div class="banner6dt2"><span> from $ 35 </span></div>
+</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div style="clear: both;"></div>
+<div class="main-third">
+<div class="banner7"><img class="banner7image" src="{{media url="otentika/home/banner6.png"}}" alt="" />
+<div class="banner7emnt">
+<h1>CLEAN &amp; HEALTHY SKIN</h1>
+<span> An original formula for dry skin that comes in milk or cream to brighten and smoothen your <br /> skin. It restores a radiant beauty from ashy skin and reduces the appearance of dark spots <br /> and blemishes.Improved moisturiziung effect to better suit dry skin. </span>
+<div class="banner7btn"><button class="action tocart primary" title="Add to Cart" type="submit"> <span class="shop_btn"> ADD TO CART </span> </button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="clear: both;"></div>
+<div class="home-bottom-container">
+<div class="home-bottom-container-content">{{block class="Magento\\Cms\\Block\\Block" block_id="product_bottom_banner"}}</div>
+</div>

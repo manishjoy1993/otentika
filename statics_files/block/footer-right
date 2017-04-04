@@ -1,0 +1,24 @@
+<div class="footer links">
+<div class="footer_nav_css">NAVIGATION <span></span></div>
+<ul class="footer links">
+<li class="nav item"><a href="{{store url="about-us"}}">The Brands</a></li>
+<li class="nav item"><a href="{{store url="customer-service"}}">Products</a></li>
+<li class="nav item"><a href="{{store url="about-us"}}">What's New</a></li>
+<li class="nav item"><a href="{{store url="customer-service"}}">Contact Us</a></li>
+<li class="nav item"><a href="{{store url="about-us"}}">Login</a></li>
+<li class="nav item"><a href="{{store url="customer-service"}}">Sign Up</a></li>
+</ul>
+</div>
+<div class="footer links">
+<div class="footer_nav_css">More<span></span></div>
+<ul>
+<li class="nav item"><a href="{{store url="about-us"}}">Shipping &amp; Delivery</a></li>
+<li class="nav item"><a href="{{store url="customer-service"}}">Return &amp; Exchanges</a></li>
+<li class="nav item"><a href="{{store url="about-us"}}">Customer Services</a></li>
+<li class="nav item"><a href="{{store url="customer-service"}}">Sitemap</a></li>
+<li class="nav item"><a href="{{store url="about-us"}}">Privacy Policy</a></li>
+</ul>
+</div>
+
+
+<!-- the identifer is footer-right-->
