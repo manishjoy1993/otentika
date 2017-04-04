@@ -1,0 +1,21 @@
+<div class="product-bottom-banner-container">
+<div class="product-bottom-banner">
+<div class="left-banner">
+<div class="heading"><span>SALE</span></div>
+<div class="text">
+<h3>Cleansing products 50% discount</h3>
+</div>
+<div class="banner-image"><img src="{{media url="otentika/home/product-bottom-banner-image.png"}}" alt="" /></div>
+</div>
+<div class="right-banner">{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" products_count="3" template="product/widget/content/grid.phtml" conditions_encoded="a:1:[i:1;a:4:[s:4:`type`;s:50:`Magento|CatalogWidget|Model|Rule|Condition|Combine`;s:10:`aggregator`;s:3:`all`;s:5:`value`;s:1:`1`;s:9:`new_child`;s:0:``;]]"}}</div>
+</div>
+<div></div>
+</div>
+
+
+
+
+
+
+
+<!--The identifier is product_bottom_banner-->
