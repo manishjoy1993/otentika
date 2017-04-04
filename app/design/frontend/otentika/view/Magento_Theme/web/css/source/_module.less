@@ -463,7 +463,7 @@
 }
 
 //
-//  Navigation
+//  Navigation & Mobile Mode
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -483,6 +483,182 @@
         right: 10px;
         top: 7px;
     }
+    .header.content {
+        padding: 0 !important;
+        height: 100px;
+    }
+    .page-header .switcher .options .action.toggle:after, .page-footer .switcher .options .action.toggle:after{
+        color: #f95318 !important;
+        content: '\e607';
+        line-height: 23px;
+    }
+    .page-header .switcher .options .action.toggle.active:after, .page-footer .switcher .options .action.toggle.active:after{
+        color: #f95318 !important;
+        content: '\e618';
+        line-height: 23px;
+    }
+    .header {
+        .logo.main {
+            display: none;
+        }
+        .navigation .level0.menu-logo {
+            display: none;
+        }
+        .mobile-header {
+            .icon-container {
+                display: inline-block;
+                height: 25px;
+                .icon {
+                    height: 25px;
+                }
+            }
+            .left {
+                float: left;
+                padding: 38px 0 34px;
+                &.menu-toggle {
+                    width: ~'calc(50% - 60px)';
+                    .menu-toggle-button {
+                        margin-left: 15%;
+                    }
+                }
+            }
+            .middle {
+                float: left;
+                &.mobile-logo{
+                    /*width: 100px;
+                    height: 84px;*/
+                    img {
+                        height: 102px;
+                        width: 120px;
+                    }
+                }
+            }
+            .right {
+                float: left;
+                padding: 38px 0 34px;
+                &.links {
+                     width: ~'calc(50% - 60px)';
+                }
+                &-content {
+                    margin-right: 15%;
+                    text-align: right;
+                    &-div {
+                        display: inline-block;
+                        margin: 0 5px;
+                        &.cart  {
+                            a.icon-container {
+                                position: relative;
+                                .cart-counter {
+                                    position: absolute;
+                                    top: -15px;
+                                    background: #000;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    color: #fff;
+                                    height: 30px;
+                                    width: 30px;
+                                    border-radius: 15px;
+                                    text-align: center;
+                                    right: -16px;
+                                    line-height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .main-menu-toggle,
+            .search-toggle {
+                display: none;
+            }
+            .search-toggle {
+                position: absolute;
+                width: 100%;
+                top: 101px;
+                z-index: 5;
+                background: #fff;
+                border-bottom: 1px solid #8f8f8f;
+                form.minisearch {
+                    margin: 3% 5%;
+                    .actions {
+                        display: none;
+                    }
+                }
+            }
+            .main-menu-toggle {
+                position: absolute;
+                top: 101px;
+                width: 100%;
+                text-align: center;
+                background: #fff;
+                border-bottom: 1px solid #8f8f8f;
+                &-content {
+                    margin: 3% 5%;
+                    .switchers {
+                        text-transform: uppercase;
+                        font-size: 16px;
+                        margin: 45px 0;
+                        .switcher {
+                            display: inline-block;
+                            margin: 0 5px;
+                            strong {
+                                font-weight: 600;
+                            }
+                            ul.switcher-dropdown.active {
+                                display: block;
+                                position: absolute;
+                            }
+                        }
+                    }
+                    .bottom-line {
+                        height: 3px;
+                        background: #ccc;
+                        max-width: 60px;
+                        margin: 0 auto;
+                    }
+                    .navigation {
+                        margin-top: 45px;
+                        background: transparent;
+                        .level0 {
+                            border-top: 0;
+                            & > .level-top {
+                                font-size: 32px;
+                                font-weight: 600;
+                                color: #878787;
+                                letter-spacing: 10px;
+                                padding: 12px 5px;
+                                &:hover {
+                                    color: #000;
+                                    font-weight: 700;
+                                }
+                            }
+
+                            &:last-child {
+                                border-bottom: 0;
+                            }
+                        }
+                    }
+                    .customer-section {
+                        margin-top: 25px;
+                        div {
+                            display: inline-block;
+                            margin: 0 5px;
+                            a {
+                                color: #878787;
+                                font-weight: 600;
+                                font-size: 14px;
+                                &:hover {
+                                    color: #f95318;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+        
 
     .page-footer .footer.content {
         .switcher-store {
@@ -545,6 +721,9 @@
     body {
         .ie9 & {
             .lib-css(background-color, @copyright__background-color);
+        }
+        .mobile-header {
+            display: none;
         }
     }
     .copyright {

@@ -9,62 +9,222 @@
 /**
  * @var \Magento\Theme\Block\Html\Header\Logo $block
  */
-?>
-<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
-<div  class="nav-toggle1"><div><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></div></div>
-<?php if ($block->isHomePage()):?>
-	<strong class="logo main-logo">
-	<?php else: ?>
-		<a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
-		<?php endif ?>
-		<img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
-		alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
-		<?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
-		<?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
-		/>
-		<?php if ($block->isHomePage()):?>
-		</strong>
-	<?php else:?>
-	</a>
-<?php endif?>
 
-<?php
-/**
- * Top menu for store
- *
- * @var $block \Magento\Theme\Block\Html\Topmenu
- */
 $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
 $appState = $objectManager->get('\Magento\Framework\App\State');
-$logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
 
 ?>
+<?php $storeName = $block->getThemeName() ? $block->getThemeName() : $block->getLogoAlt();?>
+<span data-action="toggle-nav" class="action nav-toggle"><span><?php /* @escapeNotVerified */ echo __('Toggle Nav') ?></span></span>
+<?php if ($block->isHomePage()):?>
+    <strong class="logo main">
+<?php else: ?>
+    <a class="logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+<?php endif ?>
+        <img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+             <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+             <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+        />
+<?php if ($block->isHomePage()):?>
+    </strong>
+<?php else:?>
+    </a>
+<?php endif?>
 
-<?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
-<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
-<div class="mobileMenu">
-	<nav class="navigation" data-action="navigation">
-		<ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
-			<?php /* @escapeNotVerified */ echo $_menu; ?>
-			<?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
-			<li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
-				<a href="#" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-					<span>Contact Us</span>
+<div class="mobile-header">
+	<div class="left menu-toggle">
+		<span class="action menu-toggle-button icon-container"><img class="icon" src="<?php echo $block->getViewFileUrl('images/mobile/menu-toggle.png'); ?>"></span>
+	</div>
+	<div class="middle mobile-logo">
+		<?php if ($block->isHomePage()):?>
+			<img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/mobile/logo.png'); ?>"
+	             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+	        />
+		<?php else: ?>
+			<a class="mobile-logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
+				<img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+		             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
+		             <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
+		             <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
+		        />
+			</a>
+		<?php endif ?>
+	</div>
+	<div class="right links">
+		<div class="right-content">
+			<div class="search right-content-div">
+				<span class="search icon-container"><img class="icon" src="<?php echo $block->getViewFileUrl('images/mobile/search.png'); ?>"></span>
+			</div>
+			<div class="my-account right-content-div">
+				<a class="icon-container" href="<?php echo $block->getUrl('customer/account'); ?>"><img class="icon" src="<?php echo $block->getViewFileUrl('images/mobile/account.png'); ?>"></a>
+			</div>
+			<div class="cart right-content-div">
+				<a class="icon-container" href="<?php echo $block->getUrl('checkout/cart') ?>">
+					<span class="icon-container"><img class="icon" src="<?php echo $block->getViewFileUrl('images/mobile/cart.png'); ?>"></span>
+					<span class="cart-counter">
+						<span class="counter"><?php
+							$counter = $this->helper('\Magento\Checkout\Helper\Cart'); 
+					    	echo $counter->getItemsCount();
+						?></span>
+					</span>
 				</a>
-			</li>
+			</div>
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="search-toggle">
+		<form action="<?php echo $block->getUrl('catalogsearch/result'); ?>" method="get" class="form minisearch" id="search_mini_form" >
+			<div class="control">
+				<input placeholder="<?php echo __('Search') ?>" id="search" type="text" name="q" value="" class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off">
+				<div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+	      	</div>
+	      	<div class="actions">
+				<button type="submit" title="<?php echo __('Search') ?>" class="action search" disabled="">
+					<span><?php echo __('Search') ?></span>
+				</button>
+			</div>
+		</form>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="main-menu-toggle">
+		<div class="main-menu-toggle-content">
+			<div class="switchers">
+				<!-- Store Switcher -->
+				<?php 
+					$block = $objectManager->get('\Magento\Store\Block\Switcher');
+				?>
+				<?php if (count($block->getGroups())>1): ?>
+				<div class="switcher store switcher-store" id="switcher-store">
+				    <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Select Store') ?></span></strong>
+				    <div class="actions dropdown options switcher-options">
+				        <?php foreach ($block->getGroups() as $_group): ?>
+				        <?php if ($_group->getId() == $block->getCurrentGroupId()): ?>
+				            <div class="action toggle switcher-trigger"
+				                 role="button"
+				                 tabindex="0"
+				                 data-mage-init='{"dropdown":{}}'
+				                 data-toggle="dropdown"
+				                 data-trigger-keypress-button="true"
+				                 id="switcher-store-trigger">
+				                <strong>
+				                    <span><?php echo $block->escapeHtml($_group->getName()) ?></span>
+				                </strong>
+				            </div>
+				        <?php endif; ?>
+				        <?php endforeach; ?>
+				        <ul class="dropdown switcher-dropdown" data-target="dropdown">
+				            <?php foreach ($block->getGroups() as $_group): ?>
+				            <?php if (!($_group->getId() == $block->getCurrentGroupId())): ?>
+				                <li class="switcher-option">
+				                    <a href="#"
+				                       data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_group->getDefaultStore()); ?>'>
+				                        <?php echo $block->escapeHtml($_group->getName()) ?>
+				                    </a>
+				                </li>
+				            <?php endif; ?>
+				            <?php endforeach; ?>
+				        </ul>
+				    </div>
+				</div>
+				<?php endif; ?>
+				<!-- Store Switcher -->
 
-		</ul>
-	</nav>
+				<!-- Language Switcher -->
+				<?php 
+					$block = $objectManager->get('\Magento\Store\Block\Switcher');
+				?>
+				<?php if (count($block->getStores())>1): ?>
+				<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+				<div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>">
+				    <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Language') ?></span></strong>
+				    <div class="actions dropdown options switcher-options">
+				        <div class="action toggle switcher-trigger" id="switcher-language-trigger<?php /* @escapeNotVerified */ echo $id?>">
+				            <strong class="view-<?php echo $block->escapeHtml($block->getCurrentStoreCode()) ?>">
+				                <span><?php echo $block->escapeHtml($block->getStoreName()) ?></span>
+				            </strong>
+				        </div>
+				        <ul class="dropdown switcher-dropdown" >
+				            <?php foreach ($block->getStores() as $_lang): ?>
+				                <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+				                    <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+				                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>'>
+				                            <?php echo $block->escapeHtml($_lang->getName()) ?></a>
+				                    </li>
+				                <?php endif; ?>
+				            <?php endforeach; ?>
+				        </ul>
+				    </div>
+				</div>
+				<?php endif; ?>
+				<!-- Language Switcher -->
+
+				<!-- Currency Switcher -->
+				<?php 
+					$block = $objectManager->get('\Magento\Directory\Block\Currency');
+				?>
+				<?php if ($block->getCurrencyCount() > 1): ?>
+				<?php $currencies = $block->getCurrencies(); ?>
+				<?php $currentCurrencyCode = $block->getCurrentCurrencyCode(); ?>
+				<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+				<div class="switcher currency switcher-currency" id="switcher-currency<?php /* @escapeNotVerified */ echo $id?>">
+				    <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Currency') ?></span></strong>
+				    <div class="actions dropdown options switcher-options">
+				        <div class="action toggle switcher-trigger" id="switcher-currency-trigger<?php /* @escapeNotVerified */ echo $id?>">
+				            <strong class="language-<?php echo $block->escapeHtml($block->getCurrentCurrencyCode()) ?>">
+				                <span><?php echo $block->escapeHtml($currentCurrencyCode) ?></span>
+				            </strong>
+				        </div>
+				        <ul class="dropdown switcher-dropdown" >
+				            <?php foreach ($currencies as $_code => $_name): ?>
+				                <?php if ($_code != $currentCurrencyCode): ?>
+				                    <li class="currency-<?php /* @escapeNotVerified */ echo $_code ?> switcher-option">
+				                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getSwitchCurrencyPostData($_code); ?>'><?php /* @escapeNotVerified */ echo $_code ?></a>
+				                    </li>
+				                <?php endif; ?>
+				            <?php endforeach; ?>
+				        </ul>
+				    </div>
+				</div>
+				<?php endif; ?>
+				<!-- Currency Switcher -->
+			</div>
+			<div style="clear: both;"></div>
+			<div class="bottom-line"></div>
+			<?php
+				echo $this->getLayout()->createBlock("Magento\Theme\Block\Html\Topmenu")->setTemplate("Magento_Theme::html/topmenu.phtml")->toHtml();
+			?>
+			<div class="customer-section">
+				<div class="sign-up">
+					<a href="<?php echo $block->getUrl('customer/account/create'); ?>">
+			            <?php echo __('SIGN UP'); ?>
+			        </a>
+				</div>
+				<div class="sign-in">
+					<a href="<?php echo $block->getUrl('customer/account/login'); ?>">
+			            <?php echo __('LOGIN'); ?>
+			        </a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script>
-	require(['jquery'], function($) {
-            $(document).on("load",function(event){
-
-            	$(".nav-toggle1").on('click',function(){
-            		$(".mobileMenu").toggle();
-
-            	});
-            });            
+    require(['jquery'], function($) {
+        $('.search.icon-container').click(function(){
+        	$('.search-toggle').toggle();
+        });  
+        $('.menu-toggle-button').click(function(){
+        	$('.main-menu-toggle').toggle();
         });
-    </script> 
+        $('.switcher-language .switcher-trigger').click(function(){
+        	$(this).toggleClass('active');
+        	$(this).closest('.switcher').find('.switcher-dropdown').toggleClass('active');
+        });
+        $('.switcher-currency .switcher-trigger').click(function(){
+        	$(this).toggleClass('active');
+        	$(this).closest('.switcher').find('.switcher-dropdown').toggleClass('active');
+        });
+    });
+</script> 
