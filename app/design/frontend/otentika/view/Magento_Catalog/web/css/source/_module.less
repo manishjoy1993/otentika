@@ -857,11 +857,12 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     /*Otentika*/
+    html {
+        overflow-x: hidden;
+    }
         
     .catalog-category-view{
-        html {
-            overflow-x: hidden;
-        }
+    
         & .page-main{
             margin: 0;
             padding: 0;
