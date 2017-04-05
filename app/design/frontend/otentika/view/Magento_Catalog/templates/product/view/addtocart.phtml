@@ -69,10 +69,13 @@
     require([
         'jquery'
     ], function ($) {
+        var value = parseInt($(".box-tocart .field.qty .input-text.qty").val());
         $(".box-tocart .field.qty .qty-inc").click(function(){
-            var value = parseInt($(".box-tocart .field.qty .input-text.qty").val());
+            // value = parseInt($(".box-tocart .field.qty .input-text.qty").val());
             value += 1;
-            $(".box-tocart .field.qty .input-text.qty").val(value);
+            console.log(value);
+            $(this).closest('.control').find('.input-text.qty').val(value);
+            // $(".box-tocart .field.qty .input-text.qty").val(value);
         });
         $(document).on("click", ".box-tocart .field.qty .qty-inc", function(){
             if(($(".box-tocart .field.qty .input-text.qty").val() - 1) > 0)

@@ -3,7 +3,7 @@ $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category  
 ?>
 <?php
-if($category->getName()){
+if(!empty($category)){
 	?>
 	<div class="category-link">
 		<span><?php echo __('All Products of'); ?></span>&nbsp;<span><a href="javascript:void(0);"><?php echo $category->getName(); ?></a></span>

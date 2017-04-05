@@ -43,7 +43,7 @@ $appState = $objectManager->get('\Magento\Framework\App\State');
 	        />
 		<?php else: ?>
 			<a class="mobile-logo" href="<?php echo $block->getUrl(''); ?>" title="<?php /* @escapeNotVerified */ echo $storeName ?>">
-				<img src="<?php /* @escapeNotVerified */ echo $block->getLogoSrc() ?>"
+				<img src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/mobile/logo.png'); ?>"
 		             alt="<?php /* @escapeNotVerified */ echo $block->getLogoAlt() ?>"
 		             <?php echo $block->getLogoWidth() ? 'width="' . $block->getLogoWidth() . '"' : '' ?>
 		             <?php echo $block->getLogoHeight() ? 'height="' . $block->getLogoHeight() . '"' : '' ?>
