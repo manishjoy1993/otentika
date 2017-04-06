@@ -69,17 +69,40 @@
     require([
         'jquery'
     ], function ($) {
-        var value = parseInt($(".box-tocart .field.qty .input-text.qty").val());
-        $(".box-tocart .field.qty .qty-inc").click(function(){
-            // value = parseInt($(".box-tocart .field.qty .input-text.qty").val());
-            value += 1;
-            console.log(value);
-            $(this).closest('.control').find('.input-text.qty').val(value);
-            // $(".box-tocart .field.qty .input-text.qty").val(value);
+        // This button will increment the value
+        $('.box-tocart .field.qty .qty-inc').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            fieldBox = $(this).closest('.control').find('.input-text.qty');
+            // Get its current value
+            var currentVal = parseInt(fieldBox.val());
+            // If is not undefined
+            if (!isNaN(currentVal)) {
+                // Increment
+                $(fieldBox).val(currentVal + 1);
+            } else {
+                // Otherwise put a 0 there
+                $(fieldBox).val(0);
+            }
         });
-        $(document).on("click", ".box-tocart .field.qty .qty-inc", function(){
-            if(($(".box-tocart .field.qty .input-text.qty").val() - 1) > 0)
-                $(".box-tocart .field.qty .input-text.qty").val($(".box-tocart .field.qty .input-text.qty").val() - 1);
+
+        // This button will decrement the value till 0
+        $('.box-tocart .field.qty .qty-dec').click(function(e) {
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            fieldBox = $(this).closest('.control').find('.input-text.qty');
+            // Get its current value
+            var currentVal = parseInt(fieldBox.val());
+            // If it isn't undefined or its greater than 0
+            if (!isNaN(currentVal) && currentVal > 1) {
+                // Decrement one
+                fieldBox.val(currentVal - 1);
+            } else {
+                // Otherwise put a 0 there
+                fieldBox.val(1);
+            }
         });
     });
 </script>

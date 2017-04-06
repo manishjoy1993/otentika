@@ -27,6 +27,13 @@ if(!($logo->isHomePage())){
 
 <nav class="navigation" data-action="navigation">
     <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+
+        <li class="level0 nav-1 first level-top ui-menu-item mobile-menu-home-link" role="presentation">
+            <a href="<?php echo $homeUrl; ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span><?php echo __('Home') ?></span>
+            </a>
+        </li>
+
     	<li class="level0 nav-1 first level-top ui-menu-item menu-logo" role="presentation">
         	<a href="<?php echo $homeUrl; ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
         		<span>
@@ -47,12 +54,12 @@ if(!($logo->isHomePage())){
         <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
         	<a href="<?php echo $block->getUrl('what-is-new'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-        		<span>What's New</span>
+        		<span></span>
         	</a>
         </li>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
         	<a href="<?php echo $block->getUrl('contact-us'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-        		<span>Contact Us</span>
+        		<span><?php echo __("Contact Us"); ?></span>
         	</a>
         </li>
         
