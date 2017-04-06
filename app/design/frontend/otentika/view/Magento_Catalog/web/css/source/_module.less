@@ -134,8 +134,14 @@
         .page-wrapper .nav-sections {
             margin-bottom: 0;
         }
-        .panel.header, nav.navigation {
-            max-width: 1060px !important;
+        .panel.header,
+        nav.navigation{
+            @media (min-width: 1100px){
+                max-width: 1060px;
+            }
+            @media (min-width: 768px) and (max-width: 1099px) {
+                max-width: 85%;
+            }
             margin: 0 auto !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -1102,7 +1108,12 @@
     .catalog-category-view{
         .panel.header,
         nav.navigation{
-            max-width: 1060px !important;
+            @media (min-width: 1100px){
+                max-width: 1060px;
+            }
+            @media (min-width: 768px) and (max-width: 1099px) {
+                max-width: 85%;
+            }
             margin: 0 auto !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
