@@ -1581,6 +1581,18 @@
             }
         }
     }
+    .panel.header,
+    nav.navigation{
+        @media (min-width: 1100px){
+            max-width: 1060px !important;
+        }
+        @media (min-width: 768px) and (max-width: 1099px) {
+            max-width: 85% !important;
+        }
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
     .cms-index-index {
         .panel.header,
         nav.navigation{
@@ -1999,7 +2011,12 @@
     .cms-special-offer{
         .panel.header,
         nav.navigation{
-            max-width: 1060px !important;
+            @media (min-width: 1100px){
+                max-width: 1060px;
+            }
+            @media (min-width: 768px) and (max-width: 1099px) {
+                max-width: 85%;
+            }
             margin: 0 auto !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
