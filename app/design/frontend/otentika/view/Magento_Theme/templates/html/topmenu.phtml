@@ -18,7 +18,7 @@ $appState = $objectManager->get('\Magento\Framework\App\State');
 $logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
 $homeUrl = 'javascript:void(0)';
 if(!($logo->isHomePage())){
-	$homeUrl = $block->getUrl('');
+    $homeUrl = $block->getUrl('');
 }
 ?>
 
@@ -34,33 +34,33 @@ if(!($logo->isHomePage())){
             </a>
         </li>
 
-    	<li class="level0 nav-1 first level-top ui-menu-item menu-logo" role="presentation">
-        	<a href="<?php echo $homeUrl; ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-        		<span>
-        			<img src="<?php /* @escapeNotVerified */ echo $logo->getLogoSrc() ?>"
-		             alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
-		             <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
-		             <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
-			        />
-        		</span>
-        	</a>
+        <li class="level0 nav-1 first level-top ui-menu-item menu-logo" role="presentation">
+            <a href="<?php echo $homeUrl; ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span>
+                    <img src="<?php /* @escapeNotVerified */ echo $logo->getLogoSrc() ?>"
+                     alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
+                     <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
+                     <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
+                    />
+                </span>
+            </a>
         </li>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
-        	<a href="<?php echo $block->getUrl('about-us'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-        		<span>The Brand</span>
-        	</a>
+            <a href="<?php echo $block->getUrl('about-us'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span><?php echo __("The Brand"); ?></span>
+            </a>
         </li>
         <?php /* @escapeNotVerified */ echo $_menu; ?>
         <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
-        	<a href="<?php echo $block->getUrl('what-is-new'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-        		<span></span>
-        	</a>
+            <a href="<?php echo $block->getUrl('what-is-new'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span><?php echo __("What's New"); ?></span>
+            </a>
         </li>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
-        	<a href="<?php echo $block->getUrl('contact-us'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-        		<span><?php echo __("Contact Us"); ?></span>
-        	</a>
+            <a href="<?php echo $block->getUrl('contact'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span><?php echo __("Contact Us"); ?></span>
+            </a>
         </li>
         
     </ul>

@@ -98,11 +98,14 @@
         background:#f95318;
 
         .panel.wrapper {
-            @media(max-width:768px){
+            @media(max-width:767px){
                 display: none;
             }
             .lib-css(background-color, @header-panel__background-color);
             .lib-css(color, @header-panel__text-color);
+            .block-minicart {
+                color: #333333;
+            }
         }
         .header.content{
             .nav-toggle:before{
@@ -125,7 +128,7 @@
         .columns{
             .column.main{
                 .main_Border{
-                    @media(max-width:768px){
+                    @media(max-width:767px){
                         margin-bottom: 129px;
                         border: 12px solid orangered;
                         height: 420px;
@@ -1581,6 +1584,18 @@
             }
         }
     }
+    .panel.header,
+    nav.navigation{
+        @media (min-width: 1100px){
+            max-width: 1060px !important;
+        }
+        @media (min-width: 768px) and (max-width: 1099px) {
+            max-width: 85% !important;
+        }
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
     .cms-index-index {
         .panel.header,
         nav.navigation{
@@ -1999,7 +2014,12 @@
     .cms-special-offer{
         .panel.header,
         nav.navigation{
-            max-width: 1060px !important;
+            @media (min-width: 1100px){
+                max-width: 1060px;
+            }
+            @media (min-width: 768px) and (max-width: 1099px) {
+                max-width: 85%;
+            }
             margin: 0 auto !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
