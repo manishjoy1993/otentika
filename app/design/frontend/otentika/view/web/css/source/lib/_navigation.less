@@ -307,6 +307,9 @@
 
         .level0 {
             .lib-css(margin, @_nav-level0-item-margin);
+            @media (min-width: 768px) and (max-width: 820px) {
+                .lib-css(margin, 0 20px 0 0);
+            }
             display: inline-block;
             position: relative;
 
@@ -441,7 +444,11 @@
         }
     }
 }
-
+@media (min-width: 768px) {
+    .mobile-menu-home-link {
+        display: none !important;
+    }
+}
 //  Submenu arrow
 ._lib-submenu-arrow(
     @_submenu-arrow,
