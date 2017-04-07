@@ -17,7 +17,13 @@
     .field {
         .control {
             &._with-tooltip {
-                width: 536px;
+                .input-text{
+                    width: calc(100% - 0%);
+
+                }
+                .field-tooltip.toggle{
+                        right: -8%;
+                }
                 &:extend(.abs-field-tooltip all);
             }
         }
