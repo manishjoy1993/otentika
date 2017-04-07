@@ -939,6 +939,7 @@
                     margin-top: 50px;
                     width: 100%;
                     overflow-x: hidden;
+                    
                     .main_Border{
                         /*width: 1060px;*/
                         margin: 0px auto;
@@ -1018,12 +1019,13 @@
                             padding-top: 20px;
                             .baner2_title {
                                 width: 140px;
-                                margin: 55px auto 25px;
+                                margin: 55px auto 2rem;
                                 line-height: 30px;
                                 text-align: center;
                             }
                             .banner2_hr {
                                 width: 25px;
+                                margin-top: 0;
                             }
                             .banner2_descrp {
                                 width: 160px;
@@ -1512,12 +1514,13 @@
             }
         }
     }
-    /*about us*/
+        /*about us*/
     .cms-about-us.cms-page-view.page-layout-1column{
        .page-wrapper{
         .page-main{
                padding: 0px;
         }
+
         .page-main{
         max-width: 100%;
         padding-left: 0px;
@@ -1536,13 +1539,13 @@
                 margin: 0px auto;
                 position: relative;
                 height: 391px;
-                    width: 100%;
                 .girl1{
                     display: none;
                 }
                 .girl2{
+                    width: 46%;
                     float: right;
-                    margin-top: -143px;
+                    margin-top: -158px;
                     height: 510px;
                 }
                 .titlebanner-top{
@@ -1595,6 +1598,17 @@
                         font-size: 61px;
                         @media(max-width:450px) and (min-width: 396px){
                                font-weight: 900;
+<<<<<<< HEAD
+                                font-size: 55px;
+                        }
+                         @media(max-width:396px) and (min-width: 364px){
+                                font-weight: 900;
+                                font-size: 48px;
+                        }
+                        @media(max-width:364px) and (min-width: 320px){
+                                font-weight: 900;
+                                font-size: 47px;
+=======
                                 font-size: 54px;
                                 color: #171717;
                         }
@@ -1605,6 +1619,7 @@
                         @media(max-width:364px) and (min-width: 320px){
                                 font-weight: 900;
                                 font-size: 44px;
+>>>>>>> d225b49c1444dcce33f0baf62cf32a2c9a756115
                         }
                     }
                 }
@@ -1693,13 +1708,16 @@
                         margin: 0px auto;
                         margin-bottom: 5px;
                         margin-top: 14px;
+<<<<<<< HEAD
+=======
                         font-weight: 500;
                         font-size: 83%;
                         color: #171717;
+>>>>>>> d225b49c1444dcce33f0baf62cf32a2c9a756115
                 }
                 span{
                      width: 4px;
-                    height: 153px;
+                    height: 127px;
                     background: #f95318;
                     display: block;
                     margin: 0px auto;
@@ -1759,103 +1777,7 @@
        }
     }
     /*about us*/
-    /*checkout Page*/
-    .checkout-index-index.page-layout-checkout{
-        .page-wrapper{
-            .page-header{
-                display: none;
-            }
-        }
-        .columns{
-            .column.main{
-                .level0 nav-1 first level-top ui-menu-item menu-logo{
-                        
-                }
-                .checkout-container{
-                        margin-top: -72px;
-                    .authentication-wrapper{
-                            text-align: center;
-                            float: none;
-                            max-width: 100%;
-                    }
-                    .opc-progress-bar{
-                        padding: 0;
-                        text-align: center;
-                        .opc-progress-bar-item{
-                            width: 45%;
-                        }
-                    }
-                     .opc-wrapper{
-                        .opc{
-                            .checkout-shipping-address{
-                                .step-content{
-                                    margin-left: 13%;
-                                    margin-right: 13%;
-                                    .form.form-login{
-                                        background: #fff;
-                                    }
-                                    .form.form-shipping-address{
-                                            background: #fff;
-                                    }
-                                    .form.form-login{
-                                        .emailBelowLine{
-                                                width: 50%;
-                                                border-bottom: 3px solid rgba(128, 128, 128, 0.14);
-                                                display: block;
-                                                   margin: 0% 27% 0% 27%;
-                                        }
-                                    }
-                                }
-                                .step-title{
-                                    margin-left: 13%;
-                                    margin-right: 13%;
-                                }
-                                .shippingHr{
-                                    border-bottom: 2px solid rgba(128, 128, 128, 0.14);
-                                    margin-top: 10px;
-                                    width: 100%;
-                                    display: block;
-                                }
-                            }
-                            .checkout-shipping-method{
-                                .checkout-shipping-method{
-                                    .step-title{
-                                        margin-left: 13%;
-                                        margin-right: 13%;
-                                    }
-                                    .shippingHr{
-                                        border-bottom: 2px solid rgba(128, 128, 128, 0.14);
-                                        margin-top: 10px;
-                                        width: 100%;
-                                        display: block;
-                                    }
-                                    .step-content{
-                                            margin-right: 13%;
-                                             margin-left: 13%;
-                                            .form.methods-shipping{
-                                                background: #fff;
-                                                    border-bottom: 0;
-                                                .actions-toolbar{
-                                                    .primary{
-                                                        margin-top: 40px;
-                                                        .button.action.continue.primary{
-                                                                padding: 5% 10%;
-                                                                width: 50%;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    
-                }
-            }
-        }
-    }
-    /*checkout page*/
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
@@ -2767,7 +2689,7 @@
 
     /*Special Offer Page*/
 
-      /*About Us*/
+    /*About Us*/
       .cms-about-us{
         .page-wrapper{
             .page-header{
@@ -2789,9 +2711,9 @@
         }
 
         .page-main{
-        max-width: 100%;
-        padding-left: 0px;
-        padding-right: 0px;
+            max-width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
         }
         .main-top-banner{
             background: url(../images/home/banners/gradient.png);
@@ -2799,7 +2721,6 @@
             background-position: 0 171px;
             margin-top: 122px;
             .top-banner{
-                width: 78%;
                 margin: 0px auto;
                 position: relative;
                 height: 391px;
@@ -2807,8 +2728,10 @@
                     display: none;
                 }
                 img{
+                    width: 38%;
                     float: right;
-                    margin-top: -147px;
+                    padding-right: 136px;
+                    margin-top: -149px;
                     height: 100%;
                 }
                 .titlebanner-top{
@@ -2954,31 +2877,15 @@
                     .opc-wrapper{
                         .opc{
                             .checkout-shipping-address{
-                                .shippingHr{
-                                    border-bottom: 2px solid rgba(128, 128, 128, 0.14);
-                                    margin-top: 10px;
-                                    width: 100%;
-                                    display: block;
-                                }
                                 .step-content{
                                     .form.form-login{
                                         .emailBelowLine{
-                                                 width: 50%;
+                                                width: 200px;
                                                 border-bottom: 3px solid rgba(128, 128, 128, 0.14);
                                                 display: block;
-                                                   margin: 0% 27% 0% 27%;
+                                                margin: -22px 0px -14px 141px;
+                                            }
                                         }
-                                    }
-                                }
-                            }
-                            .checkout-shipping-method{
-                                .checkout-shipping-method{
-                                    .shippingHr{
-                                        border-bottom: 2px solid rgba(128, 128, 128, 0.14);
-                                        margin-top: 10px;
-                                        width: 100%;
-                                        display: block;
-                                    }
                                 }
                             }
                         }
