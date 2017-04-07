@@ -22,12 +22,12 @@
 </div>
 <div class="product-social-share">
     <div class="fb">
-        <a href="#"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/view/social/fb.png'); ?>"></a>
+        <a href="#" onclick="window.open('http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href),'name','toolbar=0,status=0')"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/view/social/fb.png'); ?>"></a>
     </div>
     <div class="pineterest">
-        <a href="#"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/view/social/pineterest.png'); ?>"></a>
+        <a href="#" onclick="window.open('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(location.href),'name','toolbar=0,status=0')"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/view/social/pineterest.png'); ?>"></a>
     </div>
-    <div class="twitter">
+    <div class="twitter" onclick="window.open('https://twitter.com/share?url='+escape(window.location.href)+'&text='+document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;">
         <a href="#"><img src="<?php echo $block->getViewFileUrl('images/catalog/product/view/social/twitter.png'); ?>"></a>
     </div>
     <div class="plus">
