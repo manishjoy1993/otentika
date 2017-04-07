@@ -652,8 +652,10 @@
                                 margin: 0 5px;
                                 a {
                                     color: #878787;
-                                    font-weight: 600;
+                                    font-weight: 700;
+                                    letter-spacing: 0.5px;
                                     font-size: 14px;
+                                    text-decoration: none;
                                     &:hover {
                                         color: #f95318;
                                         font-weight: 700;
@@ -964,12 +966,10 @@
                                 }
                             }
                             .action.tocart.primary {
-                                padding: 10px 30px;
-                                margin-top: -24px;
-                                font-size: 1.3rem;
+                                padding: 12px 28px;
+                                margin-top: -10px;
+                                font-size: 1rem;
                                 border-radius: 0;
-                                line-height: 1;
-                                padding-bottom: 8px;
                                 white-space: nowrap;
                                 margin-left: 7px;
                                 .shop_btn {
@@ -1041,7 +1041,7 @@
                             margin-top: 30px;
                             .banner3Body {
                                 .banner3_div {
-                                    max-width: 250px;
+                                    max-width: 65%;
                                     text-align: center;
                                     margin: 0 auto;
                                     padding: 60px 0;
@@ -1106,7 +1106,7 @@
                             display: none;
                         }
                         .banner7emnt{
-                            max-width: 315px;
+                            max-width: 80%;
                             margin: 0 auto;
                             padding: 60px 0;
                             text-align: center;
@@ -2686,9 +2686,9 @@
         }
 
         .page-main{
-        max-width: 100%;
-        padding-left: 0px;
-        padding-right: 0px;
+            max-width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
         }
         .main-top-banner{
             background: url(../images/home/banners/gradient.png);
@@ -2893,6 +2893,9 @@
 
         .switcher {
             margin: 0 10px;
+            @media (min-width: 768px) and (max-width: 770px) {
+                margin: 0 6px;
+            }
             .lib-vendor-prefix-order(1);
             &:last-child {
                 margin-right: 0;
