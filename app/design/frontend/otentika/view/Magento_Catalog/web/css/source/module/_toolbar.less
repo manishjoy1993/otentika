@@ -106,8 +106,17 @@
 
         &-options {
             margin: 0 10px 0 10px;
+            @media (max-width: 365px) {
+                margin: 0 5px;
+            }
             width: auto;
             display: inline;
+            &.catalog-sorter {
+                margin: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
             & a{
                 color: #000;
                 text-decoration: none;
