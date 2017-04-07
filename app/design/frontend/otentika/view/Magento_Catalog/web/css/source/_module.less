@@ -304,6 +304,9 @@
                         background: #fff;
                         border: 0;
                         margin: 0 15px;
+                        @media (min-width: 768px) and (max-width: 900px){
+                            margin: 0 7px;
+                        }
                         padding: 0;
                         font-size: 12px;
                         font-weight: 600;
@@ -689,6 +692,10 @@
             text-transform: uppercase;
             height: 35px;
             padding: 0 20px;
+            @media (max-width: 767px) {
+                max-width: 165px;
+                float: left;
+            }
         }
     }
 
@@ -1229,10 +1236,21 @@
     .box-tocart {
         .qty{
             margin: 0;
-            display: inline-block;
+            @media (min-width: 1190px) {
+                display: inline-block;
+            }
+            @media (min-width: 768px) and (max-width: 1189px) {
+                margin-bottom: 20px;
+            }
+            
         }
         .actions{
-            display: inline;
+            @media (min-width: 1190px) {
+                display: inline;
+            }
+            @media (min-width: 768px) and (max-width: 1189px) {
+                display: flex;
+            }
         }
         .action.tocart {
             margin-bottom: 0;
