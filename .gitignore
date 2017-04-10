@@ -51,4 +51,3 @@ atlassian*
 !/var/.htaccess
 /vendor/*
 !/vendor/.htaccess
-!/vendor/imaginaerum
