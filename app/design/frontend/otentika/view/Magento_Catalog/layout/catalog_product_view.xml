@@ -50,6 +50,7 @@
         </referenceBlock>
 
         <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View" name="product.recently.viewed" template="product/view/recently-viewed.phtml" after="product.info.media" />
             <block class="Magento\Catalog\Block\Product\View" name="product.bottom.banner" template="product/view/product-view-bottom.phtml" after="product.info.details" />
         </referenceContainer>
 
