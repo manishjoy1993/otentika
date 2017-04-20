@@ -10,7 +10,7 @@
 @minicart__border-color: @color-gray80;
 @minicart__padding-horizontal: @indent__base;
 
-@minicart-qty__height: 20px;
+@minicart-qty__height: 24px;
 
 //
 //  Common
@@ -185,20 +185,15 @@
                     .lib-css(background, @active__color);
                     .lib-css(color, @page__background-color);
                     .lib-css(height, @minicart-qty__height);
-                    .lib-css(width, @minicart-qty__height);
                     .lib-css(line-height, @minicart-qty__height);
-                    border-radius: 10px;
+                    border-radius: 2px;
                     display: inline-block;
                     margin: 3px 0 0;
                     min-width: 18px;
                     overflow: hidden;
-                    padding: 0;
+                    padding: 0 3px;
                     text-align: center;
                     white-space: normal;
-                    font-size: 12px;
-                    position: absolute;
-                    top: -8px;
-                    right: -14px;
 
                     &.empty {
                         display: none;
@@ -420,7 +415,7 @@
         margin-left: 13px;
 
         .block-minicart {
-            right: -15px;
+            right: -25px;
             width: 390px;
         }
     }
