@@ -182,7 +182,10 @@
         .link.wishlist{
             float: right;
             width: 23px;
-            margin: -12px 20px;
+            margin: -12px 10px -12px 20px;
+            &.checkout-link {
+                margin: -12px 10px -12px 15px;
+            }
             img{
                 height: 17px;
             }
@@ -477,7 +480,9 @@
         right: -25px;
         top: -2px;
     }
-
+    .header.panel .link.wishlist.checkout-link {
+        display: none;
+    }
     .navigation .parent .level-top:after {
         .lib-font-size(16);
         right: 10px;
