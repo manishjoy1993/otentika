@@ -67,6 +67,22 @@
         .lib-css(background-color, @page__background-color);
     }
 
+    //Banner Offer
+    .header-offer-container {
+        background: @header-link-hover-orange;
+        .content {
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+    .checkout-index-index {
+        .header-offer-container {
+            display: none;
+        }
+    }
+
     //  ToDo UI: move it directly to .page-wrapper (now it doesn't appear in mediaquery cuz of size of css)
     .page-wrapper {
         .ie9 & {
@@ -184,7 +200,8 @@
             width: 23px;
             margin: -12px 10px -12px 20px;
             &.checkout-link {
-                margin: -12px 10px -12px 15px;
+                margin: 8px 10px -12px 15px;
+                -webkit-margin-before: -12px;
             }
             img{
                 height: 17px;
@@ -3059,7 +3076,7 @@
             }
             .lib-vendor-prefix-order(1);
             &:last-child {
-                margin-right: 0;
+                margin-right: 10px;
             }
         }
     }
@@ -3332,13 +3349,17 @@
         left: 121px;
     }*/
     .switcher.language.switcher-language{
-        float: left;
+        /*float: left;*/
         position: relative;
         /*left: 113px;*/
-        padding-left: 25px;
+        /*padding-left: 25px;*/
         @media (min-width: 768px) and (max-width: 860px) {
             padding-left: 15px;
         }
+    }
+    .switcher.store.switcher-store {
+        padding-left: 25px;
+        float: left;
     }
 
     .header.content{
