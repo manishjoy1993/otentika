@@ -65,6 +65,14 @@
 & when (@media-common = true) {
     body {
         .lib-css(background-color, @page__background-color);
+        &.account {
+            .column.main .block:not(.widget) .block-title {
+                border-bottom: 1px solid #f95318;
+            }
+            .table-wrapper {
+                border-bottom: 1px solid #f95318;;
+            }
+        }
     }
 
     //Banner Offer
