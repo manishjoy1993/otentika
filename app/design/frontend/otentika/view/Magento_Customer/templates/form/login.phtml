@@ -27,7 +27,7 @@
             <?php echo $block->getBlockHtml('formkey'); ?>
             <fieldset class="fieldset login" data-hasrequired="<?php /* @escapeNotVerified */ echo __('') ?>">
                 <div class="field note">
-                    <h2><?php echo __('Glad to see you back') ?></h2>
+                    <div class="loginTitle"><span><?php echo __('GLAD TO SEE YOU BACK :)') ?></span></div>
                     <div class="text">
                         <div class="link-container">
                             <a href="<?php echo $block->getUrl('customer/account/create') ?>"><?php echo __("I don't have an account") ?></a>
@@ -58,3 +58,66 @@
         </form>
     </div>
 </div>
+
+
+<style type="text/css">
+    .block.block-customer-login{
+        margin: 1px auto !important;
+    min-width: 82% !important;
+    }
+    .loginTitle span{
+        font-size: 26px;
+    font-weight: 300;
+        margin-bottom: 22px;
+    }
+
+    .fieldset.login .link-container a{
+            font-size: 20px;
+            color: #575757;
+            font-weight: 300;
+            text-decoration: underline #000;
+    }
+    .field.note .text{
+            float: left;
+    }
+    .loginTitle{
+        margin-bottom: 30px;
+    }
+    .field.note .text{
+            float: left;
+    margin-bottom: 28px;
+    }
+    .login-container{
+        margin-top: 46px;
+    }
+    #email::-webkit-input-placeholder {
+    color: black;
+    font-weight: 600;
+    font-size: 19px;
+    margin-left: 2px;
+    }
+     #pass::-webkit-input-placeholder {
+    color: black;
+    font-weight: 600;
+    font-size: 19px;
+
+    }
+    .field.email.required .input-text{
+        height: 52px !important;
+    border: 2px solid lightgray;
+       
+    }
+
+    .field.password.required .input-text{
+        height: 52px !important;
+    border: 2px solid lightgray;
+        padding-left: 15%;
+    }
+    #email{
+         padding-left: 15%;
+    }
+    #pass{
+         padding-left: 15%;
+    }
+
+</style>
