@@ -142,6 +142,71 @@
             }
         }
     }
+    .customer-account-login {
+        .page-title-wrapper {
+            display: none;
+        }
+        .block-new-customer {
+            display: none;
+        }
+        .login-container{
+            .block-customer-login {
+                .fieldset {
+                    .field.note {
+                        h2 {
+                            text-align: center;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                            margin-bottom: 2.5rem;
+                            font-size: 2.2rem;
+                        }
+                        .text {
+                            text-align: center;
+                            .link-container {
+                                display: inline-block;
+                                &.divider {
+                                    height: 10px;
+                                    border-right: 1.5px solid rgba(119, 119, 119, 0.7);
+                                    margin: 0 7px;
+                                }
+                                a {
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                    & > .field {
+                        & > .control {
+                            width: 100%;
+                            .input-text {
+                                font-size: 12px;
+                                padding: 0 15px;
+                                font-weight: 600;
+                                border-radius: 0;
+                                height: 38px;
+                                &:focus {
+                                    box-shadow: none;
+                                    border-color: #ff5501;
+                                }
+                            }
+                        }
+                    }
+                    .actions-toolbar {
+                        text-align: center;
+                        .primary {
+                            float: none;
+                            .action {
+                                padding: 10px 35px;
+                                border-radius: 0;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+                
+        }
+    }
 
     //  My account
     .account {
@@ -430,6 +495,24 @@
                     border-radius: 0;
                 }
             }
+        }
+    }
+
+    //Login page
+    .customer-account-login {
+        .page-title-wrapper {
+            display: none;
+        }
+        .block-new-customer {
+            display: none;
+        }
+        .login-container{
+            .block-customer-login {
+                float: none !important;
+                margin: 10px auto;
+                min-width: 500px;
+            }
+                
         }
     }
 
