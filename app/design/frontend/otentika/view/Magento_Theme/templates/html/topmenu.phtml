@@ -45,21 +45,30 @@ if(!($logo->isHomePage())){
                 </span>
             </a>
         </li>
+        
+        <?php /* @escapeNotVerified */ echo $_menu; ?>
+        <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
             <a href="<?php echo $block->getUrl('about-us'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
                 <span><?php echo __("The Brand"); ?></span>
             </a>
         </li>
-        <?php /* @escapeNotVerified */ echo $_menu; ?>
-        <?php /* @escapeNotVerified */ echo $block->getChildHtml(); ?>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
             <a href="<?php echo $block->getUrl('what-is-new'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-                <span><?php echo __("What's New"); ?></span>
+                <span><?php echo __("New Release"); ?></span>
             </a>
         </li>
         <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
-            <a href="<?php echo $block->getUrl('contact'); ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
-                <span><?php echo __("Contact Us"); ?></span>
+            <a href="<?php echo "#" ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span><?php echo __("Blog"); ?></span>
+            </a>
+        </li>
+        <?php
+            $offerCategory = $objectManager->create('Magento\Catalog\Model\Category')->load(8);
+        ?>
+        <li class="level0 nav-1 first level-top ui-menu-item" role="presentation">
+            <a href="<?php echo $offerCategory->getUrl() ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
+                <span><?php echo __("Offers"); ?></span>
             </a>
         </li>
         

@@ -27,7 +27,8 @@
             <?php echo $block->getBlockHtml('formkey'); ?>
             <fieldset class="fieldset login" data-hasrequired="<?php /* @escapeNotVerified */ echo __('') ?>">
                 <div class="field note">
-                    <div class="loginTitle"><span><?php echo __('GLAD TO SEE YOU BACK :)') ?></span></div>
+                    <h2><?php echo __('Glad to see you back') ?></h2>
+                    <!-- <div class="loginTitle"><span><?php echo __('GLAD TO SEE YOU BACK :)') ?></span></div> -->
                     <div class="text">
                         <div class="link-container">
                             <a href="<?php echo $block->getUrl('customer/account/create') ?>"><?php echo __("I don't have an account") ?></a>
@@ -61,7 +62,7 @@
 
 
 <style type="text/css">
-    .block.block-customer-login{
+    /*.block.block-customer-login{
         margin: 1px auto !important;
     min-width: 82% !important;
     }
@@ -118,6 +119,6 @@
     }
     #pass{
          padding-left: 15%;
-    }
+    }*/
 
 </style>
