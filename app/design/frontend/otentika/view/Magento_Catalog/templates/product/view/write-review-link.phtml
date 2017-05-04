@@ -1,0 +1,43 @@
+<?php
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$appState = $objectManager->get('\Magento\Framework\App\State');
+$block = $objectManager->get('\Magento\Review\Block\Product\ReviewRenderer');
+?>
+
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php $url = $block->getReviewsUrl() . '#reviews'; ?>
+<?php $urlForm = $block->getReviewsUrl() . '#review-form'; ?>
+<?php if ($block->getReviewsCount()): ?>
+<?php $rating = $block->getRatingSummary(); ?>
+<div class="link-to-form product-reviews-summary<?php echo !$rating ? ' no-rating' : ''?>" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+    <div class="reviews-actions">
+        <a class="action add" href="<?php /* @escapeNotVerified */ echo $urlForm ?>"><?php /* @escapeNotVerified */ echo __('Write A Review') ?></a>
+    </div>
+</div>
+<?php elseif ($block->getDisplayIfEmpty()): ?>
+<div class="product-reviews-summary empty">
+    <div class="reviews-actions">
+        <a class="action add" href="<?php /* @escapeNotVerified */ echo $urlForm; ?>">
+            <?php /* @escapeNotVerified */ echo __('Be the first to review this product') ?>
+        </a>
+    </div>
+</div>
+<?php endif; ?>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        $('.reviews-actions .action.add').click(function(){
+            $(".review-add").show();
+        });
+    });
+</script>

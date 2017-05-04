@@ -26,9 +26,9 @@
          </div>
      </div>
     <?php endif;?>
-    <div class="reviews-actions">
+    <!-- <div class="reviews-actions">
         <a class="action add" href="<?php /* @escapeNotVerified */ echo $urlForm ?>"><?php /* @escapeNotVerified */ echo __('Write A Review') ?></a>
-    </div>
+    </div> -->
 </div>
 <?php elseif ($block->getDisplayIfEmpty()): ?>
 <div class="product-reviews-summary empty">
@@ -39,13 +39,3 @@
     </div>
 </div>
 <?php endif; ?>
-
-<script type="text/javascript">
-    require([
-        'jquery'
-    ], function ($) {
-        $('.reviews-actions .action.add').click(function(){
-            $(".review-add").show();
-        });
-    });
-</script>
