@@ -12,13 +12,16 @@
         </referenceContainer>
     	<move element="product.info" destination="product.info.price" />
     	<move element="product.info.details.info" destination="product.info.price"/>
-    	<move element="product.info.review" destination="product.info.extrahint"/>
+        <referenceContainer name="product.info.price">
+            <block class="Magento\Catalog\Block\Product\View" name="product.info.review.summary" template="product/view/review.phtml" after="product.price.final" />
+        </referenceContainer>
 
     	<referenceContainer name="product.info.stock.sku" remove="true"/>
     	<referenceBlock name="product.info.mailto" remove="true"/>
     	<referenceBlock name="view.addto.compare" remove="true"/>
     	<referenceBlock name="product.info.description" remove="true"/>
         <referenceBlock name="product.attributes.info" remove="true"/>
+        <referenceBlock name="product.info.review" remove="true"/>
     	
 		<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details.info" template="product/view/details.phtml">
             <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.info" template="product/view/attribute.phtml" group="detailed_info" before="product.info.description.info">
@@ -30,7 +33,36 @@
                     <argument name="title" translate="true" xsi:type="string">Description</argument>
                 </arguments>
             </block>
-            
+
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.ingredients" template="product/view/attribute.phtml" group="detailed_info" before="product.info.description.info">
+                <arguments>
+                    <argument name="at_code" xsi:type="string">ingredients</argument>
+                    <argument name="css_class" xsi:type="string">description</argument>
+                    <argument name="at_label" xsi:type="string">default</argument>
+                    <argument name="at_type" xsi:type="string">attribute</argument>
+                    <argument name="title" translate="true" xsi:type="string">Ingredients</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.usage" template="product/view/attribute.phtml" group="detailed_info" before="product.info.description.info">
+                <arguments>
+                    <argument name="at_code" xsi:type="string">usage</argument>
+                    <argument name="css_class" xsi:type="string">description</argument>
+                    <argument name="at_label" xsi:type="string">default</argument>
+                    <argument name="at_type" xsi:type="string">attribute</argument>
+                    <argument name="title" translate="true" xsi:type="string">Usage</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.description.must_know" template="product/view/attribute.phtml" group="detailed_info" before="product.info.description.info">
+                <arguments>
+                    <argument name="at_code" xsi:type="string">must_know</argument>
+                    <argument name="css_class" xsi:type="string">description</argument>
+                    <argument name="at_label" xsi:type="string">default</argument>
+                    <argument name="at_type" xsi:type="string">attribute</argument>
+                    <argument name="title" translate="true" xsi:type="string">Must Know</argument>
+                </arguments>
+            </block>
         </block>
 
         <referenceBlock name="product.attributes" remove="true" />
@@ -42,16 +74,20 @@
                 </arguments>
             </block>
 
-          <block class="Magento\Catalog\Block\Product\View" name="shippinginfo.tab" as="shippinginfo" template="product/view/shipping-payment-tab.phtml" group="detailed_info" after="-" >
+          <!-- <block class="Magento\Catalog\Block\Product\View" name="shippinginfo.tab" as="shippinginfo" template="product/view/shipping-payment-tab.phtml" group="detailed_info" after="-" >
              <arguments>
                 <argument translate="true" name="title" xsi:type="string">Shipping &amp; Payment</argument>
              </arguments>
-          </block>
+          </block> -->
         </referenceBlock>
+        <referenceContainer name="product.info.extrahint">
+            <block class="Magento\Catalog\Block\Product\View" name="write.review.link" template="product/view/write-review-link.phtml" />
+        </referenceContainer>
 
         <referenceContainer name="content">
             <block class="Magento\Catalog\Block\Product\View" name="product.recently.viewed" template="product/view/recently-viewed.phtml" after="product.info.media" />
-            <block class="Magento\Catalog\Block\Product\View" name="product.bottom.banner" template="product/view/product-view-bottom.phtml" after="product.info.details" />
+            <!-- <block class="Magento\Catalog\Block\Product\View" name="product.recently.viewed" template="product/view/recently-viewed.phtml" after="product.info.media" /> -->
+            <!-- <block class="Magento\Catalog\Block\Product\View" name="product.bottom.banner" template="product/view/product-view-bottom.phtml" after="product.info.details" /> -->
         </referenceContainer>
 
     </body>
