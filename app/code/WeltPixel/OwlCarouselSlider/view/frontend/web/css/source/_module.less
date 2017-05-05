@@ -240,7 +240,26 @@
 		width: 100%;
 	}
 }
-
+.owl-carousel-products-upsell {
+	.owl-item {
+		.product-item {
+			background: #fff !important;
+			&-info {
+				min-width: 68%;
+				& .product-item-photo {
+					background: #F9F9F9;
+					display: block;
+					padding: 15px;
+				}
+			}
+		}
+	}
+}
+.upsell-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 3rem;
+}
 @-webkit-keyframes fadeOut {
 	0% {
 		opacity: 1;
@@ -360,12 +379,6 @@
 		    	padding: 0;
 		    	.product-item {
 		    		padding: 0;
-		    		.product-item-details {
-		    			max-width: 150px;
-		    			.price-box {
-		    				margin: 0;
-		    			}
-		    		}
 		    	}
 		    	.product-item-info {
 		    		width: 100%;
@@ -378,7 +391,6 @@
 		    			vertical-align: middle;
 		    			.product-short-description {
 		    				font-size: 1.3rem;
-		    				color: #575757;
 		    			}
 		    		}
 		    	}

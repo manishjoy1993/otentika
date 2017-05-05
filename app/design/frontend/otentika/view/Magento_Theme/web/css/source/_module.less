@@ -98,7 +98,9 @@
             min-height: 0;
         }
         .nav-sections{
-        background: #f95318;
+        /*background: #f95318;*/
+        background: transparent;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.7);
             .section-items.nav-sections-items{
                 .section-item-content.nav-sections-item-content{
                     .navigation{
@@ -210,6 +212,15 @@
             &.checkout-link {
                 margin: 8px 10px -12px 15px;
                 -webkit-margin-before: -12px;
+                display: none;
+            }
+            &.registration-link,
+            &.authorization-link,
+            &.account-link,
+            &.logout-link {
+                margin: 7px 10px;
+                width: auto;
+                font-size: 12px;
             }
             img{
                 height: 17px;
@@ -511,7 +522,7 @@
     .navigation .parent .level-top:after {
         .lib-font-size(16);
         right: 10px;
-        top: 7px;
+        top: 27px;
     }
 
     /*Header*/
@@ -1976,6 +1987,13 @@
         margin: 0 auto !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        .menu-logo {
+            margin-right: 0;
+            .level-top {
+                overflow-y: hidden;
+                margin-bottom: -10px;
+            }
+        }
     }
     .cms-index-index {
         .panel.header,
@@ -3059,8 +3077,10 @@
     /*checkout page*/
 
     .navigation ul {
-        padding: 16px 0;
-        background: #f95318;
+        /*padding: 16px 0;*/
+        padding: 0;
+        /*background: #f95318;*/
+        background: #fff;
     }
 
     .page-header {
@@ -3068,7 +3088,7 @@
         margin-bottom: 0;
 
         .panel.wrapper {
-            border-bottom: 1px solid @secondary__color;
+            /*border-bottom: 1px solid @secondary__color;*/
             .lib-css(background-color, @header-panel__background-color);
         }
 
@@ -3174,6 +3194,7 @@
     .header {
         &.panel {
             > .header.links {
+                display: none;
                 .lib-list-inline();
                 float: left;
                 margin-left: auto;
@@ -3345,8 +3366,8 @@
         color: #fff;
     }
     .level-top .ui-corner-all span img{
-        margin-bottom: -46px;
-        margin-top: -25px;
+        margin-bottom: -38px;
+        /*margin-top: -25px;*/
     }
     /*.page-header .switcher .options .action.toggle, .page-footer .switcher .options .action.toggle{
         color: grey;
