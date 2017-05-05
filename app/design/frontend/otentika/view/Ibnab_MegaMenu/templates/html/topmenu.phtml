@@ -113,6 +113,53 @@ if(!($logo->isHomePage())){
                         <span><?php echo __("Offers"); ?></span>
                     </a>
                 </li>
+                <!-- Search block in menu -->
+                <?php
+                    $helper = $this->helper('Magento\Search\Helper\Data');
+                ?>
+                <li class="menu-search">
+                    <?php
+                        $searchBlock = $objectManager->get('\Magento\Framework\View\Element\Template');
+                    ?>
+                    <div class="block block-search">
+                      <div class="block block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong></div>
+                      <div class="block block-content">
+                          <form class="form minisearch" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
+                              <div class="field search">
+                                  <label class="label" for="search" data-role="minisearch-label">
+                                      <span><?php /* @escapeNotVerified */ echo __('Search'); ?></span>
+                                  </label>
+                                  <div class="control">
+                                      <input id="search"
+                                             data-mage-init='{"quickSearch":{
+                                                  "formSelector":"#search_mini_form",
+                                                  "url":"<?php /* @escapeNotVerified */ echo $searchBlock->getUrl('search/ajax/suggest', ['_secure' => $searchBlock->getRequest()->isSecure()]); ?>",
+                                                  "destinationSelector":"#search_autocomplete"}
+                                             }'
+                                             type="text"
+                                             name="<?php /* @escapeNotVerified */ echo $helper->getQueryParamName() ?>"
+                                             value="<?php /* @escapeNotVerified */ echo $helper->getEscapedQueryText() ?>"
+                                             class="input-text"
+                                             maxlength="<?php /* @escapeNotVerified */ echo $helper->getMaxQueryLength();?>"
+                                             role="combobox"
+                                             aria-haspopup="false"
+                                             aria-autocomplete="both"
+                                             autocomplete="off"/>
+                                      <div id="search_autocomplete" class="search-autocomplete"></div>
+                                      <?php echo $searchBlock->getChildHtml() ?>
+                                  </div>
+                              </div>
+                              <div class="actions">
+                                  <button type="submit"
+                                          title="<?php echo $searchBlock->escapeHtml(__('Search')) ?>"
+                                          class="action search">
+                                      <span><?php /* @escapeNotVerified */ echo __('Search'); ?></span>
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
+                    </div>
+                </li>
             </ul>
         </div>
         <ul id="dm" data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>

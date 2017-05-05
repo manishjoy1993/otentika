@@ -9,6 +9,7 @@
 <?php
 /** @var $block \Magento\Framework\View\Element\Template */
 /** @var $helper \Magento\Search\Helper\Data */
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
 $helper = $this->helper('Magento\Search\Helper\Data');
 ?>
 <div class="minicart-search">
@@ -83,10 +84,40 @@ $helper = $this->helper('Magento\Search\Helper\Data');
               }
 
           </script> -->
- 
+          <?php
+            $authBlock = $objectManager->get('\Magento\Customer\Block\Account\AuthorizationLink');
+            if(!($authBlock->isLoggedIn())) {
+              ?>
+              <li style="display: inline;" class="link wishlist authorization-link" data-bind="scope: 'wishlist'">
+                  <a title="<?php echo __('Login'); ?>" href="<?php /* @escapeNotVerified */ echo $block->getUrl('customer/account/login') ?>">
+                    <?php echo $block->escapeHtml('Login'); ?>
+                  </a>
+              </li>
+              <li style="display: inline;" class="link wishlist registration-link" data-bind="scope: 'wishlist'">
+                  <a title="<?php echo __('Sign Up'); ?>" href="<?php /* @escapeNotVerified */ echo $block->getUrl('customer/account/create') ?>">
+                    <?php echo $block->escapeHtml('SIGN UP'); ?>
+                  </a>
+              </li>
+              
+              <?php
+            } else {
+              ?>
+              <li style="display: inline;" class="link wishlist logout-link" data-bind="scope: 'wishlist'">
+                  <a title="<?php echo __('Logout'); ?>" href="<?php /* @escapeNotVerified */ echo $block->getUrl('customer/account/logout') ?>">
+                    <?php echo $block->escapeHtml('Logout'); ?>
+                  </a>
+              </li>
+              <li style="display: inline;" class="link wishlist account-link" data-bind="scope: 'wishlist'">
+                  <a title="<?php echo __('Dashboard'); ?>" href="<?php /* @escapeNotVerified */ echo $block->getUrl('customer/account') ?>">
+                    <?php echo $block->escapeHtml('Account'); ?>
+                  </a>
+              </li>
+              
+              <?php
+            }
 
-
-  <div class="block block-search">
+          ?>
+  <!-- <div class="block block-search">
       <div class="block block-title"><strong><?php /* @escapeNotVerified */ echo __('Search'); ?></strong></div>
       <div class="block block-content">
           <form class="form minisearch" id="search_mini_form" action="<?php /* @escapeNotVerified */ echo $helper->getResultUrl() ?>" method="get">
@@ -123,7 +154,7 @@ $helper = $this->helper('Magento\Search\Helper\Data');
               </div>
           </form>
       </div>
-  </div>
+  </div> -->
 
 </div>
 
