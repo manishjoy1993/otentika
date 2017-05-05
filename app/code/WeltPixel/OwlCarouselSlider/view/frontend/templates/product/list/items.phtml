@@ -99,7 +99,7 @@ switch ($type = $block->getType()) {
             $showWishlist = $displaySocial['display_wishlist'];
             $showCompare = $displaySocial['display_compare'];
             $showCart = false;
-            $templateType = null;
+            $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
             $description = false;
             $canItemsAddToCart = false;
         }
@@ -180,7 +180,7 @@ switch ($type = $block->getType()) {
         <?php else: ?>
         <div class="block <?php /* @escapeNotVerified */ echo $class; ?>">
             <?php endif; ?>
-            <h3 class="block-title title">
+            <h3 class="block-title title <?php if($type == 'upsell'){ echo 'upsell-title'; } ?>">
                 <span id="block-<?php /* @escapeNotVerified */ echo $class?>-heading" role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo $title; ?></span>
             </h3>
             <div class="block-content content" aria-labelledby="block-<?php /* @escapeNotVerified */ echo $class?>-heading">
