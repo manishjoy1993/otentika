@@ -25,7 +25,7 @@
         <input type="hidden" name="error_url" value="<?php /* @escapeNotVerified */ echo $block->getErrorUrl() ?>">
         <div class="mainContainer">
             <div class="leftPart">
-             <span class="joingUsTitle"><?php /* @escapeNotVerified */ echo __('GLAD YOU ARE JOINING US :)') ?></span>
+             <div class="joingUsTitle"><span><?php /* @escapeNotVerified */ echo __('GLAD YOU ARE JOINING US :)') ?></span><!-- <span class="smiley">&#x263A;</span> --></div>
             <?php echo $block->getLayout()->createBlock('Magento\Customer\Block\Widget\Name')->setObject($block->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
              <fieldset class="fieldset create account" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
         <br>
@@ -46,12 +46,16 @@
                        data-validate="{required:true, 'validate-customer-password':true}"
                        autocomplete="off" placeholder="Password *">
             </div>
+            
+
+        </div>
+        <div class="checkboxes">
             <div id="show-me-my-password" data-role="password-strength-meter" >
                     <input type="checkbox" name="showPassword" class="showPass">
                     <span>show me my password</span>
             </div>
             <div id="termsConditon" data-role="password-strength-meter" >
-                    <input type="checkbox" name="showPassword" class="showPass">
+                    <input type="checkbox" name="terms_agree" class="showPass">
                     <span>I have read and agree to <a href="#"> TERMS & CONDITION</a> AND <a href="#"> PRIVACY POLICY</a> of otentika.com </span>
             </div>
             <?php if ($block->isNewsletterEnabled()): ?>
@@ -61,8 +65,7 @@
             </div>
             <?php /* Extensions placeholder */ ?>
             <?php echo $block->getChildHtml('customer.form.register.newsletter')?>
-        <?php endif ?>
-
+            <?php endif ?>
         </div>
         <div class="field confirmation required">
             <label for="password-confirmation" class="label"><span><?php /* @escapeNotVerified */ echo __('Confirm Password') ?></span></label>
@@ -94,16 +97,14 @@
                         By joining the Smashcash Rewards Program, you agree to receive Smashcash emails and you accept the Smashcash emails and you accept the Smashcash <a href="#">TERMS & CONDITIONS</a> ,and to be bound by the <a href="#">TERMS & CONDITIONS</a> and <a href="#">PRIVACY POLICY </a> for this website.
                     </span>
             </div>
-            
-            
+            </div>
             <div class="actions-toolbar">
-        <div class="primary">
-            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Create an Account') ?>"><span><?php /* @escapeNotVerified */ echo __('SIGN ME UP PLEASE!') ?></span></button>
-        </div>
-        <div class="secondary">
-            <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('Back') ?></span></a>
-        </div>
-    </div>
+                <div class="primary">
+                    <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Create an Account') ?>"><span><?php /* @escapeNotVerified */ echo __('SIGN ME UP PLEASE!') ?></span></button>
+                </div>
+                <div class="secondary">
+                    <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"><span><?php /* @escapeNotVerified */ echo __('Back') ?></span></a>
+                </div>
             </div>
         </div>
         
@@ -231,6 +232,17 @@ require([
     <?php endif ?>
     }).find('input:text').attr('autocomplete', 'off');
 
+    $("input[name='password']").keyup(function(){
+        $("input[name='password_confirmation']").val($(this).val());
+    });
+    $("input[name='showPassword']").change(function(){
+        if($(this).is(":checked")){
+            $("input[name='password']").attr('type', 'text');
+        } else {
+            $("input[name='password']").attr('type', 'password');
+        }
+    });
+
 });
 </script>
 <?php if ($block->getShowAddressFields()): ?>
@@ -255,193 +267,234 @@ require([
 
 
 <style type="text/css">
-    
-/*    .field.field-name-firstname{
-        float: left;
-        }*/
-        .form.create.account.form-create-account{
-            width: 100%;
-        }
-         .leftPart{
-                width: 42.5%;
-            display: inline-block;
-        }
-        .rightPart{
-             width: 49.5%;
-            display: inline-block;
-                float: right;
-        }
-        .field.confirmation.required{
-            display: none;
-        }
+input::-webkit-input-placeholder {
+  opacity: 1;
+}
+input:-moz-placeholder {
+  /* Firefox 18- */
+  opacity: 1;
+}
+input::-webkit-placeholder {
+  opacity: 1;
+}
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 1;
+}
+input:-ms-input-placeholder {
+  opacity: 1;
+}
 
-        #show-me-my-password{
-                margin-top: 6px;
-        }
-        #termsConditon{
-                margin-top: 20px;
-        }
-        .field.choice.newsletter{
-            margin-top: 6px;
-        }
-        .page-main{
-            box-sizing: border-box;
-            max-width: 100%;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        /*.fieldset.create.info legend{
-           
-        }*/
-        .mainContainer{
-            margin: 0px auto;
-            width: 92%;
-        }
-        
-        .joingUsTitle{
-          font-size: 31px;
-    margin-bottom: 0px;
-    color: rgba(0, 0, 0, 0.73);
-    font-weight: 300;
-        }
-       .page-title{
-            display: none !important;
-        }
-        .cxName{
-
-    margin-top: 45px;
-        }
-        /*.page-title-wrapper{
-                border-bottom: 4px solid #f95318;
-        }*/
-    
-        
-
-        .mainContainer{
-            margin-top: 95px;
-        }
-        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #000;
+.page-title{
+    display: none !important;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:    #000000;
-   opacity:  0;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color:    #000;
-   opacity:  0;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color:    #000;
-}
-.form-create-account input{
-    text-align: center;
-}
-.rightTitle{
-    font-size: 31px;
-        color: rgba(0, 0, 0, 0.73);
-    font-weight: 300;
-    margin-bottom: 50px;
-    width: 96%;
-    margin: 0px auto;
-}
-#termsConditon span{
-    width: 395px;
-    display: inline-block;
-    vertical-align: top;
-}
-.field.choice.newsletter span{
-     width: 395px;
-    display: inline-block;
-    vertical-align: top;
-}
-#rightSideCheckbox span{
-     width: 445px;
-    display: inline-block;
-    vertical-align: top;   
-}
-.field.date.field-dob{
-       margin-top: 29px;
-    margin-bottom: 42px;
-}
-#rightSideCheckbox{
-    margin-bottom:32px; 
-}
-.action.submit.primary{
-        border-radius: 0;
-            padding: 12px 40px;
-}
-.actions-toolbar{
-    width: 352px;
-    margin: 0px auto;
-}
-.control.customer-dob{
-    width: 68%;
-}
-.field.date.field-dob span{
+.field.confirmation.required{
     display: none;
 }
-.leftPart input[type="text"]{
-   height: 42px;
-    border: 2px solid lightgray;
-}
-.leftPart input[type="email"]{
-   height: 42px;
-    border: 2px solid lightgray;
-}
-.leftPart input[type="password"]{
-   height: 42px;
-    border: 2px solid lightgray;
-}
-.rightSecondTitle{
-    width: 60%;
-    margin-top: 33px;
-}
-.rightSecondTitle span{
-    font-size: 17px;
+.field.date.field-dob span{
+    /*display: none;*/
 }
 
-.field.date.field-dob input[type="text"]{
-    height: 42px; 
-     border: 2px solid lightgray; 
-}
-#rightSideCheckbox span{
+    @media(min-width: 768px) {
+                .form.create.account.form-create-account{
+                width: 100%;
+            }
+             .leftPart{
+                    width: 42.5%;
+                display: inline-block;
+            }
+            .rightPart{
+                 width: 49.5%;
+                display: inline-block;
+                    float: right;
+            }
+
+
+            #show-me-my-password{
+                    margin-top: 6px;
+            }
+            #termsConditon{
+                    margin-top: 20px;
+            }
+            .field.choice.newsletter{
+                margin-top: 6px;
+            }
+            .page-main{
+                box-sizing: border-box;
+                max-width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            /*.fieldset.create.info legend{
+               
+            }*/
+            .mainContainer{
+                margin: 0px auto;
+                /*width: 92%;*/
+                max-width: 1060px;
+            }
+            
+
+            .cxName{
+
+        margin-top: 45px;
+            }
+            /*.page-title-wrapper{
+                    border-bottom: 4px solid #f95318;
+            }*/
+        
+            
+
+            .mainContainer{
+                margin-top: 95px;
+            }
+       /*     ::-webkit-input-placeholder { 
+        color:    #000;
+    }*/
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color:    #000000;
+       opacity:  0;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color:    #000;
+       opacity:  0;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color:    #000;
+    }
+    /*.form-create-account input{
+        text-align: center;
+    }*/
+    .joingUsTitle{
+        font-size: 31px;
+        margin-bottom: 0px;
+        color: rgba(0, 0, 0, 0.73);
+        font-weight: 300;
+        text-align: center;
+    }
+    .rightTitle{
+        font-size: 31px;
+        color: rgba(0, 0, 0, 0.73);
+        font-weight: 300;
+        /*margin-bottom: 50px;*/
+        /*width: 96%;*/
+        text-align: center;
+        /*margin: 0px auto;*/
+    }
+    #termsConditon span{
+        /*width: 395px;*/
+        /*display: inline-block;*/
+        vertical-align: top;
+    }
+    .field.choice.newsletter span{
+         /*width: 395px;*/
+        /*display: inline-block;*/
+        vertical-align: top;
+    }
+    #rightSideCheckbox span{
+         /*width: 445px;*/
+        /*display: inline-block;*/
+        vertical-align: top;   
+    }
+    .field.date.field-dob{
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+    #rightSideCheckbox{
+        margin-bottom:32px; 
+    }
+    .action.submit.primary{
+            border-radius: 0;
+                padding: 12px 40px;
+    }
+    .actions-toolbar{
+        width: 352px;
+        margin: 0px auto;
+    }
+    /*.control.customer-dob{
+        width: 68%;
+    }*/
+
+    .leftPart input[type="text"]{
+       height: 42px;
+        border: 2px solid lightgray;
+    }
+    .leftPart input[type="email"]{
+       height: 42px;
+        border: 2px solid lightgray;
+    }
+    .leftPart input[type="password"]{
+       height: 42px;
+        border: 2px solid lightgray;
+    }
+    .rightSecondTitle{
+        /*width: 60%;*/
+        text-align: center;
+        margin-top: 33px;
+    }
+    .rightSecondTitle span{
+        font-size: 17px;
+    }
+
+    .field.date.field-dob input[type="text"]{
+        height: 42px; 
+         border: 2px solid lightgray; 
+    }
+    #rightSideCheckbox span{
+            color: grey;
+    }
+    #rightSideCheckbox a{
+            text-decoration: underline #000;
         color: grey;
-}
-#rightSideCheckbox a{
-        text-decoration: underline #000;
-    color: grey;
-}
+    }
 
-#termsConditon a{
-    text-decoration: underline grey;
+    #termsConditon a{
+        text-decoration: underline grey;
 
+    }
+    .titleBirthDay{
+        display: block !important;
+        font-weight: 600;
+        font-size: 19px;
+        float: left;
+        margin-right: 10px;
+    }
+    .control.customer-dob input{
+        width: 52% !important;
+    }
+    .actions-toolbar{
+        text-align: center;
+    }
+    .actions-toolbar .primary {
+        float: none;
+    }
+    .actions-toolbar .primary .action.primary {
+        margin: 0;
+    }
 }
-.titleBirthDay{
-    display: block !important;
-    font-weight: 600;
-    font-size: 19px;
-    float: left;
-    margin-right: 10px;
-}
-.control.customer-dob input{
-    width: 52% !important;
-}
-
-
-.input-text.required-entry::-webkit-input-placeholder {
-    color: black;
-    font-weight: 600;
-    font-size: 19px;
-}
-#email_address::-webkit-input-placeholder {
-    color: black;
-    font-weight: 600;
-    font-size: 19px;
-}
-#password::-webkit-input-placeholder {
-    color: black;
-    font-weight: 600;
-    font-size: 19px;
+@media (max-width: 767px) {
+    .joingUsTitle{
+        font-size: 24px;
+        margin-bottom: 0px;
+        color: rgba(0, 0, 0, 0.73);
+        font-weight: 300;
+        text-align: center;
+    }
+    .rightTitle{
+        font-size: 24px;
+        color: rgba(0, 0, 0, 0.73);
+        font-weight: 300;
+        text-align: center;
+    }
+    .rightSecondTitle {
+        margin: 10px auto;
+        text-align: center;
+    }
+    .cxName {
+        margin-top: 15px;
+    }
+    #rightSideCheckbox {
+        margin: 15px auto;
+    }
 }
 </style>

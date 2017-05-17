@@ -36,9 +36,9 @@ $fieldCssClass = 'field date field-' . $block->getHtmlId();
 $fieldCssClass .= $block->isRequired() ? ' required' : '';
 ?>
 <div class="<?php /* @escapeNotVerified */ echo $fieldCssClass; ?>">
-    <label class="label" for="<?php echo $block->getHtmlId()?>"><span><?php /* @escapeNotVerified */ echo $block->getLabel() ?></span></label>
+    <label class="label" for="<?php echo $block->getHtmlId()?>"><span><?php echo __('BIRTHDATE'); /* @escapeNotVerified */ //echo $block->getLabel() ?></span></label>
     <div class="control customer-dob">
-    <span class="titleBirthDay">BIRTHDATE</span>
+    <!-- <span class="titleBirthDay">BIRTHDATE</span> -->
         <?php echo $block->getFieldHtml(); ?>
         <?php if ($_message = $block->getAdditionalDescription()) : ?>
             <div class="note"><?php /* @escapeNotVerified */ echo $_message; ?></div>
