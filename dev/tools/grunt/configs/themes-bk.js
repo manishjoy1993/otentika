@@ -41,36 +41,6 @@ module.exports = {
         ],
         dsl: 'less'
     },
-    view: {
-        area: 'frontend',
-        name: 'otentika/view',
-        locale: 'en_US',
-        files: [
-            'css/styles-m',
-            'css/styles-l'
-        ],
-        dsl: 'less'
-    },
-    fchild: {
-        area: 'frontend',
-        name: 'Otentika/FChild',
-        locale: 'en_US',
-        files: [
-            'css/styles-m',
-            'css/styles-l'
-        ],
-        dsl: 'less'
-    },
-    schild: {
-        area: 'frontend',
-        name: 'Otentika/SChild',
-        locale: 'en_US',
-        files: [
-            'css/styles-m',
-            'css/styles-l'
-        ],
-        dsl: 'less'
-    },
     backend: {
         area: 'adminhtml',
         name: 'Magento/backend',
