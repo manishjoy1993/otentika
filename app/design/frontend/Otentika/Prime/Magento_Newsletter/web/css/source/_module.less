@@ -1,0 +1,109 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //  Newsletter subscription
+    .block.newsletter {
+        margin-bottom: 20px;
+        h2{
+            padding-left: 30px;
+            color: #878787;
+            font-size: 22px;
+            font-weight: normal;
+                margin-bottom: 30px;
+        }
+        h4{
+            padding-left: 30px;
+            color: #878787;
+            font-weight: normal;
+            margin-bottom: 70px;
+            line-height: 26px;
+        }
+
+        .form.subscribe {
+            display: table;
+            width: 78%;
+            margin-left: 46px;
+        }
+
+        .fieldset {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .field {
+            margin: 0;
+
+            .control {
+                .lib-icon-font(
+                @icon-envelope,
+                @_icon-font-size: 16px,
+                @_icon-font-line-height: 32px,
+                @_icon-font-color: @form-element-input-placeholder__color,
+                @_icon-font-margin: 0 0 0 8px
+                );
+
+                &:before {
+                    position: absolute;
+                    display:none;
+                }
+
+                display: block;
+            }
+        }
+
+        input {
+            height: 45px;
+            margin-left: -16px;
+            background: #191919;
+            border: 1px solid rgba(135, 135, 135, 0.5);
+            width: 250px;
+            margin-right: 25px;
+        }
+
+        .title {
+            display: block;
+            margin-left: 30px;
+            text-transform: uppercase;
+            color: #efefef;
+        }
+
+        .label {
+            &:extend(.abs-visually-hidden all);
+        }
+
+        .actions {
+            display: table-cell;
+            vertical-align: top;
+            width: 1%;
+        }
+
+        .action.subscribe {
+               border-radius: 0;
+                margin-left: -1px;
+                height: 45px;
+                padding-left: 35px;
+                padding-right: 35px;
+                text-transform: uppercase;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        width: 34%;
+    }
+}

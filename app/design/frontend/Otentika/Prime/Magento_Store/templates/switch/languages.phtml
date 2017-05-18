@@ -1,0 +1,88 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Language switcher template
+ */
+
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$appState = $objectManager->get('\Magento\Framework\App\State');
+
+?>
+
+<?php if (count($block->getStores())>1): ?>
+<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+<div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>">
+    <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Language') ?></span></strong>
+    <div class="actions dropdown options switcher-options">
+        <div class="action toggle switcher-trigger" id="switcher-language-trigger<?php /* @escapeNotVerified */ echo $id?>">
+            <strong class="view-<?php echo $block->escapeHtml($block->getCurrentStoreCode()) ?>">
+                <span><?php echo $block->escapeHtml($block->getStoreName()) ?></span>
+            </strong>
+        </div>
+        <ul class="dropdown switcher-dropdown"
+            data-mage-init='{"dropdownDialog":{
+                "appendTo":"#switcher-language<?php /* @escapeNotVerified */ echo $id ?> > .options",
+                "triggerTarget":"#switcher-language-trigger<?php /* @escapeNotVerified */ echo $id ?>",
+                "closeOnMouseLeave": false,
+                "triggerClass":"active",
+                "parentClass":"active",
+                "buttons":null}}'>
+            <?php foreach ($block->getStores() as $_lang): ?>
+                <?php if ($_lang->getId() != $block->getCurrentStoreId()): ?>
+                    <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> switcher-option">
+                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>'>
+                            <?php echo $block->escapeHtml($_lang->getName()) ?></a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>
+
+<?php
+/**
+ * Currency switcher
+ *
+ * @see \Magento\Directory\Block\Currency
+ */
+$block = $objectManager->get('\Magento\Directory\Block\Currency');
+?>
+<?php if ($block->getCurrencyCount() > 1): ?>
+<?php $currencies = $block->getCurrencies(); ?>
+<?php $currentCurrencyCode = $block->getCurrentCurrencyCode(); ?>
+<?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+<div class="switcher currency switcher-currency" id="switcher-currency<?php /* @escapeNotVerified */ echo $id?>">
+    <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Currency') ?></span></strong>
+    <div class="actions dropdown options switcher-options">
+        <div class="action toggle switcher-trigger" id="switcher-currency-trigger<?php /* @escapeNotVerified */ echo $id?>">
+            <strong class="language-<?php echo $block->escapeHtml($block->getCurrentCurrencyCode()) ?>">
+                <span><?php echo $block->escapeHtml($currentCurrencyCode) ?> - <?php echo @$block->escapeHtml($currencies[$currentCurrencyCode]) ?></span>
+            </strong>
+        </div>
+        <ul class="dropdown switcher-dropdown" data-mage-init='{"dropdownDialog":{
+            "appendTo":"#switcher-currency<?php /* @escapeNotVerified */ echo $id?> > .options",
+            "triggerTarget":"#switcher-currency-trigger<?php /* @escapeNotVerified */ echo $id?>",
+            "closeOnMouseLeave": false,
+            "triggerClass":"active",
+            "parentClass":"active",
+            "buttons":null}}'>
+            <?php foreach ($currencies as $_code => $_name): ?>
+                <?php if ($_code != $currentCurrencyCode): ?>
+                    <li class="currency-<?php /* @escapeNotVerified */ echo $_code ?> switcher-option">
+                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getSwitchCurrencyPostData($_code); ?>'><?php /* @escapeNotVerified */ echo $_code ?> - <?php /* @escapeNotVerified */ echo $_name ?></a>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<?php endif; ?>
