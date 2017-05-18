@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="footer_links" remove="true" />
+        <!-- <referenceBlock name="store_language" remove="true" /> -->
+
+        <referenceContainer name="footer">
+             <block class="Magento\Theme\Block\Html\Footer" name="footer.link" after="subscribe" template="Magento_Theme::html/footer.phtml"/>
+
+            <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="footer-container" template="subscribe.phtml"/>
+            <block class="Magento\Cms\Block\Block" name="Promo">
+		    <arguments>
+		        <argument name="block_id" xsi:type="string">body_content</argument>
+		    </arguments>
+		</block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <container name="otentika.header" after="top.links">
+                
+            </container>
+        </referenceContainer>
+        <move element="form.subscribe" destination="footer-container" />
+        <move element="top.search" destination="header.panel" />
+        <move element="minicart" destination="header.panel"  />
+        <move element="store_switcher" destination="otentika.header"  />
+        <move element="store_language" destination="otentika.header"  />
+         <move element="otentika.header" destination="header.panel" />
+         <referenceBlock name="top.search" after="minicart" />
+
+            <!-- <move element="wish-list-link" destination="header.panel" /> -->
+
+        <move element="Promo" destination="content" />
+        <!-- <move element="copyright" destination="footer-container" /> -->
+
+
+
+
+    </body>
+</page>
+
+

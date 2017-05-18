@@ -65,30 +65,6 @@
 & when (@media-common = true) {
     body {
         .lib-css(background-color, @page__background-color);
-        &.account {
-            .column.main .block:not(.widget) .block-title {
-                border-bottom: 1px solid #f95318;
-            }
-            .table-wrapper {
-                border-bottom: 1px solid #f95318;;
-            }
-        }
-    }
-
-    //Banner Offer
-    .header-offer-container {
-        background: @header-link-hover-orange;
-        .content {
-            color: #fff;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 10px;
-        }
-    }
-    .checkout-index-index {
-        .header-offer-container {
-            display: none;
-        }
     }
 
     //  ToDo UI: move it directly to .page-wrapper (now it doesn't appear in mediaquery cuz of size of css)
@@ -208,8 +184,7 @@
             width: 23px;
             margin: -12px 10px -12px 20px;
             &.checkout-link {
-                margin: 8px 10px -12px 15px;
-                -webkit-margin-before: -12px;
+                margin: -12px 10px -12px 15px;
             }
             img{
                 height: 17px;
@@ -498,12 +473,6 @@
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
-    }
-
-    
-    //Banner Offer
-    .header-offer-container {
-        background: #191919;
     }
 
     .nav-sections .switcher-trigger strong:after {
@@ -1903,7 +1872,6 @@
         margin-bottom: 13px;
         margin-top: 4px;
     }
-
 }
 
 //
@@ -3091,7 +3059,7 @@
             }
             .lib-vendor-prefix-order(1);
             &:last-child {
-                margin-right: 10px;
+                margin-right: 0;
             }
         }
     }
@@ -3364,17 +3332,13 @@
         left: 121px;
     }*/
     .switcher.language.switcher-language{
-        /*float: left;*/
+        float: left;
         position: relative;
         /*left: 113px;*/
-        /*padding-left: 25px;*/
+        padding-left: 25px;
         @media (min-width: 768px) and (max-width: 860px) {
             padding-left: 15px;
         }
-    }
-    .switcher.store.switcher-store {
-        padding-left: 25px;
-        float: left;
     }
 
     .header.content{
