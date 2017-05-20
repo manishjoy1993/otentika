@@ -17,7 +17,7 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
 
 ?>
 <div class="toolbar-sorter sorter">
-    <label class="sorter-label" for="sorter"><?php /* @escapeNotVerified */ echo __('Sort By') ?>&nbsp;&nbsp;:&nbsp;&nbsp;</label>
+    <!-- <label class="sorter-label" for="sorter"><?php /* @escapeNotVerified */ echo __('Sort By') ?>&nbsp;&nbsp;:&nbsp;&nbsp;</label> -->
     <div class="catalog-sorter sorter-options">
         <?php foreach ($block->getAvailableOrders() as $_key => $_order): ?>
             <div class="sorter-options">
@@ -25,16 +25,16 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
                     if ($block->isOrderCurrent($_key)) {
                         if ($block->getCurrentDirection() == 'desc'){
                             ?>
-                            <a title="<?php echo __('Sort by %1 in ascending order', $_order) ?>" class="current ascending-sorter" href="?product_list_order=<?php echo $_key ?>&product_list_dir=asc"><?php echo $block->escapeHtml(__($_order)) ?></a>
+                            <a title="<?php echo __('Sort by %1 - Low to High', $_order) ?>" class="current ascending-sorter" href="?product_list_order=<?php echo $_key ?>&product_list_dir=asc"><?php echo $block->escapeHtml(__($_order)) ?></a>
                             <?php
                         } else{
                             ?>
-                            <a title="<?php echo __('Sort by %1 in descending order', $_order) ?>" class="current descending-sorter" href="?product_list_order=<?php echo $_key ?>&product_list_dir=desc"><?php echo $block->escapeHtml(__($_order)) ?></a>
+                            <a title="<?php echo __('Sort by %1 - High to Low', $_order) ?>" class="current descending-sorter" href="?product_list_order=<?php echo $_key ?>&product_list_dir=desc"><?php echo $block->escapeHtml(__($_order)) ?></a>
                             <?php
                         }
                     } else{
                         ?>
-                        <a title="<?php echo __('Sort by %1 in descending order', $_order) ?>" class="descending-sorter" href="?product_list_order=<?php echo $_key ?>&product_list_dir=desc"><?php echo $block->escapeHtml(__($_order)) ?></a>
+                        <a title="<?php echo __('Sort by %1 - High to Low', $_order) ?>" class="descending-sorter" href="?product_list_order=<?php echo $_key ?>&product_list_dir=desc"><?php echo $block->escapeHtml(__($_order)) ?></a>
                         <?php
                     }
                 ?>

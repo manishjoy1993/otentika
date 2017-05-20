@@ -43,10 +43,12 @@
                         </div>
                         <div class="filter-options" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false}}'>
                     <?php  $wrapOptions = true; endif; ?>
-                    <div class="filter-options-item">
-                        <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __($filter->getName()) ?></div>
-                        <div data-role="content" class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></div>
-                    </div>
+                    <?php if($filter->getName() != 'Price') { ?>
+                        <div class="filter-options-item">
+                            <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __($filter->getName()) ?></div>
+                            <div data-role="content" class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></div>
+                        </div>
+                    <?php } ?>
                 <?php endif; ?>
             <?php endforeach; ?>
             <?php if ($wrapOptions): ?>
