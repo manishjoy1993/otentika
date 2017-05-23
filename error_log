@@ -1,37 +1,80 @@
-[02-Dec-2016 12:23:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+[04-May-2017 14:02:41 UTC] PHP Fatal error:  Uncaught Zend_Cache_Exception: cache_dir "/home/owebcom/public_html/var/cache/" is not writable in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php:209
 Stack trace:
-#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
-#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
-#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
-#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
-#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
-[02-Dec-2016 12:24:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+#0 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache/Backend/File.php(180): Zend_Cache::throwException('cache_dir "/hom...')
+#1 /home/owebcom/public_html/vendor/colinmollenhour/cache-backend-file/File.php(87): Zend_Cache_Backend_File->setCacheDir('/home/owebcom/p...')
+#2 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(153): Cm_Cache_Backend_File->__construct(Array)
+#3 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(94): Zend_Cache::_makeBackend('Cm_Cache_Backen...', Array, true, true)
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/App/Cache/Frontend/Factory.php(155): Zend_Cache::factory('Magento\\Framewo...', 'Cm_Cache_Backen...', Array, Array, true, true, true)
+#5 /home/owebcom/public_html/lib/internal/Magento/Framewor in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php on line 209
+[04-May-2017 14:02:42 UTC] PHP Fatal error:  Uncaught Zend_Cache_Exception: cache_dir "/home/owebcom/public_html/var/cache/" is not writable in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php:209
 Stack trace:
-#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
-#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
-#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
-#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
-#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
-[02-Dec-2016 12:29:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+#0 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache/Backend/File.php(180): Zend_Cache::throwException('cache_dir "/hom...')
+#1 /home/owebcom/public_html/vendor/colinmollenhour/cache-backend-file/File.php(87): Zend_Cache_Backend_File->setCacheDir('/home/owebcom/p...')
+#2 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(153): Cm_Cache_Backend_File->__construct(Array)
+#3 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(94): Zend_Cache::_makeBackend('Cm_Cache_Backen...', Array, true, true)
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/App/Cache/Frontend/Factory.php(155): Zend_Cache::factory('Magento\\Framewo...', 'Cm_Cache_Backen...', Array, Array, true, true, true)
+#5 /home/owebcom/public_html/lib/internal/Magento/Framewor in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php on line 209
+[04-May-2017 14:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
 Stack trace:
-#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
-#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
-#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
-#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
-#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
-[02-Dec-2016 12:41:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[04-May-2017 14:03:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
 Stack trace:
-#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
-#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
-#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
-#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
-#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
-[02-Dec-2016 12:41:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Magento\Setup\Module\DataSetup::create() in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php:46
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[04-May-2017 14:03:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
 Stack trace:
-#0 /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php(35): Mageplaza\Seo\Setup\UpgradeSchema->_addRobotsAttribute(Object(Magento\Setup\Module\Setup))
-#1 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(849): Mageplaza\Seo\Setup\UpgradeSchema->upgrade(Object(Magento\Setup\Module\Setup), Object(Magento\Setup\Model\ModuleContext))
-#2 /home/owebcom/public_html/setup/src/Magento/Setup/Model/Installer.php(779): Magento\Setup\Model\Installer->handleDBSchemaData(Object(Magento\Setup\Module\Setup), 'schema')
-#3 /home/owebcom/public_html/setup/src/Magento/Setup/Console/Command/UpgradeCommand.php(73): Magento\Setup\Model\Installer->installSchema()
-#4 /home/owebcom/public_html/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(257): Magento\Setup\Console\Command\UpgradeCommand->execute(Obje in /home/owebcom/public_html/app/code/Mageplaza/Seo/Setup/UpgradeSchema.php on line 46
-[07-Dec-2016 06:37:54 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 589824 bytes) in /home/owebcom/public_html/vendor/composer/ClassLoader.php on line 412
-[07-Dec-2016 06:39:28 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 589824 bytes) in /home/owebcom/public_html/vendor/composer/ClassLoader.php on line 412
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[04-May-2017 14:33:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[04-May-2017 14:33:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[04-May-2017 14:34:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[04-May-2017 14:43:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function getFrontendLabel() on boolean in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml:26
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/View/TemplateEngine/Php.php(59): include()
+#1 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(255): Magento\Framework\View\TemplateEngine\Php->render(Object(Magento\Catalog\Block\Product\View\Description), '/home/owebcom/p...', Array)
+#2 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/Template.php(279): Magento\Framework\View\Element\Template->fetchView('/home/owebcom/p...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Element/AbstractBlock.php(659): Magento\Framework\View\Element\Template->_toHtml()
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/View/Layout.php(542): Magento\Framework\View\Element\AbstractBlock->toHtml()
+#5 /home/owebcom/public_html/lib/inter in /home/owebcom/public_html/app/design/frontend/otentika/view/Magento_Catalog/templates/product/view/attribute.phtml on line 26
+[05-May-2017 10:54:35 UTC] PHP Fatal error:  Uncaught Zend_Cache_Exception: cache_dir "/home/owebcom/public_html/var/cache/" is not writable in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php:209
+Stack trace:
+#0 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache/Backend/File.php(180): Zend_Cache::throwException('cache_dir "/hom...')
+#1 /home/owebcom/public_html/vendor/colinmollenhour/cache-backend-file/File.php(87): Zend_Cache_Backend_File->setCacheDir('/home/owebcom/p...')
+#2 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(153): Cm_Cache_Backend_File->__construct(Array)
+#3 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(94): Zend_Cache::_makeBackend('Cm_Cache_Backen...', Array, true, true)
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/App/Cache/Frontend/Factory.php(155): Zend_Cache::factory('Magento\\Framewo...', 'Cm_Cache_Backen...', Array, Array, true, true, true)
+#5 /home/owebcom/public_html/lib/internal/Magento/Framewor in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php on line 209

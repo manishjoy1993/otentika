@@ -11,3 +11,12 @@ Disallow: /*SDI=
 Disallow: /catalog/product_compare/
 Disallow: /catalogsearch/
 Disallow: /wishlist/
+Sitemap: https://otentikaweb.com/sitemap_eu_en.xml
+Sitemap: https://otentikaweb.com/sitemap/en_EU/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/fr_EU/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/en_NG/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/en_SW/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/fr_SW/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/en_UK/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/en_US/sitemap.xml
+Sitemap: https://otentikaweb.com/sitemap/fr_US/sitemap.xml

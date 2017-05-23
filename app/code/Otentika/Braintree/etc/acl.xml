@@ -9,9 +9,9 @@
                         <resource id="Otentika_Braintree::news_delete" title="Delete Braintree" sortOrder="20" />
 					</resource>
                 </resource>
-                <resource id="Otentika_Adminhtml::stores">
-                    <resource id="Otentika_Adminhtml::stores_settings">
-                        <resource id="Otentika_Adminhtml::config">
+                <resource id="Otentika_Adminhtml::stores" title="Braintree">
+                    <resource id="Otentika_Adminhtml::stores_settings" title="Braintree Module">
+                        <resource id="Otentika_Adminhtml::config" title="Configuration">
                             <resource id="Otentika_Braintree::config_braintree" title="Braintree Section" sortOrder="50" />
                         </resource>
                     </resource>
