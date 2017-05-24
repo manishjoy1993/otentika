@@ -5,5 +5,5 @@
     <preference for="Magento\Catalog\Block\Product\ProductList\Toolbar" type="Excellence\Sortby\Block\Rewrite\Catalog\Product\ProductList\Toolbar" />
     <preference for="Magento\Catalog\Model\Config\Source\ListSort" type="Excellence\Sortby\Model\Rewrite\Catalog\Config\Source\ListSort" />
     <preference for="Magento\Catalog\Model\Category\Attribute\Source\Sortby" type="Excellence\Sortby\Model\Rewrite\Catalog\Category\Attribute\Source\Sortby" />
-    <preference for="Magento\Customer\Block\Widget\Dob" type="Excellence\Sortby\Block\Rewrite\Customer\Widget\Dob" />
+    <!-- <preference for="Magento\Customer\Block\Widget\Dob" type="Excellence\Sortby\Block\Rewrite\Customer\Widget\Dob" /> -->
 </config>
