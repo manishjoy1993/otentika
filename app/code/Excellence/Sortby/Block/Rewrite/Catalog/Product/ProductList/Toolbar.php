@@ -31,10 +31,16 @@ class Toolbar extends \Magento\Catalog\Block\Product\ProductList\Toolbar {
                          )
                      ->group('e.entity_id')
                      ->order('qty_ordered ' . $this->getCurrentDirection());
-			} else {
-				$this->_collection->setOrder($this->getCurrentOrder(), $this->getCurrentDirection());
-			}
+					} elseif ($this->getCurrentOrder() == 'price_asc') {
+							$this->_collection->setOrder('price', 'asc');
+					} elseif ($this->getCurrentOrder() == 'price_desc') {
+							$this->_collection->setOrder('price', 'desc');
+					} else {
+						$this->_collection->setOrder($this->getCurrentOrder(), $this->getCurrentDirection());
+					}
         }
+				// echo "<pre>";
+				// print_r($this->_collection->getSelect()->__toString()); die();
         return $this;
     }
 
@@ -48,7 +54,7 @@ class Toolbar extends \Magento\Catalog\Block\Product\ProductList\Toolbar {
         if($this->getCurrentOrder() == 'price' && $this->getRequest()->getParam('product_list_dir') == null) {
             return 'desc';
         }
-        
+
         $dir = $this->_getData('_current_grid_direction');
         if ($dir) {
             return $dir;
