@@ -29,7 +29,15 @@
 
     .catalog-category-view {
         .product-reviews-summary {
-            display: none;
+          float: right;
+          display: inline-block;
+            .rating-summary {
+              margin: 0;
+              margin-top: -7px;
+            }
+            .reviews-actions {
+              display: none;
+            }
         }
     }
     .rating-summary {
@@ -303,7 +311,7 @@
 
     .product-reviews-summary {
         margin-bottom: @indent__xs;
-
+        display: inline-block;
         .products.wrapper.list & {
             margin: 0 auto;
         }
@@ -325,6 +333,9 @@
             .action.view span {
             }
         }
+    }
+    .rating-summary .rating-result > span:before {
+      color: #333333;
     }
 
     .product-info-main,
