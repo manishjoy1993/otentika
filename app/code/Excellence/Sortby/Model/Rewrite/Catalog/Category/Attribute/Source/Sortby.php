@@ -16,8 +16,11 @@ class Sortby extends \Magento\Catalog\Model\Category\Attribute\Source\Sortby {
                     'value' => $attribute['attribute_code'],
                 ];
             }
-            $this->_options[] = ['label' => __('Popularity'), 'value' => 'popularity'];
+          $this->_options[] = ['label' => __('Popularity'), 'value' => 'popularity'];
         	$this->_options[] = ['label' => __('Rating'), 'value' => 'rating_summary'];
+
+					$this->_options[] = ['label' => __('Price (Low to High)'), 'value' => 'price_asc'];
+	        $this->_options[] = ['label' => __('Price (High to Low)'), 'value' => 'price_desc'];
         }
         return $this->_options;
     }

@@ -1,0 +1,16 @@
+<?php
+$currentCategory = $block->getCurrentCategory();
+?>
+<div class="banner-container default">
+  <div class="banner-container-content">
+    <div class="current-category-name">
+      <h2><?php echo $currentCategory->getName(); ?></h2>
+    </div>
+    <div class="clearfix"></div>
+    <div class="category-description">
+      <?php echo $currentCategory->getDescription(); ?>
+    </div>
+  </div>
+
+</div>
+<div class="banner-container-border-bottom"></div>

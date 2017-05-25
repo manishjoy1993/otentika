@@ -18,6 +18,8 @@ class Config extends \Magento\Catalog\Model\Config {
         }
         $options['popularity'] = __('Popularity');
         $options['rating_summary'] = __('Rating');
+				$options['price_asc'] = __('Price (Low to High)');
+				$options['price_desc'] = __('Price (High to Low)');
 
         return $options;
     }
