@@ -20,7 +20,7 @@
 <?php echo $block->getChildHtml('customer.form.register.extra')?>
 <form class="form create account form-create-account" action="<?php /* @escapeNotVerified */ echo $block->getPostActionUrl() ?>" method="post" id="form-validate" enctype="multipart/form-data" autocomplete="off">
     <fieldset class="fieldset create info">
-       
+
         <input type="hidden" name="success_url" value="<?php /* @escapeNotVerified */ echo $block->getSuccessUrl() ?>">
         <input type="hidden" name="error_url" value="<?php /* @escapeNotVerified */ echo $block->getErrorUrl() ?>">
         <div class="mainContainer">
@@ -30,13 +30,13 @@
              <fieldset class="fieldset create account" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
         <br>
         <div class="field required">
-            
+
             <div class="control">
                 <input type="email" name="email" autocomplete="email" id="email_address" value="<?php echo $block->escapeHtml($block->getFormData()->getEmail()) ?>" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" class="input-text" data-validate="{required:true, 'validate-email':true}" placeholder="Email Address *">
             </div>
         </div>
         <div class="field password required" data-mage-init='{"passwordStrengthIndicator": {}}'>
-            
+
             <div class="control">
                 <input type="password" name="password" id="password"
                        title="<?php /* @escapeNotVerified */ echo __('Password') ?>"
@@ -46,7 +46,7 @@
                        data-validate="{required:true, 'validate-customer-password':true}"
                        autocomplete="off" placeholder="Password *">
             </div>
-            
+
 
         </div>
         <div class="checkboxes">
@@ -67,10 +67,10 @@
             <?php echo $block->getChildHtml('customer.form.register.newsletter')?>
             <?php endif ?>
         </div>
-        <div class="field confirmation required">
+        <div class="field confirmation">
             <label for="password-confirmation" class="label"><span><?php /* @escapeNotVerified */ echo __('Confirm Password') ?></span></label>
             <div class="control">
-                <input type="password" name="password_confirmation" title="<?php /* @escapeNotVerified */ echo __('Confirm Password') ?>" id="password-confirmation" class="input-text" data-validate="{required:true, equalTo:'#password'}" autocomplete="off">
+                <input type="password" name="password_confirmation" title="<?php /* @escapeNotVerified */ echo __('Confirm Password') ?>" id="password-confirmation" class="input-text" autocomplete="off">
             </div>
         </div>
         <?php echo $block->getChildHtml('form_additional_info'); ?>
@@ -107,9 +107,9 @@
                 </div>
             </div>
         </div>
-        
 
-        
+
+
 
         <?php $_taxvat = $block->getLayout()->createBlock('Magento\Customer\Block\Widget\Taxvat') ?>
         <?php if ($_taxvat->isEnabled()): ?>
@@ -211,7 +211,7 @@ require([
 
     var dataForm = $('#form-validate');
     var ignore = <?php /* @escapeNotVerified */ echo $_dob->isEnabled() ? '\'input[id$="full"]\'' : 'null'; ?>;
-    
+
     dataForm.mage('validation', {
     <?php if ($_dob->isEnabled()): ?>
         errorPlacement: function(error, element) {
@@ -232,9 +232,9 @@ require([
     <?php endif ?>
     }).find('input:text').attr('autocomplete', 'off');
 
-    $("input[name='password']").keyup(function(){
-        $("input[name='password_confirmation']").val($(this).val());
-    });
+    // $("input[name='password']").keyup(function(){
+    //     $("input[name='password_confirmation']").val($(this).val());
+    // });
     $("input[name='showPassword']").change(function(){
         if($(this).is(":checked")){
             $("input[name='password']").attr('type', 'text');
@@ -288,7 +288,7 @@ input:-ms-input-placeholder {
 .page-title{
     display: none !important;
 }
-.field.confirmation.required{
+.field.confirmation{
     display: none;
 }
 .field.date.field-dob span{
@@ -297,7 +297,7 @@ input:-ms-input-placeholder {
 .ui-datepicker .ui-datepicker-title {
     margin: 0 1.2em;
 }
-.ui-datepicker .ui-datepicker-prev, 
+.ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
     width: 1em;
     /*top: 7px;*/
@@ -335,14 +335,14 @@ input:-ms-input-placeholder {
                 padding-right: 0;
             }
             /*.fieldset.create.info legend{
-               
+
             }*/
             .mainContainer{
                 margin: 0px auto;
                 /*width: 92%;*/
                 max-width: 1060px;
             }
-            
+
 
             .cxName{
 
@@ -351,13 +351,13 @@ input:-ms-input-placeholder {
             /*.page-title-wrapper{
                     border-bottom: 4px solid #f95318;
             }*/
-        
-            
+
+
 
             .mainContainer{
                 margin-top: 95px;
             }
-       /*     ::-webkit-input-placeholder { 
+       /*     ::-webkit-input-placeholder {
         color:    #000;
     }*/
     :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -403,14 +403,14 @@ input:-ms-input-placeholder {
     #rightSideCheckbox span{
          /*width: 445px;*/
         /*display: inline-block;*/
-        vertical-align: top;   
+        vertical-align: top;
     }
     .field.date.field-dob{
         margin-top: 30px;
         margin-bottom: 25px;
     }
     #rightSideCheckbox{
-        margin-bottom:32px; 
+        margin-bottom:32px;
     }
     .action.submit.primary{
             border-radius: 0;
@@ -446,8 +446,8 @@ input:-ms-input-placeholder {
     }
 
     .field.date.field-dob input[type="text"]{
-        height: 42px; 
-         border: 2px solid lightgray; 
+        height: 42px;
+         border: 2px solid lightgray;
     }
     #rightSideCheckbox span{
             color: grey;
