@@ -1,0 +1,9 @@
+<div class="field category-name">
+  <?php
+     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+     $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
+  ?>
+  <label class="label">
+    <?php echo $category->getName(); ?>
+  </label>
+</div>
