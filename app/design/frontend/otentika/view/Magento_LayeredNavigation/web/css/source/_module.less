@@ -10,7 +10,7 @@
 
 & when (@media-common = true) {
     /*Otentika*/
-    
+
     .catalog-category-view{
         .filter{
             & .show-product-number{
@@ -34,6 +34,41 @@
     }
     /*Otentika*/
     .filter {
+        &.category-list-container {
+          margin-top: 105px;
+        }
+        .category-list {
+          background: #EFEFEF;
+          &-item {
+            text-align: center;
+            padding: 35px 0 0 0;
+            line-height: 24px;
+            &:last-child {
+              padding-bottom: 35px;
+            }
+            a {
+              text-decoration: none;
+              &:hover {
+                background: #ccc;
+                color: #000
+              }
+            }
+          }
+          &-title {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            font-style: italic;
+          }
+          &-content {
+            .item {
+              text-align: center;
+              a {
+                color: #000;
+              }
+            }
+          }
+        }
         &.block {
             margin-bottom: 0;
         }
