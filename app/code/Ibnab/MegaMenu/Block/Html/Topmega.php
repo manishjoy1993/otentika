@@ -174,7 +174,7 @@ class Topmega extends Topmenu
             }
           }
         }
-          if(!$category->getDisabledChildren() && $childLevel == 0)
+          if($childLevel == 0)
           {
             $html .= $this->_getHtml($child, $childrenWrapClass, $limit, $colStops);
           }
