@@ -74,3 +74,31 @@ if(!($logo->isHomePage())){
         
     </ul>
 </nav>
+<script>
+    require(['jquery'], function($) {
+        $(document).on('mouseover', '.menu-dropdown-icon', function(){
+            // console.log('mouseenter');
+            $('.overlay').show();
+        });
+
+        $('.menu > ul > li > ul').mouseover(function(){
+            // console.log('mouseenter');
+            $('.overlay').show();
+        });
+
+        $('.menu > ul > li > ul').mouseout(function(){
+            // console.log('mouseenter');
+            $('.overlay').hide();
+        });
+
+        $(document).on('mouseout', '.menu-dropdown-icon', function(){
+            // console.log('mouseenter');
+            $('.overlay').hide();
+        });
+
+        // $('.menu-dropdown-icon').mouseout(function(){
+        //     // console.log('mouseout');
+        //     $('.overlay').hide();
+        // });  
+    });
+</script> 
