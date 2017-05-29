@@ -7,6 +7,7 @@
                     <argument name="block_id" xsi:type="string">header_offer_banner</argument>
                 </arguments>
             </block>
+            <block name="body.overlay" class="Magento\Framework\View\Element\Template" template="Magento_Theme::html/overlay.phtml" before="-" />
         </referenceContainer>
 
         <referenceBlock name="footer_links" remove="true" />
