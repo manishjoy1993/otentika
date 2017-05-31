@@ -1999,7 +1999,7 @@
     .panel.header,
     nav.navigation{
         @media (min-width: 1100px){
-            max-width: 1060px !important;
+            max-width: 85% !important;
         }
         @media (min-width: 768px) and (max-width: 1099px) {
             max-width: 85% !important;
@@ -2020,7 +2020,7 @@
         .panel.header,
         nav.navigation{
             @media (min-width: 1100px){
-                max-width: 1060px;
+                max-width: 85%;
             }
             @media (min-width: 768px) and (max-width: 1099px) {
                 max-width: 85%;
@@ -2057,7 +2057,7 @@
                     margin-top: 50px;
                     .main_Border{
                         @media (min-width: 1100px){
-                            width: 1060px;
+                            width: ~'calc(85% - 24px)';
                         }
                         @media (min-width: 768px) and (max-width: 1099px) {
                             width: 85%;
@@ -2068,6 +2068,7 @@
                         border-bottom: 0;
                         position: relative;
                         height: 450px;
+                        overflow-y: hidden;
                         .banner1 {
                             float: right;
                             padding-right: 73px;
@@ -2109,7 +2110,7 @@
                 }
                 .home-middle-container {
                     @media (min-width: 1100px){
-                        max-width: 860px;
+                        max-width: 85%;
                     }
                     @media (min-width: 768px) and (max-width: 1099px) {
                         max-width: 80%;
@@ -2379,7 +2380,7 @@
                     padding: 85px 0;
                     .home-bottom-container-content{
                         @media (min-width: 1100px){
-                            max-width: 860px;
+                            max-width: 85%;
                         }
                         @media (min-width: 768px) and (max-width: 1099px) {
                             max-width: 80%;
@@ -2394,12 +2395,12 @@
                                 .left-banner {
                                     padding-bottom: 0;
                                     .banner-image img {
-                                        max-height: 191px
+                                        // max-height: 191px;
                                     }
                                 }
                                 .right-banner {
                                     .product-item {
-                                        height: 314px;
+                                        height: 345px;
                                         .action.towishlist {
                                             padding: 0 5px;
                                             &:before {
@@ -2518,7 +2519,7 @@
                 height: 375px;
                 padding-top: 40px;
                 &-content {
-                    max-width: 900px;
+                    max-width: 85%;
                     margin: 0 auto;
                     background: #F9F9F9;
                     height: 397px;
@@ -2587,7 +2588,7 @@
             .middle-banner {
                 margin-top: 35px;
                 &-content {
-                    max-width: 900px;
+                    max-width: 85%;
                     margin: 0 auto;
                     .left-banner {
                         background: url(../images/special/middle-left.png) no-repeat;
@@ -2664,7 +2665,7 @@
             .bottom-banner {
                 margin-top: 100px;
                 &-content {
-                    max-width: 900px;
+                    max-width: 85%;
                     margin: 0 auto;
                     .banner-div {
                         background: grey;
