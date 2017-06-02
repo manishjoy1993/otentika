@@ -32,6 +32,17 @@ NOTE: Regarding styles - if we leave it this way, we'll move it to boxes.css
  */
 ?>
 <?php
+  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+  $customerSession = $objectManager->get('Magento\Customer\Model\Session');
+  $dob = null;
+  if($customerSession->isLoggedIn()) {
+    $date = new \DateTime($customerSession->getCustomer()->getDob());
+    $dob = $date->format('m/d/Y');
+    // echo $date->format('m/d/Y');
+  }
+  
+?>
+<?php
 $fieldCssClass = 'field date field-' . $block->getHtmlId();
 $fieldCssClass .= $block->isRequired() ? ' required' : '';
 ?>
@@ -40,7 +51,7 @@ $fieldCssClass .= $block->isRequired() ? ' required' : '';
     <div class="control customer-dob">
     <!-- <span class="titleBirthDay">BIRTHDATE</span> -->
         <?php //echo $block->getFieldHtml(); ?>
-        <input type="text" name="dob" id="dob_custom" placeholder="MM/DD/YYYY" readonly="true">
+        <input value="<?php echo $dob ?>" type="text" name="dob" id="dob_custom" placeholder="MM/DD/YYYY" readonly="true">
         <?php if ($_message = $block->getAdditionalDescription()) : ?>
             <div class="note"><?php /* @escapeNotVerified */ echo $_message; ?></div>
         <?php endif; ?>
