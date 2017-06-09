@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success">
+    <h1 class="thankyou-message"><?php echo __('Thank You!'); ?></h1>
+    <h1 class="success-message"><?php echo __('Your Order Has been Placed Successfully.'); ?></h1>
+    <p class="check-email-message"><?php /* @escapeNotVerified */ echo __('Please check your email for your confirmation email') ?></p>
+    <p class="check-email-message"><?php /* @escapeNotVerified */ echo __('If you did not get it, first check your spam then call our customer service, we\'d be happy to help!') ?></p>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?php /* @escapeNotVerified */ echo $block->getUrl() ?>"><span><?php /* @escapeNotVerified */ echo __('Go Back To Site') ?></span></a>
+        </div>
+    </div>
+</div>

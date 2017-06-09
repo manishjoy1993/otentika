@@ -1,0 +1,69 @@
+<?php
+$itemsVisible = $block->getCartItems();
+$discount = null;
+if($block->getCouponCode()) {
+	$discount = $block->getDiscount();
+}
+?>
+
+<div class="summary-content">
+	<div class="title-container">
+		<strong class="summary title"><?php echo __('Summary') ?></strong>
+		<div class="edit"><a class="link" href="<?php echo $block->getUrl('checkout/cart') ?>"><?php echo __('Edit') ?></a></div>
+	</div>
+	<div style="clear: both;"></div>
+<?php if (count($itemsVisible) > 2): ?>
+	<div class="block items" id="block-items" data-mage-init='{"collapsible":{"openedState": "active", "saveState": true}}'>
+<?php else: ?>
+	<div class="block items no-active" id="block-items">
+<?php endif; ?>
+	
+	
+		<div class="title" data-role="title">
+	        <strong id="block-items-heading" role="heading" aria-level="2"><?php /* @escapeNotVerified */ echo __('Items') ?></strong>
+	    </div>
+		<div class="content" data-role="content" aria-labelledby="block-items-heading">
+			<?php foreach ($itemsVisible as $item): ?>
+		  		<div class="item">
+		  			<div class="thumbnail">
+		  				<a href="<?php echo $item->getUrl(); ?>"><img src="<?php echo $block->getProductThumbnail($item->getSku()); ?>"></a>
+		  			</div>
+		  			<div class="item-details">
+		  				<div class="name"><a href="<?php echo $item->getUrl(); ?>"><?php echo $item->getName(); ?></a></div>
+		  				<div class="additional">
+		  					<div class="sku"><?php echo $item->getSku(); ?></div>
+		  					<div class="margin">|</div>
+		  					<div class="qty"><span class="label"><?php echo __('QTY') ?>:&nbsp;&nbsp;</span><span class="value"></span><?php echo $item->getQty(); ?></div>
+		  					<div class="price">
+		  						<?php echo $block->getFormattedPrice($item->getPrice()); ?>
+		  					</div>
+		  				</div>
+		  			</div>
+		  		</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<div style="clear: both;"></div>
+	<div class="block subtotal">
+		<div class="content">
+			<div class="row">
+				<div class="label"><?php echo __('Order Subtotal') ?></div>
+				<div class="value"><?php echo $block->getSubtotal(); ?></div>
+			</div>
+			<?php if ($discount): ?>
+  				<div class="row">
+					<div class="label"><?php echo __('Applied Coupon') ?></div>
+					<div class="value"><strong><?php echo $block->getCouponCode(); ?></strong></div>
+				</div>
+				<div class="row">
+					<div class="label"><?php echo __('Discount') ?></div>
+					<div class="value"><?php echo $discount; ?></div>
+				</div>
+				<div class="row">
+					<div class="label"><?php echo __('Total') ?></div>
+					<div class="value"><strong><?php echo $block->getGrandTotal(); ?></strong></div>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</div>
