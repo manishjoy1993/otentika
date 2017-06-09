@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Excellence_Login::css/login_page.css" />
+    </head>
+    <body>
+        <referenceContainer name="header.container" remove="true" />
+        <referenceContainer name="page.top" remove="true" />
+        <referenceBlock name="header.promo" remove="true" />
+        <referenceContainer name="content">
+        	<block class="Magento\Checkout\Block\Cart" name="checkout.cart" template="cart.phtml" cacheable="false">
+                <container name="checkout.cart.items" as="with-items">
+                    <container name="checkout.cart.container" htmlTag="div" htmlClass="cart-container" before="-">
+                        <!-- Customer Login Part -->
+                        <container name="customer.login.container" label="Customer Login Container" htmlTag="div" htmlClass="login-container">
+                			<block class="Excellence\Login\Block\Login" name="customer.new" template="Excellence_Login::guest.phtml"/>
+			                <block class="Excellence\Login\Block\Login" name="customer_form_login" template="Excellence_Login::login.phtml"/>
+			                <block class="Excellence\Login\Block\Login" name="customer_login_js" template="Excellence_Login::js.phtml"/>
+			            </container>
+			            <container name="customer.login.sidebar.container" label="Customer Login Container" htmlTag="div" htmlClass="login-sidebar-container">
+			            	<block class="Excellence\Login\Block\Summary" name="customer_login_summary" template="Excellence_Login::sidebar/ordersummary.phtml"/>
+			            	<block class="Magento\Checkout\Block\Cart\Coupon" name="checkout.cart.coupon" as="coupon" template="Excellence_Login::sidebar/cart/coupon.phtml"/>
+                            <container name="customer.login.sidebar.support" label="Checkout Support Container" htmlTag="div" htmlClass="checkout-support-container">
+                                <block class="Magento\Cms\Block\Block" name="checkout_login_support_block">
+                                    <arguments>
+                                        <argument name="block_id" xsi:type="string">checkout_login_support_block</argument>
+                                    </arguments>
+                                </block>
+                            </container>
+			            </container>
+                    </container>
+                </container>
+                <container name="checkout.cart.noitems" as="no-items">
+                    <block class="Magento\Checkout\Block\Cart" name="checkout.cart.empty" before="-" template="cart/noItems.phtml">
+                        <container name="checkout.cart.empty.widget" as="checkout_cart_empty_widget" label="Empty Shopping Cart Content Before"/>
+                    </block>
+                </container>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,12 @@
+<?php
+	if($block->isLoggedIn()){
+		$block->getRedirectObject()->setRedirect('checkout');
+	}
+?>
+<script>
+    require(['jquery'], function($) {
+        $(document).on('click', '.edit.link', function(){
+            window.location.href = "<?php echo $block->getUrl('checkout/cart') ?>";
+        });
+    });
+</script>

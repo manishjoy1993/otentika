@@ -500,6 +500,35 @@
         border: @tooltip__border-width solid @tooltip__border-color;
         padding: 10px;
     }
+
+    // Checkout Success Page
+    div.checkout-success {
+        text-align: center;
+        text-transform: uppercase;
+        h1 {
+            font-size: 32px;
+            font-weight: 500;
+            &.thankyou-message {
+                margin-bottom: 75px;
+                margin-top: 20px;
+            }
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .actions-toolbar {
+            text-align: center;
+            margin-top: 22px;
+            .primary {
+                float: none;
+                .action.primary {
+                    border-radius: 0;
+                    padding: 18px 18px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 }
 
 //
