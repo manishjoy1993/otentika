@@ -4,6 +4,9 @@
         <css src="Excellence_Login::css/login_page.css" />
     </head>
     <body>
+        <referenceContainer name="header.container" remove="true" />
+        <referenceContainer name="page.top" remove="true" />
+        <referenceBlock name="header.promo" remove="true" />
         <referenceContainer name="content">
         	<block class="Magento\Checkout\Block\Cart" name="checkout.cart" template="cart.phtml" cacheable="false">
                 <container name="checkout.cart.items" as="with-items">

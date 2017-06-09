@@ -212,3 +212,10 @@ label {
     font-style: italic;
     margin-bottom: 15px;
 }
+.cart-header {
+	text-align: center;
+}
+.cart-header .backto-home-link,
+.cart-header .cart-title {
+	display: none;
+}
