@@ -127,8 +127,8 @@
                                         </div>
                                         
                                         <div class="street-city">
-                                            <!--ko if: shippingFormData().street --><span data-bind="text: shippingFormData().street[0]"></span><!--/ko--><!--ko if: shippingFormData().street[1] -->
-                                            &nbsp;<span data-bind="text: shippingFormData().street[1]"></span><!--/ko-->&nbsp;<span data-bind="text: shippingFormData().city"></span>
+                                            <!--ko if: shippingFormData().street --><span data-bind="text: shippingFormData().street[0]"></span><!--ko if: shippingFormData().street[1] -->
+                                            &nbsp;<span data-bind="text: shippingFormData().street[1]"></span><!--/ko--><!--/ko-->&nbsp;<span data-bind="text: shippingFormData().city"></span>
                                         </div>
                                         <div class="zip-region">
                                             <span data-bind="text: shippingFormData().postcode"></span><!--ko if: shippingFormData().region -->
