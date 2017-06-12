@@ -68,12 +68,7 @@ define(
                 }
             },
             paymentData: function() {
-                var payment = quote.paymentMethod();
-                if(payment) {
-                    return payment.title;
-                } else {
-                    return false;
-                }
+                return $(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text();
             },
             continueShippingStep: function() {
                 // console.log(shippingMethods.getShippingList());
@@ -127,6 +122,10 @@ define(
             validateFormData: function(shippingFormData){
                 console.log(shippingFormData);
                 var toReturn = true;
+<<<<<<< HEAD:app/code/Magestore/OneStepCheckout/view/frontend/web/js/view/osc-1.js
+=======
+                var toReturn = true;
+>>>>>>> 971f3da3bdee7b432d14ee4b8ee9005a0107f12b:app/code/Magestore/OneStepCheckout/view/frontend/web/js/view/osc.js
                 if(shippingFormData.firstname != null && shippingFormData.firstname.length == 0) {
                     toReturn = false;
                 }
@@ -170,6 +169,7 @@ define(
                     $('#review_step').addClass('active');
                     $('.onestepcheckout-order-review').show();
                     $('#onestepcheckout-button-place-order').show();
+                    $('#payment-method-review').text($(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text())
                 }
             },
             prepareToPlaceOrder: function(){
