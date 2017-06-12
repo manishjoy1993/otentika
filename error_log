@@ -78,3 +78,11 @@ Stack trace:
 #3 /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php(94): Zend_Cache::_makeBackend('Cm_Cache_Backen...', Array, true, true)
 #4 /home/owebcom/public_html/lib/internal/Magento/Framework/App/Cache/Frontend/Factory.php(155): Zend_Cache::factory('Magento\\Framewo...', 'Cm_Cache_Backen...', Array, Array, true, true, true)
 #5 /home/owebcom/public_html/lib/internal/Magento/Framewor in /home/owebcom/public_html/vendor/magento/zendframework1/library/Zend/Cache.php on line 209
+[09-Jun-2017 13:01:17 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/owebcom/public_html/var/generation/Magento/Framework/App/ResourceConnection/. in /home/owebcom/public_html/lib/internal/Magento/Framework/Code/Generator.php:115
+Stack trace:
+#0 /home/owebcom/public_html/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/owebcom/public_html/lib/internal/Magento/Framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/owebcom/public_html/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/owebcom/public_html/lib/internal/Magento/Framework/ObjectManager/Factory/Dynamic/Developer.php(71): Magento\Framework\ObjectManag in /home/owebcom/public_html/lib/internal/Magento/Framework/Code/Generator.php on line 115

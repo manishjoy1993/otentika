@@ -116,29 +116,31 @@
 
                     <div class="onestepcheckout-order-review">
                         <!--ko if:!isVirtual() -->
-                        <div class="shipping-data">
-                            <div class="title"><h3 class="step-title step_4" id="shipping_review_header" data-bind="i18n: 'Shipping Address'"></h3></div>
-                            <div class="clear-both"></div>
-                            <div class="review-order" id="review_order">
-                                <div class="address">
-                                    <div class="name">
-                                        <span data-bind="text: shippingFormData().firstname"></span>&nbsp;<span data-bind="text: shippingFormData().lastname"></span>
-                                    </div>
-                                    
-                                    <div class="street-city">
-                                        <span data-bind="text: shippingFormData().street[0]"></span><!--ko if: shippingFormData().street[1] -->
-                                        &nbsp;<span data-bind="text: shippingFormData().street[1]"></span><!--/ko-->&nbsp;<span data-bind="text: shippingFormData().city"></span>
-                                    </div>
-                                    <div class="zip-region">
-                                        <span data-bind="text: shippingFormData().postcode"></span><!--ko if: shippingFormData().region -->
-                                        &nbsp;<span data-bind="text: shippingFormData().region"></span><!--/ko--><!--ko if: shippingFormData().region_id -->&nbsp;<span data-bind="text: shippingFormData().region_id"></span><!--/ko-->
-                                    </div>
-                                    <div class="country">
-                                        <span data-bind="text: shippingFormData().country_id"></span>
+                            <!--ko if:shippingFormData() -->
+                            <div class="shipping-data">
+                                <div class="title"><h3 class="step-title step_4" id="shipping_review_header" data-bind="i18n: 'Shipping Address'"></h3></div>
+                                <div class="clear-both"></div>
+                                <div class="review-order" id="review_order">
+                                    <div class="address">
+                                        <div class="name">
+                                            <span data-bind="text: shippingFormData().firstname"></span>&nbsp;<span data-bind="text: shippingFormData().lastname"></span>
+                                        </div>
+                                        
+                                        <div class="street-city">
+                                            <!--ko if: shippingFormData().street --><span data-bind="text: shippingFormData().street[0]"></span><!--/ko--><!--ko if: shippingFormData().street[1] -->
+                                            &nbsp;<span data-bind="text: shippingFormData().street[1]"></span><!--/ko-->&nbsp;<span data-bind="text: shippingFormData().city"></span>
+                                        </div>
+                                        <div class="zip-region">
+                                            <span data-bind="text: shippingFormData().postcode"></span><!--ko if: shippingFormData().region -->
+                                            &nbsp;<span data-bind="text: shippingFormData().region"></span><!--/ko--><!--ko if: shippingFormData().region_id -->&nbsp;<span data-bind="text: shippingFormData().region_id"></span><!--/ko-->
+                                        </div>
+                                        <div class="country">
+                                            <span data-bind="text: shippingFormData().country_id"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <!--/ko-->
                         <!--/ko-->
                         <!--ko if:paymentData() -->
                         <div class="payment-data">
