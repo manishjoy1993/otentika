@@ -63,15 +63,12 @@ define(
                 this._super();
             },
             shippingFormData: function() {
-                return checkoutData.getShippingAddressFromData();
+                if (checkoutData.getShippingAddressFromData() != null) {
+                    return checkoutData.getShippingAddressFromData();
+                }
             },
             paymentData: function() {
-                var payment = quote.paymentMethod();
-                if(payment) {
-                    return payment.title;
-                } else {
-                    return false;
-                }
+                return $(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text();
             },
             continueShippingStep: function() {
                 // console.log(shippingMethods.getShippingList());
@@ -125,22 +122,26 @@ define(
             validateFormData: function(shippingFormData){
                 console.log(shippingFormData);
                 var toReturn = true;
-                if(shippingFormData.firstname.length == 0) {
+                var toReturn = true;
+                if(shippingFormData.firstname != null && shippingFormData.firstname.length == 0) {
                     toReturn = false;
                 }
-                if(shippingFormData.lastname.length == 0) {
+                if(shippingFormData.lastname != null && shippingFormData.lastname.length == 0) {
                     toReturn = false;
                 }
-                if(shippingFormData.street[0].length == 0) {
+                if(shippingFormData.street != null) {
+                    if(shippingFormData.street[0].length == 0) {
+                        toReturn = false;
+                    }
+                }
+                    
+                if(shippingFormData.city != null && shippingFormData.city.length == 0) {
                     toReturn = false;
                 }
-                if(shippingFormData.city.length == 0) {
+                if(shippingFormData.telephone != null && shippingFormData.telephone.length == 0) {
                     toReturn = false;
                 }
-                if(shippingFormData.telephone.length == 0) {
-                    toReturn = false;
-                }
-                if(shippingFormData.country_id.length == 0) {
+                if(shippingFormData.country_id != null &&shippingFormData.country_id.length == 0) {
                     toReturn = false;
                 }
                 if(shippingFormData.postcode.length == 0) {
@@ -165,6 +166,7 @@ define(
                     $('#review_step').addClass('active');
                     $('.onestepcheckout-order-review').show();
                     $('#onestepcheckout-button-place-order').show();
+                    $('#payment-method-review').text($(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text())
                 }
             },
             prepareToPlaceOrder: function(){
