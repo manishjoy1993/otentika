@@ -122,10 +122,7 @@ define(
             validateFormData: function(shippingFormData){
                 console.log(shippingFormData);
                 var toReturn = true;
-<<<<<<< HEAD:app/code/Magestore/OneStepCheckout/view/frontend/web/js/view/osc-1.js
-=======
                 var toReturn = true;
->>>>>>> 971f3da3bdee7b432d14ee4b8ee9005a0107f12b:app/code/Magestore/OneStepCheckout/view/frontend/web/js/view/osc.js
                 if(shippingFormData.firstname != null && shippingFormData.firstname.length == 0) {
                     toReturn = false;
                 }
