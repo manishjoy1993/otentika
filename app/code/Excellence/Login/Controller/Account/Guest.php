@@ -25,7 +25,8 @@ class Guest extends \Magento\Framework\App\Action\Action
         try {
             if($data) {
                 $this->session->setCheckoutLoggedIn(true);
-                $resultRedirect->setPath('checkout', $data);
+                $this->session->setCheckoutUsername($data['username']);
+                $resultRedirect->setPath('checkout/cart');
             } else {
                 $resultRedirect->setPath('login');
             }
