@@ -183,8 +183,55 @@ define(
                 }
                 return list;
             },
+            getShippingListCustom: function () {
+                var list = [];
+                var rates = this.rates();
+                if(rates && rates.length > 0){
+                    ko.utils.arrayForEach(rates, function(method) {
+                        if(list.length > 0){
+                            var notfound = true;
+                            ko.utils.arrayForEach(list, function(carrier) {
+                                if(carrier && carrier.code == method.carrier_code){
+                                    carrier.methods.push(method);
+                                    notfound = false;
+                                }
+                            });
+                            if(notfound == true){
+                                var carrier = {
+                                    code:method.carrier_code + '_' + method.method_code,
+                                    title:method.method_title,
+                                    methods:[method]
+                                }
+                                list.push(carrier);
+                            }
+                        }else{
+                            var carrier = {
+                                code:method.carrier_code + '_' + method.method_code,
+                                title:method.method_title,
+                                methods:[method]
+                            }
+                            list.push(carrier);
+                        }
+                    });
+                }
+                return list;
+            },
+            drawCarrierSelect: function() {
+                var list = this.getShippingListCustom();
+                var htmlCode = "";
+                if(list.length > 0) {
+                    list.forEach(function(carrier, index) {
+                        htmlCode += "<option value="+ carrier.code +" >" + carrier.title + "</option>";
+                    });
+                    
+                } else {
+                    htmlCode += "<option>No Shipping Method</option>";
+                }
+                $('#carrier_select').html(htmlCode);
+            },
             isShippingOnList: function(carrier_code,method_code){
                 var list = this.getShippingList();
+                this.drawCarrierSelect();
                 if(list.length > 0){
                     var carrier = ko.utils.arrayFirst(list, function(carrier) {
                         return (carrier.code == carrier_code);

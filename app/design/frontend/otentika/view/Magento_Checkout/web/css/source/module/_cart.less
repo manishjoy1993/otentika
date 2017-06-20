@@ -22,8 +22,15 @@
         .page-main {
             padding-left: 0;
             padding-right: 0;
+            max-width: 1160px;
         }
-
+        .page-wrapper {
+            background: #ccc;
+        }
+        .cart-container {
+            background: #fff;
+            padding: 0 5%;
+        }
         .page-title-wrapper {
             padding-left: @layout__width-xs-indent;
             padding-right: @layout__width-xs-indent;
@@ -31,12 +38,15 @@
         }
         .cart-header {
             text-transform: uppercase;
-            margin-bottom: 15px;
+            padding-bottom: 15px;
+            background: #fff;
             .cart-logo {
                 text-align: center;
+                background: #ccc;
             }
             .backto-home-link {
                 margin: 15px 0;
+                padding: 0 5%;
                 a {
                     color: #f95318;
                     font-weight: 600;
@@ -48,6 +58,7 @@
                 font-size: 16px;
                 font-weight: 600;
                 font-style: italic;
+                padding: 0 5%;
             }
         }
         /*Cross Sell*/
@@ -623,6 +634,7 @@
         .lib-layout-column(2, 2, @layout-column-checkout__width-left);
         padding: 1px @indent__base @indent__m;
         position: relative;
+        width: 30%;
 
         > .title {
             display: block;
@@ -734,6 +746,7 @@
     //  Empty cart
     .cart-empty {
         &:extend(.abs-revert-side-paddings all);
+        padding: 0 5%;
     }
 
     //  Cross sell
@@ -742,6 +755,7 @@
             .lib-layout-column(2, 1, @layout-column-checkout__width-main);
             &:extend(.abs-add-box-sizing-desktop all);
             padding: 0 4% 0 0;
+            width: 70%;
 
             .products-grid .product-item {
                 width: 100%/4;

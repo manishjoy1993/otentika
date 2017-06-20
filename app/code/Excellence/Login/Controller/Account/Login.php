@@ -47,7 +47,8 @@ class Login extends \Magento\Customer\Controller\AbstractAccount
         if ($this->session->isLoggedIn()) {
             /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
             $resultRedirect = $this->resultRedirectFactory->create();
-            $resultRedirect->setPath('checkout', array('username' => urlencode($this->session->getCustomer()->getEmail())));
+            $this->session->setCheckoutUsername($this->session->getCustomer()->getEmail());
+            $resultRedirect->setPath('checkout/cart');
             return $resultRedirect;
         }
 
