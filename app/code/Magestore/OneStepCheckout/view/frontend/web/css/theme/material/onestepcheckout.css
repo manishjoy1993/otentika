@@ -142,7 +142,7 @@ label span.required{color:red}
 #shipping_method_step_header{border-top:1px solid #e0e0e0}
 .one-step-checkout #billing_step_header:before{content:'+'}
 .one-step-checkout #shipping_method_step_header:before{content:'2'}
-.one-step-checkout #payment_method_step_header:before{content:'3'}
+.one-step-checkout #payment_method_step_header:before{/*content:'3'*/content: '2'}
 .one-step-checkout #shipping_step_header:before{content:'1'}
 .one-step-checkout #review_step_header:before{content:'\2713'}
 .one-step-checkout #review_step_header{background:#fff;border-bottom:1px solid #c8c8c8}
@@ -165,7 +165,7 @@ label span.required{color:red}
 .order-review-info .onestepcheckout-terms-conditions label{font-weight:400}
 .order-review-info .onestepcheckout-discount{margin-top:15px;float:left;width:100%;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .order-review-info .onestepcheckout-discount .input-box{width:61%;display:inline-block;vertical-align: middle;}
-.order-review-info .onestepcheckout-discount .actions-button{display:inline-block;margin-left:10px;vertical-align: middle;}
+.order-review-info .onestepcheckout-discount .actions-button{display:inline-block;margin:14px 0 auto 10px;vertical-align: top;}
 .order-review-info .onestepcheckout-discount .actions-button button,
 button.osc-ok-button,button.osc-edit-button
 {/*box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24) !important;*/}
@@ -358,7 +358,7 @@ button.place-order-loader span{background:none transparent!important}
 .one-step-checkout button.btn-checkout span span{background-position:100% 0!important;padding:0 66px 0 56px !important;text-transform:capitalize;display:block!important}
 .a-right .cart-price{text-align:right}
 #add_coupon_code_button,#remove_coupon_code_button
-{background:none repeat scroll 0 0 transparent;border:medium none;padding:0 5px;width:105px;height:35px;cursor:pointer;border-radius:3px}
+{background:none repeat scroll 0 0 transparent;border:medium none;padding:0 5px;width:105px;height:43px;cursor:pointer;border-radius:3px}
 .onestepcheckout-index-index button:hover{opacity:.8!important;filter:alpha(opacity=80)!important}
 #remove_coupon_code_button,.osc-edit-button{background:#fff!important}
 #remove_coupon_code_button span span{color:#363636!important}
@@ -404,7 +404,7 @@ p.forgot-link{padding-top:15px;padding-bottom:5px}
 .sercurity-box .input-box label,.gift-messages-form .input-box label, #onestepcheckout-login-popup label,.onestepcheckout-survey label,.onestepcheckout-discount .discount-form label,#shipping label,#billing-new-address-form label,.field legend.label,
 .virtualCheckout .email-field label,
 .onestepcheckout-giftmessage .control label
-{color:#898989;font-size:14px;font-weight:400;position:absolute;pointer-events:none;top:10px;top:-15px\9;transition:.2s ease all;-moz-transition:.2s ease all;-webkit-transition:.2s ease all}
+{color:#000;font-size:13px;text-transform: uppercase; font-weight:600;/*position:absolute;*/pointer-events:none;top:10px;top:-15px\9;transition:.2s ease all;-moz-transition:.2s ease all;-webkit-transition:.2s ease all}
 #shipping .email-has-data ~ label, .sercurity-box .input-box input:focus ~ label,.sercurity-box input.input-text:valid ~ label,.gift-messages-form .input-box input:focus ~ label,.gift-messages-form input.input-text:valid ~ label,#onestepcheckout-login-popup input:focus ~ label,#onestepcheckout-login-popup input.input-text:valid ~ label,.onestepcheckout-discount .discount-form input:focus ~ label,.onestepcheckout-discount .discount-form input.input-text:valid ~ label,#shipping input:focus ~ label,#shipping input.input-text:valid ~ label,#billing-new-address-form input.input-text:valid ~ label,
 #shipping input:disabled ~ label,
 #shipping select:valid ~ label,
@@ -433,7 +433,7 @@ p.forgot-link{padding-top:15px;padding-bottom:5px}
 .sercurity-box .input-box{ float:left;width:100%;clear:both;   position: relative; margin: 15px 0 10px;}
 .sercurity-box input.input-text, .gift-messages-form input.input-text, .shipping-region-input,.billing-region-input, #onestepcheckout-login-popup input.input-text,.onestepcheckout-discount .discount-form input.input-text,#shipping input.input-text,#billing-new-address-form input.input-text,
 .virtualCheckout .email-field input.input-text
-{font-size:15px;padding:13px 0 0 0;display:block;width:100%!important;height:auto!important;border:none;border-bottom:1px solid #e0e0e0;border-radius:0;font-weight:500;color:#252525}
+{font-size:15px;padding:7px;display:block;width:100%!important;height:auto!important;/*border:none;*/border:1px solid rgba(0, 0, 0, 0.72);border-radius:0;font-weight:500;color:#252525}
 input.billing-region-input,input.shipping-region-input{padding:7px 10px 0 5px!important;border-bottom:1px solid #e0e0e0;}
 .sercurity-box .highlight,.gift-messages-form .highlight,#onestepcheckout-login-popup .highlight,.onestepcheckout-discount .discount-form .highlight,#shipping .highlight,#billing-new-address-form .highlight{position:absolute;height:20px;width:100px;top:25%;left:0;pointer-events:none;opacity:.5}
 .sercurity-box .bar,.gift-messages-form .bar,#onestepcheckout-login-popup .bar,.onestepcheckout-discount .discount-form .bar,#shipping .bar,#billing-new-address-form .bar{position:relative;display:block;width:100%}
@@ -442,6 +442,11 @@ input.billing-region-input,input.shipping-region-input{padding:7px 10px 0 5px!im
 .gift-messages-form .bar:after,#onestepcheckout-login-popup .bar:after,.onestepcheckout-discount .discount-form .bar:after,#shipping .bar:after,#billing-new-address-form .bar:after{right:50%}
 .mdl-selectfield label{top:-20px!important;font-size:12px!important}
 #billing-address-select, .onestepcheckout-survey select,#shipping select,#billing-new-address-form select{font-family:inherit;background-color:transparent;width:100%;padding:0 20px 0 0;font-size:15px;color:#000;border:none;border-bottom:1px solid #e0e0e0}
+#billing-address-select, .onestepcheckout-survey select, #shipping select, #billing-new-address-form select{
+    border: 1px solid #000;
+    padding: 7px;
+    height: 42px;
+}
 #billing-address-select:focus,.onestepcheckout-survey select:focus,#shipping select:focus,#billing-new-address-form select:focus{outline:none}
 #billing-address-select,.onestepcheckout-survey select, .mdl-selectfield select,#billing-new-address-form .mdl-selectfield select{-webkit-appearance:none;-moz-appearance:none;appearance:none}
 .onestepcheckout-survey, .mdl-selectfield,#billing-new-address-form .mdl-selectfield{font-family:'Roboto','Helvetica','Arial',sans-serif;position:relative;margin-top:26px}
@@ -1240,7 +1245,11 @@ fieldset.field{
 #billing-new-address-form .field.choice label{
     top: 5px; font-size: 15px;
 }
-.one-step-checkout .fieldset > .field > .label,.one-step-checkout .fieldset > .fields > .field > .label{font-weight: 400;font-size:14px;}
+.one-step-checkout .fieldset > .field > .label,.one-step-checkout .fieldset > .fields > .field > .label{font-weight: 400;font-size:14px; margin: 0;}
+
+div[name='shippingAddress.country_id'] {
+	clear: both;
+}
 
 .three-columns-new-osc.virtualCheckout .wrap-col-last-3{width:49%;float:right;}
 .one-step-checkout.three-columns-new-osc.virtualCheckout .onestepcheckout-shipping-payment-review {
@@ -1422,6 +1431,7 @@ button.osc-ok-button,button.osc-edit-button
 }
 .one-step-checkout.three-columns-new-osc .onestepcheckout-order-review {
 	display: none;
+	background: #fff;
 }
 .one-step-checkout #shipping_review_header:before {
     content: '\2713';
@@ -1434,6 +1444,10 @@ button.osc-ok-button,button.osc-edit-button
 }
 .one-step-checkout.three-columns-new-osc .onestepcheckout-order-review .review-order{
 	padding: 12px 4%;
+}
+.one-step-checkout .button-set {
+    padding-right: 20px;
+    margin-bottom: 20px;
 }
 #onestepcheckout-button-place-order,
 #onestepcheckout-button-continue-to-review {

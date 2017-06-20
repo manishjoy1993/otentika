@@ -176,7 +176,9 @@ class Create extends CreatePost
 		}
 
 		if ($this->session->isLoggedIn() || !$this->registration->isAllowed()) {
-			$result['redirect'] = $this->urlModel->getUrl('customer/account');
+			$this->session->setCheckoutLoggedIn(true);
+			$this->session->setCheckoutUsername($this->session->getCustomer()->getEmail());
+			$result['redirect'] = $this->urlModel->getUrl('checkout/cart');
 
 			return $resultJson->setData($result);
 		}
