@@ -203,7 +203,7 @@
                                             </table>
                                             <div class="data-table">
                                                 <div class="carrier-select-container">
-                                                    <select data-bind="change: selectShippingMethod()" id="carrier_select"></select>
+                                                    <select data-bind="event: { change: selectShippingMethod() }" id="carrier_select"><option data-bind="i18n:'No Shipping Method'"></option></select>
                                                 </div>
                                             </div>
                                             <table id="checkout-total-table" class="data-table">

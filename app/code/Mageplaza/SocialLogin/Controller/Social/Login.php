@@ -262,7 +262,7 @@ class Login extends Action
 	 */
 	protected function _loginPostRedirect()
 	{
-		$url = $this->urlBuilder->getUrl('customer/account');
+		$url = $this->urlBuilder->getUrl('checkout/cart');
 
 		if ($this->_request->getParam('authen') == 'popup') {
 			$url = $this->urlBuilder->getUrl('checkout');
@@ -273,6 +273,8 @@ class Login extends Action
 				$this->accountRedirect->clearRedirectCookie();
 			}
 		}
+		$this->session->setCheckoutLoggedIn(true);
+		$this->session->setCheckoutUsername($this->session->getCustomer()->getEmail());
 
 		return $url;
 	}
