@@ -67,6 +67,10 @@ define(
                     return checkoutData.getShippingAddressFromData();
                 }
             },
+            selectShippingMethod: function() {
+                var selcted = $("#carrier_select").val();
+                jQuery(".methods-shipping input[value="+selcted+"]").click();
+            },
             paymentData: function() {
                 return $(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text();
             },
@@ -75,7 +79,7 @@ define(
                 $('.nav-step').removeClass('active');
                 $('#shipping_step').addClass('active');
                 $('.btn-proceed-checkout').hide();
-                $('#onestepcheckout-button-continue-to-billing').show();
+                $('#onestepcheckout-button-continue-to-billing').css('display', 'block');;
                 $('.address-information.address-info-3-columns').show();
                 $('.onestepcheckout-shipping-payment-review').hide();
                 $('.onestepcheckout-order-review').hide();
@@ -85,7 +89,7 @@ define(
                     $('.nav-step').removeClass('active');
                     $('#billing_step').addClass('active');
                     $('.btn-proceed-checkout').hide();
-                    $('#onestepcheckout-button-continue-to-review').show();
+                    $('#onestepcheckout-button-continue-to-review').css('display', 'block');;
                     $('.address-information.address-info-3-columns').hide();
                     $('.onestepcheckout-shipping-payment-review').show();
                     $('.onestepcheckout-order-review').hide();
@@ -96,7 +100,7 @@ define(
                     $('.nav-step').removeClass('active');
                     $('#review_step').addClass('active');
                     $('.btn-proceed-checkout').hide();
-                    $('#onestepcheckout-button-place-order').show();
+                    $('#onestepcheckout-button-place-order').css('display', 'block');;
                     $('.address-information.address-info-3-columns').hide();
                     $('.onestepcheckout-shipping-payment-review').hide();
                     $('.onestepcheckout-order-review').show();
@@ -114,7 +118,9 @@ define(
                         $('.nav-step').removeClass('active');
                         $('#billing_step').addClass('active');
                         $('.onestepcheckout-shipping-payment-review').show();
-                        $('#onestepcheckout-button-continue-to-review').show();
+                        $('#onestepcheckout-button-continue-to-review').css('display', 'block');;
+                    } else {
+                        this.showErrorMessage($t('Please fill all the fields correctly.'));
                     }
                 }
                     
@@ -165,7 +171,7 @@ define(
                     $('.nav-step').removeClass('active');
                     $('#review_step').addClass('active');
                     $('.onestepcheckout-order-review').show();
-                    $('#onestepcheckout-button-place-order').show();
+                    $('#onestepcheckout-button-place-order').css('display', 'block');
                     $('#payment-method-review').text($(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text())
                 }
             },

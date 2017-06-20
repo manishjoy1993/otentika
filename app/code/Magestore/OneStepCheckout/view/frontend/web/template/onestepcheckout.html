@@ -201,6 +201,11 @@
                                                     <!--/ko-->
                                                 </tbody>
                                             </table>
+                                            <div class="data-table">
+                                                <div class="carrier-select-container">
+                                                    <select data-bind="change: selectShippingMethod()" id="carrier_select"></select>
+                                                </div>
+                                            </div>
                                             <table id="checkout-total-table" class="data-table">
                                                 <tbody>
                                                     <!-- ko foreach: getRegion('sidebar') -->
