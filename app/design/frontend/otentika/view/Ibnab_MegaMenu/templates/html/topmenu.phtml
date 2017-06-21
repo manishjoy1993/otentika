@@ -109,7 +109,7 @@ if(!($logo->isHomePage())){
                     $offerCategory = $objectManager->create('Magento\Catalog\Model\Category')->load(8);
                 ?>
                 <li>
-                    <a href="<?php echo $offerCategory->getUrl() ?>" class="level-top" tabindex="-1" role="menuitem">
+                    <a href="<?php echo $block->getUrl('special-offer'); //echo $offerCategory->getUrl() ?>" class="level-top" tabindex="-1" role="menuitem">
                         <span><?php echo __("Offers"); ?></span>
                     </a>
                 </li>

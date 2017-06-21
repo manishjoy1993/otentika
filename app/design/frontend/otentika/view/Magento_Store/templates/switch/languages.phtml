@@ -14,12 +14,12 @@
 
 $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
 $appState = $objectManager->get('\Magento\Framework\App\State');
-
+$storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
 ?>
 
 <?php if (count($block->getStores())>1): ?>
 <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
-<div class="switcher language switcher-language" data-ui-id="language-switcher" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>">
+<div class="switcher language switcher-language <?php echo $storeManager->getStore()->getCode(); ?>" data-ui-id="language-switcher" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>">
     <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Language') ?></span></strong>
     <div class="actions dropdown options switcher-options">
         <div class="action toggle switcher-trigger" id="switcher-language-trigger<?php /* @escapeNotVerified */ echo $id?>">
@@ -60,7 +60,7 @@ $block = $objectManager->get('\Magento\Directory\Block\Currency');
 <?php $currencies = $block->getCurrencies(); ?>
 <?php $currentCurrencyCode = $block->getCurrentCurrencyCode(); ?>
 <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
-<div class="switcher currency switcher-currency" id="switcher-currency<?php /* @escapeNotVerified */ echo $id?>">
+<div class="switcher currency switcher-currency <?php echo $storeManager->getStore()->getCode(); ?>" id="switcher-currency<?php /* @escapeNotVerified */ echo $id?>">
     <strong class="label switcher-label"><span><?php /* @escapeNotVerified */ echo __('Currency') ?></span></strong>
     <div class="actions dropdown options switcher-options">
         <div class="action toggle switcher-trigger" id="switcher-currency-trigger<?php /* @escapeNotVerified */ echo $id?>">

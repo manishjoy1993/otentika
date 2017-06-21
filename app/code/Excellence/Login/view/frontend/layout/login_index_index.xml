@@ -4,6 +4,7 @@
         <css src="Excellence_Login::css/login_page.css" />
         <css src="Mageplaza_SocialLogin::css/style.css"/>
         <css src="Mageplaza_Core::css/font-awesome.min.css"/>
+        <css src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url" />
     </head>
     <body>
         <referenceContainer name="header.container" remove="true" />
