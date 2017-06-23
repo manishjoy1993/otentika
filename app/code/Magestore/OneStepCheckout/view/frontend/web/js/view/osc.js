@@ -21,6 +21,7 @@ define(
         'Magento_Checkout/js/checkout-data',
         'Magestore_OneStepCheckout/js/model/validate-shipping',
         'Magestore_OneStepCheckout/js/view/shipping/methods',
+        'mage/url',
         'Magestore_OneStepCheckout/js/view/gift-message'
     ],
     function (
@@ -39,6 +40,7 @@ define(
         checkoutData,
         ValidateShipping,
         shippingMethods,
+        url,
         giftMessageView
     ) {
         'use strict';
@@ -61,6 +63,12 @@ define(
             placingOrder: ko.observable(false),
             initialize: function () {
                 this._super();
+            },
+            getPrivacyPolicyUrl: function() {
+                return url.build('#');
+            },
+            getTermsConditionUrl: function () {
+                return url.build('#');
             },
             shippingFormData: function() {
                 if (checkoutData.getShippingAddressFromData() != null) {
@@ -177,6 +185,10 @@ define(
             },
             prepareToPlaceOrder: function(){
                 var self = this;
+                if(!($("#agree_terms").is(":checked"))) {
+                    this.showErrorMessage($t('Please agree to terms and conditions.'));
+                    return false;
+                }
                 if (!quote.paymentMethod()) {
                     alertPopup({
                         content: $t('Please choose a payment method!'),

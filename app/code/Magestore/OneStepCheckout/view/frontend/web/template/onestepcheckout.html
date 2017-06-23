@@ -45,13 +45,16 @@
     </div>
   </div>
 </li>
+<div id="onestepcheckout-error-messages" class="show" data-bind="fadeVisible:errorMessage">
+    <p data-bind="i18n:errorMessage"></p>
+</div>
 <ol class="one-step-checkout three-columns-new-osc clearfix" data-bind="css:{virtualCheckout:isVirtual()},afterRender:afterRender">
     <li class="address-order">
         <div id="one-step-checkout-form">
             <div class="wrap-case-3colums">
                 <div class="wrap-case-3colums">
                     <!--ko if:!isVirtual() -->
-                    <div class="address-information address-info-3-columns">
+                    <div class="address-information address-info-3-columns column-left">
                         <div id='onestepcheckout-shipping-section'>
                             <!-- ko foreach: getRegion('steps') -->
                                 <!-- ko foreach: getRegion('shipping-step') -->
@@ -64,7 +67,7 @@
                     </div>
                     <!--/ko-->
 
-                    <div class="onestepcheckout-shipping-payment-review">
+                    <div class="onestepcheckout-shipping-payment-review column-left">
                         <!--ko if:!isVirtual() -->
                             <div class="order-information shipping-method-information order-info-3-columns">
                                 <ol>
@@ -114,7 +117,7 @@
                         </div>
                     </div>
 
-                    <div class="onestepcheckout-order-review">
+                    <div class="onestepcheckout-order-review column-left">
                         <!--ko if:!isVirtual() -->
                             <!--ko if:shippingFormData() -->
                             <div class="shipping-data">
@@ -151,11 +154,16 @@
                         </div>
                         <div class="button-set clearfix button-onestepcheckout">
                             <div class="clear"></div>
+                            <div class="terms-condition">
+                                <span class="check"><input id="agree_terms" type="checkbox" name="agree"></span>
+                                <span class="text" >I have read and agree to <a class="link" data-bind="attr: { href: getTermsConditionUrl() }">Terms &amp; Condition</a> and <a class="link" data-bind="attr: { href: getPrivacyPolicyUrl() }" >Privacy Policy</a> of otentika.com</span>
+                            </div>
+                            <div class="clear"></div>
                             <button id="onestepcheckout-button-place-order" type="button"
                                     class="btn-proceed-checkout onestepcheckout-btn-checkout onestepcheckout-place"
                                     data-bind="attr:{title:$t('Place Order')},click:prepareToPlaceOrder,enable:enableCheckout">
                                 <span>
-                                    <span class="title" data-bind="i18n:'Place order now'"></span>
+                                    <span class="title" data-bind="i18n:'Pay Now'"></span>
                                 </span>
                             </button>
                             <button style="display: none"
@@ -168,7 +176,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="wrap-col-last-3">
+                    <div class="wrap-col-last-3 column-right">
                         <div class="onestepcheckout-review-info">
                             <ol>
                                 <li class="order-review-info">
@@ -259,9 +267,7 @@
                             <p data-bind="i18n:'Please wait, processing your order...'"></p>
                         </div>
                         <!--/ko-->
-                        <div id="onestepcheckout-error-messages" class="show" data-bind="fadeVisible:errorMessage">
-                            <p data-bind="i18n:errorMessage"></p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

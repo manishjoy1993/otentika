@@ -8,6 +8,7 @@
 
 /**  @var $block \Magento\Checkout\Block\Cart */
 ?>
+
 <?php $mergedCells = ($this->helper('Magento\Tax\Helper\Data')->displayCartBothPrices() ? 2 : 1); ?>
 <?php echo $block->getChildHtml('form_before') ?>
 <form action="<?php /* @escapeNotVerified */ echo $block->getUrl('checkout/cart/updatePost') ?>"
@@ -16,6 +17,14 @@
           data-mage-init='{"validation":{}}'
           class="form form-cart">
     <?php echo $block->getBlockHtml('formkey'); ?>
+    <div class="header-text-link">
+        <div class="backto-home-link">
+            <a href="<?php echo $block->getUrl(''); ?>"><?php echo __('Wanna Get Back to Shopping?') ?></a>
+        </div>
+        <div class="cart-title">
+            <?php echo __("Here's What You Have Picked So Far"); ?>
+        </div>
+    </div>
     <div class="cart table-wrapper<?php echo $mergedCells == 2 ? ' detailed' : ''; ?>">
         <table id="shopping-cart-table"
                class="cart items data table"
