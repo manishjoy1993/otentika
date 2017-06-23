@@ -28,8 +28,8 @@
             background: #ccc;
         }
         .cart-container {
-            background: #fff;
-            padding: 0 5%;
+            /*background: #fff;*/
+            /*padding: 0 5%;*/
         }
         .page-title-wrapper {
             padding-left: @layout__width-xs-indent;
@@ -38,15 +38,16 @@
         }
         .cart-header {
             text-transform: uppercase;
-            padding-bottom: 15px;
             background: #fff;
             .cart-logo {
                 text-align: center;
                 background: #ccc;
             }
+            
+        }
+        .header-text-link {
             .backto-home-link {
                 margin: 15px 0;
-                padding: 0 5%;
                 a {
                     color: #f95318;
                     font-weight: 600;
@@ -58,7 +59,6 @@
                 font-size: 16px;
                 font-weight: 600;
                 font-style: italic;
-                padding: 0 5%;
             }
         }
         /*Cross Sell*/
@@ -104,13 +104,14 @@
                 }
             }
         }
-        .checkout-support-container {
+        .checkout-login-support-block {
             clear: both;
             padding: 12px 0;
-            margin: 20px -20px -25px -20px;
+            margin: 20px auto;
             background: #fff;
+            text-align: left;
         }
-        .checkout-support-container .checkout-login-support-block .title {
+        .checkout-login-support-block .title {
             font-size: 20px;
             font-weight: 500;
             font-style: italic;
@@ -134,7 +135,7 @@
     //  Summary block
     .cart-summary {
         &:extend(.abs-add-box-sizing all);
-        .lib-css(background, @sidebar__background-color);
+        .lib-css(background, #fff);
         margin-bottom: @indent__m;
         padding: 1px 0 @indent__m;
 
@@ -612,6 +613,14 @@
         .page-title-wrapper {
             &:extend(.abs-revert-side-paddings all);
         }
+        .cart-container {
+            .form-cart {
+                width: 69%;
+                padding: 0 15px;
+                background: #fff;
+                margin-bottom: 0;
+            }
+        }
     }
 
     //  Cart container
@@ -627,6 +636,9 @@
         .widget {
             float: left;
         }
+        .checkout-login-support-block {
+            margin: 20px auto 50px;
+        }
     }
 
     //  Summary block
@@ -635,6 +647,7 @@
         padding: 1px @indent__base @indent__m;
         position: relative;
         width: 30%;
+        top: initial !important;
 
         > .title {
             display: block;
@@ -754,11 +767,17 @@
         &.crosssell {
             .lib-layout-column(2, 1, @layout-column-checkout__width-main);
             &:extend(.abs-add-box-sizing-desktop all);
-            padding: 0 4% 0 0;
-            width: 70%;
+            /*padding: 0 4% 0 0;*/
+            width: 69%;
+            padding: 15px 15px 35px;
+            background: #fff;
 
             .products-grid .product-item {
                 width: 100%/4;
+            }
+            .owl-carousel.products .owl-item img {
+                width: 100px;
+                margin: 0 auto;
             }
         }
     }

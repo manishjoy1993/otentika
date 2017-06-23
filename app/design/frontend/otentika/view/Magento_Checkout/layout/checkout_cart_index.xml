@@ -11,14 +11,12 @@
         <referenceContainer name="header.container" remove="true" />
         <referenceContainer name="page.top" remove="true" />
         <referenceBlock name="header.promo" remove="true" />
-        <referenceContainer name="cart.summary">
-        	<container name="customer.login.sidebar.support" label="Checkout Support Container" htmlTag="div" htmlClass="checkout-support-container">
-                <block class="Magento\Cms\Block\Block" name="checkout_login_support_block">
-                    <arguments>
-                        <argument name="block_id" xsi:type="string">checkout_login_support_block</argument>
-                    </arguments>
-                </block>
-            </container>
+        <referenceContainer name="checkout.cart.methods">
+            <block class="Magento\Cms\Block\Block" name="checkout_login_support_block" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">checkout_login_support_block</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>

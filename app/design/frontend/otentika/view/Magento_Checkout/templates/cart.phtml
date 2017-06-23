@@ -8,23 +8,17 @@ $appState = $objectManager->get('\Magento\Framework\App\State');
 $logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
 ?>
 <div class="cart-header">
-	<div class="cart-logo">
-		<a href="<?php echo $block->getUrl(''); ?>">
-			<span>
+    <div class="cart-logo">
+        <a href="<?php echo $block->getUrl(''); ?>">
+            <span>
                 <img src="<?php /* @escapeNotVerified */ echo $logo->getLogoSrc() ?>"
                  alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
                  <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
                  <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
                 />
             </span>
-		</a>
-	</div>
-	<div class="backto-home-link">
-		<a href="<?php echo $block->getUrl(''); ?>"><?php echo __('Wanna Get Back to Shopping?') ?></a>
-	</div>
-	<div class="cart-title">
-		<?php echo __("Here's What You Have Picked So Far"); ?>
-	</div>
+        </a>
+    </div>
 </div>
 <?php
 /**
