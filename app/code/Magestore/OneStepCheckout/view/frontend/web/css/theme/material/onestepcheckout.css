@@ -1605,3 +1605,13 @@ div[name*="company"]{
 .terms-condition input[type="checkbox"] {
 	margin: 0 10px;
 }
+.step-title .edit {
+	margin-left: 15px;
+}
+.step-title .edit a {
+	color: #f95318;
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 500;
+    cursor: pointer;
+}
