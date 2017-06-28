@@ -584,6 +584,26 @@
 
             }
         }
+        .product-reviews-summary {
+            &.empty {
+                .action {
+                    &.add {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .product-info-price {
+            .product-reviews-summary {
+                &.empty {
+                    .action {
+                        &.add {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
 
         .product-options-bottom {
             .box-tocart {
