@@ -30,20 +30,6 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_view->getLayout()->initMessages();
-		// $this->_view->getPage()->getConfig()->getTitle()->set(__('Site Login'));
-        $listBlock = $this->_view->getLayout()->getBlock('login.list');
-
-        if ($listBlock) {
-            $currentPage = abs(intval($this->getRequest()->getParam('p')));
-            if ($currentPage < 1) {
-                $currentPage = 1;
-            }
-            
-            $listBlock->setCurrentPage($currentPage);
-        }
-        
         /** @var \Magento\Framework\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         return $resultPage;

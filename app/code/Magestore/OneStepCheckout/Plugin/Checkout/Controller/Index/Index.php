@@ -30,7 +30,7 @@ class Index extends \Magento\Checkout\Controller\Index\Index
             }
             if(empty($this->getRequest()->getParam('username'))){
                 $resultRedirect = $this->resultRedirectFactory->create();
-                $this->messageManager->addNotice(__('Please select any of the following method.'));
+                // $this->messageManager->addNotice(__('Please select any of the following method.'));
                 $resultRedirect->setPath('login');
                 return $resultRedirect;
             } else {
