@@ -247,7 +247,7 @@ p.forgot-link a span{background:url(../../../images/onestepcheckout/material/arr
 .address-info-3-columns .group-select ul li .one-field select,
 .address-info-3-columns form .field select
 {width:100%!important;padding:2px 0 1px;height:26px;margin:0;border:1px solid silver}
-.one-step-checkout{background:none;border:none;padding:0;float:left;width:100%}
+.one-step-checkout{background:none;border:none;padding:0;/*float:left;*/width:100%}
 .onestepcheckout-giftmessage .gift-messages-form{margin-top:10px}
 .onestepcheckout-giftmessage .gift-messages-form .whole-order h4{color:#404040!important}
 .onestepcheckout-form-list .fields{width:100%!important}
@@ -1350,7 +1350,8 @@ button.osc-ok-button,button.osc-edit-button
 #onestepcheckout-error-messages{
     color: #ff0000;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 1120px;
 }
 
 .shipping-address-item .input-wrapper{
@@ -1429,8 +1430,15 @@ button.osc-ok-button,button.osc-edit-button
 
 /*my custom*/
 .one-step-checkout {
-	margin-top: 25px;
+	/*margin-top: 25px;*/
 	position: relative;
+}
+.one-step-checkout.three-columns-new-osc {
+	margin: 0 auto;
+	max-width: 1120px;
+}
+.one-step-checkout.three-columns-new-osc.onestepcheckout-index-index {
+	max-width: 100%;
 }
 .form-login {
 	display: none;
@@ -1462,11 +1470,20 @@ button.osc-ok-button,button.osc-edit-button
 #onestepcheckout-button-continue-to-review {
 	display: none;
 }
+.logo-gap {
+	height: 25px;
+	background: #fff;
+}
 .logo-container {
 	text-align: center;
 }
+.checkout-logo img {
+	margin: -15px auto -20px auto;
+}
 .nav-links {
 	text-align: center;
+	max-width: 1120px;
+	margin: 20px auto auto;
 }
 .nav-links .nav-step {
 	display: inline-block;
@@ -1572,7 +1589,8 @@ div[name*="company"]{
 	background: #ccc;
 }
 .page-main {
-	max-width: 1160px !important;
+	max-width: 100% !important;
+	padding: 0 !important;
 }
 .order-review-info .onestepcheckout-discount .discount-form {
 	width: 91%;

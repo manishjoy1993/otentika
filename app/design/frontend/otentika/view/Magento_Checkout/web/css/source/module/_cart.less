@@ -39,11 +39,18 @@
         .cart-header {
             text-transform: uppercase;
             background: #fff;
+            margin-bottom: 20px;
             .cart-logo {
                 text-align: center;
                 background: #ccc;
+                img {
+                    margin: -15px auto -20px auto;
+                }
             }
-            
+            .logo-gap {
+                height: 25px;
+                background: #fff;
+            }
         }
         .header-text-link {
             .backto-home-link {
@@ -606,19 +613,29 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .checkout-cart-index {
         .page-main {
-            padding-left: @layout__width-xs-indent;
-            padding-right: @layout__width-xs-indent;
+            /*padding-left: @layout__width-xs-indent;*/
+            /*padding-right: @layout__width-xs-indent;*/
+            max-width: 100%;
         }
 
         .page-title-wrapper {
             &:extend(.abs-revert-side-paddings all);
         }
         .cart-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            position: relative;
             .form-cart {
                 width: 69%;
                 padding: 0 15px;
                 background: #fff;
                 margin-bottom: 0;
+            }
+            .cart-summary {
+                position: absolute;
+                right: 0;
+                bottom: 25px;
+                top: 00 !important;
             }
         }
     }

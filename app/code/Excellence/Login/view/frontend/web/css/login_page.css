@@ -1,6 +1,10 @@
 @media(min-width: 768px) {
 	.login-index-index .page-main {
-		max-width: 1160px;
+		max-width: 100%;
+		padding: 0;
+	}
+	.login-index-index .cart-header .cart-logo img {
+		margin: -15px auto -20px auto;
 	}
 	.page-title-wrapper {
 		display: none;
@@ -13,6 +17,9 @@
 	    order: 1;
 	    padding-right: 4%;
 	    position: relative;
+	}
+	.login-index-index .cart-container {
+		max-width: calc(1120px - 10%);
 	}
 	.login-index-index .login-container .fieldset > .field > .control {
 		width: 100%;
@@ -29,12 +36,20 @@
 		margin-top: 25px;
 	}*/
 }
+.logo-gap {
+	height: 25px;
+	background: #fff;
+}
+.logo-gap.after {
+	margin-bottom: 40px;
+}
 .login-index-index .page-wrapper {
 	background: #ccc;
 }
 .login-index-index .cart-container {
 	background: #fff;
 	padding: 5%;
+	margin: 0 auto;
 }
 .login-container .block .block-title {
 	font-size: 24px;
@@ -193,6 +208,7 @@ label {
 }
 .login-index-index .discount .actions-toolbar {
 	float: right;
+	margin-top: 0;
 }
 .login-index-index .discount .actions-toolbar > .primary .action {
 	width: 75px;
