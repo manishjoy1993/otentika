@@ -302,13 +302,20 @@ switch ($type = $block->getType()) {
 					<?php endif; ?>
                 </div>
             </div>
-                    
+            <?php
+                $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                $customerSession = $objectManager->get('Magento\Customer\Model\Session');
+                $checkoutUrl = $block->getUrl('checkout');
+                if(!empty($customerSession->getCheckoutUsername())) {
+                    $checkoutUrl = $block->getUrl('checkout', ['username' => $customerSession->getCheckoutUsername()]);
+                }
+            ?>
             <?php
                 if ($block->getType() == 'crosssell') {
                     ?>
                     <dir style="clear: both; margin: 0;"></dir>
                     <div class="skip-to-checkout-container">
-                        <a class="skip-to-checkout" href="<?php echo $block->getUrl('checkout'); ?>"><?php echo __('Skip Sample Selection') ?></a>
+                        <a class="skip-to-checkout" href="<?php echo $checkoutUrl; ?>"><?php echo __('Skip Sample Selection') ?></a>
                     </div>
                     <?php
                 }

@@ -8,6 +8,7 @@ $appState = $objectManager->get('\Magento\Framework\App\State');
 $logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
 ?>
 <div class="cart-header">
+    <div class="logo-gap before"></div>
     <div class="cart-logo">
         <a href="<?php echo $block->getUrl(''); ?>">
             <span>
@@ -19,6 +20,7 @@ $logo = $objectManager->get('\Magento\Theme\Block\Html\Header\Logo');
             </span>
         </a>
     </div>
+    <div class="logo-gap after"></div>
 </div>
 <?php
 /**
