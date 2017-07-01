@@ -7,6 +7,7 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <link src="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto" src_type="url" rel="stylesheet" type="text/css" />
+        <link src="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" src_type="url" rel="stylesheet" type="text/css" />
+        <link src="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" src_type="url" rel="stylesheet" type="text/css" />
     </head>
 </page>

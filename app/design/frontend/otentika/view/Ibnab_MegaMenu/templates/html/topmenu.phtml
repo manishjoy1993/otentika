@@ -78,11 +78,34 @@ if(!($logo->isHomePage())){
                 <li class="level0 nav-1 first level-top ui-menu-item menu-logo" role="presentation">
                     <a href="<?php echo $homeUrl; ?>" class="level-top ui-corner-all" tabindex="-1" role="menuitem">
                         <span>
-                            <img src="<?php /* @escapeNotVerified */ echo $logo->getLogoSrc() ?>"
-                             alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
-                             <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
-                             <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
-                            />
+                            <?php
+                                $scopeConfigObj = $objectManager->get('Magento\Framework\App\Config\ScopeConfigInterface');
+                                $request = $objectManager->get('Magento\Framework\App\Action\Context')->getRequest();
+                                $mediaUrl = $objectManager->get('Magento\Store\Model\StoreManagerInterface')
+                                            ->getStore()
+                                            ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+
+                                // var_dump($request->getFullActionName()); die();
+
+                                if(($scopeConfigObj->getValue('design/login/use_different_product_logo') == 1) && ($request->getFullActionName() == 'catalog_product_view')) {
+                                    ?>
+                                    <img src="<?php /* @escapeNotVerified */ echo $mediaUrl."product_logo/".$scopeConfigObj->getValue('design/login/product_logo') ?>"
+                                     alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
+                                     <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
+                                     <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
+                                    />
+                                    <?php
+                                } else {
+                                    ?>
+                                      <img src="<?php /* @escapeNotVerified */ echo $logo->getLogoSrc() ?>"
+                                       alt="<?php /* @escapeNotVerified */ echo $logo->getLogoAlt() ?>"
+                                       <?php echo $logo->getLogoWidth() ? 'width="' . $logo->getLogoWidth() . '"' : '' ?>
+                                       <?php echo $logo->getLogoHeight() ? 'height="' . $logo->getLogoHeight() . '"' : '' ?>
+                                      />
+                                    <?php
+                                }
+                            ?>
+                            
                         </span>
                     </a>
                 </li>
@@ -109,7 +132,7 @@ if(!($logo->isHomePage())){
                     $offerCategory = $objectManager->create('Magento\Catalog\Model\Category')->load(8);
                 ?>
                 <li>
-                    <a href="<?php echo $block->getUrl('special-offer'); //echo $offerCategory->getUrl() ?>" class="level-top" tabindex="-1" role="menuitem">
+                    <a href="<?php echo $offerCategory->getUrl() ?>" class="level-top" tabindex="-1" role="menuitem">
                         <span><?php echo __("Offers"); ?></span>
                     </a>
                 </li>
