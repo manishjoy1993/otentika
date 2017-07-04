@@ -16,63 +16,102 @@
 <?php
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
     $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');//get current category
-    $currentLevel = $category->getLevel();
+    if($category) {
+      $currentLevel = $category->getLevel();
 
-    $categoryCollection = $objectManager->get('\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
-    $categories = $categoryCollection->create();
-    $categories->addAttributeToSelect('*')
-            ->addAttributeToFilter('is_active', 1)
-            ->addAttributeToFilter('include_in_menu', 1)
-            ->addAttributeToFilter('entity_id', array('neq' => '2'));
+      $categoryCollection = $objectManager->get('\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory');
+      $categories = $categoryCollection->create();
+      $categories->addAttributeToSelect('*')
+              ->addAttributeToFilter('is_active', 1)
+              ->addAttributeToFilter('include_in_menu', 1)
+              ->addAttributeToFilter('entity_id', array('neq' => '2'));
 
-    if($currentLevel != 4) { //show instant child categories
-        if($currentLevel == 2) {
-          $categories->addAttributeToFilter('level', 4);
-        }
-        if ($currentLevel == 3) {
-          $instantChildLevel = $currentLevel+1;
-          $categories->addAttributeToFilter('level', $instantChildLevel)
-                      ->addAttributeToFilter('parent_id', $category->getId());
-        }
+      if($currentLevel != 4) { //show instant child categories
+          if($currentLevel == 2) {
+            $categories->addAttributeToFilter('level', 4);
+          }
+          if ($currentLevel == 3) {
+            $instantChildLevel = $currentLevel+1;
+            $categories->addAttributeToFilter('level', $instantChildLevel)
+                        ->addAttributeToFilter('parent_id', $category->getId());
+          }
 
-    } else { //show child categores of instant parent
-        $instantParent = $category->getData('parent_id');
-        $categories->addAttributeToFilter('level', $currentLevel)
-                   ->addAttributeToFilter('parent_id', $instantParent);
+      } else { //show child categores of instant parent
+          $instantParent = $category->getData('parent_id');
+          $categories->addAttributeToFilter('level', $currentLevel)
+                     ->addAttributeToFilter('parent_id', $instantParent);
+      }
+      ?>
+        <div class="block filter category-list-container" id="layered-filter-block">
+          <div class="block-content filter-content">
+            <div class="filter-options category-list" id="narrow-by-list" data-role="content">
+              <?php foreach ($categories as $category): ?>
+
+                <div class="category-list-item">
+                    <div data-role="title" class="category-list-title"><a href="<?php echo $category->getUrl(); ?>"><?php /* @escapeNotVerified */ echo __($category->getName()) ?></a></div>
+                    <div data-role="content" class="category-list-content">
+                      <?php
+                        $categoryProducts = $category->getProductCollection()
+                                                      ->addAttributeToSelect('*')
+                                                      ->setPageSize(2);
+                      ?>
+                      <?php if (count($categoryProducts)): ?>
+                          <ol class="items">
+                            <?php foreach ($categoryProducts as $product): ?>
+                                <li class="item">
+                                    <a href="<?php echo $product->getUrl() ?>"><?php echo $product->getName(); ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                          </ol>
+                      <?php else: ?>
+                        <div class="no-item">
+                          <?php echo __('0 Items') ?>
+                        </div>
+
+                      <?php endif; ?>
+
+                    </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+      <?php
+    } else {
+      ?>
+        <?php if ($block->canShowBlock()): ?>
+          <div class="block filter">
+              <div class="block-title filter-title">
+                  <strong><?php /* @escapeNotVerified */ echo __('Shop By') ?></strong>
+              </div>
+
+              <div class="block-content filter-content">
+                  <?php echo $block->getChildHtml('state') ?>
+
+                  <?php if ($block->getLayer()->getState()->getFilters()): ?>
+                      <div class="block-actions filter-actions">
+                          <a href="<?php /* @escapeNotVerified */ echo $block->getClearUrl() ?>" class="action clear filter-clear"><span><?php /* @escapeNotVerified */ echo __('Clear All') ?></span></a>
+                      </div>
+                  <?php endif; ?>
+                  <?php $wrapOptions = false; ?>
+                  <?php foreach ($block->getFilters() as $filter): ?>
+                      <?php if (!$wrapOptions): ?>
+                          <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?php /* @escapeNotVerified */ echo __('Shopping Options') ?></strong>
+                          <dl class="filter-options" id="narrow-by-list">
+                      <?php $wrapOptions = true; endif; ?>
+                          <?php if ($filter->getItemsCount()): ?>
+                              <dt role="heading" aria-level="3" class="filter-options-title"><?php echo $block->escapeHtml(__($filter->getName())) ?></dt>
+                              <dd class="filter-options-content"><?php /* @escapeNotVerified */ echo $block->getChildBlock('renderer')->render($filter); ?></dd>
+                          <?php endif; ?>
+                  <?php endforeach; ?>
+                  <?php if ($wrapOptions): ?>
+                      </dl>
+                  <?php endif; ?>
+              </div>
+          </div>
+      <?php endif; ?>
+      <?php
     }
 ?>
 
-<div class="block filter category-list-container" id="layered-filter-block">
-  <div class="block-content filter-content">
-    <div class="filter-options category-list" id="narrow-by-list" data-role="content">
-      <?php foreach ($categories as $category): ?>
-
-        <div class="category-list-item">
-            <div data-role="title" class="category-list-title"><a href="<?php echo $category->getUrl(); ?>"><?php /* @escapeNotVerified */ echo __($category->getName()) ?></a></div>
-            <div data-role="content" class="category-list-content">
-              <?php
-                $categoryProducts = $category->getProductCollection()
-                                              ->addAttributeToSelect('*')
-                                              ->setPageSize(2);
-              ?>
-              <?php if (count($categoryProducts)): ?>
-                  <ol class="items">
-                    <?php foreach ($categoryProducts as $product): ?>
-                        <li class="item">
-                            <a href="<?php echo $product->getUrl() ?>"><?php echo $product->getName(); ?></a>
-                        </li>
-                    <?php endforeach; ?>
-                  </ol>
-              <?php else: ?>
-                <div class="no-item">
-                  <?php echo __('0 Items') ?>
-                </div>
-
-              <?php endif; ?>
-
-            </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</div>
+      
