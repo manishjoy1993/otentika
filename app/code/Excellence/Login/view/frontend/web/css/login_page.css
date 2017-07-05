@@ -31,6 +31,9 @@
 		width: calc(35% - 50px);
 	    float: right;
 	}
+	.social-login-container {
+		height: 200px;
+	}
 	/*.cart-summary-after {
 		clear: both;
 		margin-top: 25px;
@@ -241,4 +244,13 @@ label {
 .cart-header .backto-home-link,
 .cart-header .cart-title {
 	display: none;
+}
+
+.page-title-wrapper {
+	display: none;
+}
+
+.login-index-index .page-main {
+	max-width: 100%;
+	padding: 0;
 }
