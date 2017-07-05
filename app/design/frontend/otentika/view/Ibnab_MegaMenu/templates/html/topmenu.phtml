@@ -118,8 +118,16 @@ if(!($logo->isHomePage())){
                         <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('brand_menu_block')->toHtml(); ?>
                     </ul>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="<?php echo $block->getUrl('what-is-new'); ?>" class="level-top" tabindex="-1" role="menuitem">
+                        <span><?php echo __("New Release"); ?></span>
+                    </a>
+                </li> -->
+                <?php
+                    $newReleaseCategory = $objectManager->create('Magento\Catalog\Model\Category')->load(37);
+                ?>
+                <li>
+                    <a href="<?php echo $newReleaseCategory->getUrl() ?>" class="level-top" tabindex="-1" role="menuitem">
                         <span><?php echo __("New Release"); ?></span>
                     </a>
                 </li>
