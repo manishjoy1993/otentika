@@ -78,11 +78,14 @@
     //Banner Offer
     .header-offer-container {
         background: @header-link-hover-orange;
+        margin-bottom: 15px;
         .content {
             color: #fff;
             text-transform: uppercase;
             text-align: center;
             padding: 10px;
+            font-family: @font-family__roboto;
+            font-weight: 700;
         }
     }
     .checkout-index-index {
@@ -121,7 +124,7 @@
         .lib-css(background-color, @header__background-color);
         border-bottom: 1px solid @border-color__base;
         margin-bottom: @indent__base;
-        background:#f95318;
+        background:#000;
 
         .panel.wrapper {
             @media(max-width:767px){
@@ -631,7 +634,8 @@
                                     .cart-counter {
                                         position: absolute;
                                         top: -15px;
-                                        background: #000;
+                                        background: rgba(249, 83, 24, 0.8);
+                                        display: none;
                                         font-size: 16px;
                                         font-weight: 700;
                                         color: #fff;
@@ -868,6 +872,8 @@
                                     color: #878787;
                                     letter-spacing: 10px;
                                     padding: 12px 5px;
+                                    font-family: @font-family__open-sans;
+                                    font-weight: 400;
                                     &:hover {
                                         color: #000;
                                         font-weight: 700;
