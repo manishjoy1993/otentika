@@ -507,6 +507,15 @@
             &:extend(.abs-sidebar-totals-mobile all);
         }
     }
+    .header-text-link {
+        padding: 5px 15px;
+        .backto-home-link {
+            display: none;
+        }
+    }
+    .form.form-cart {
+        background: #fff;
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
@@ -630,9 +639,11 @@
                 padding: 0 15px;
                 background: #fff;
                 margin-bottom: 0;
+                min-height: 550px;
             }
             .cart-summary {
                 position: absolute;
+                min-height: 550px;
                 right: 0;
                 bottom: 25px;
                 top: 00 !important;

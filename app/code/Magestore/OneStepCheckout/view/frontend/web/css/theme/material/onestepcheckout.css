@@ -64,10 +64,15 @@ button.onestepcheckout-btn-checkout{padding:5px 0;border-radius: 3px}
 .one-step-checkout a.back{padding-left:16px;line-height:13px}
 .one-step-checkout .payment-methods dd{padding:0}
 .one-step-checkout .button-set{margin-top:0;clear:both}
-@media(min-width: 768px) {
+@media(min-width: 861px) {
 	.one-step-checkout .button-set {
 		float: left;
 		margin-left: 20px;
+	}
+}
+@media (max-width: 860px) {
+	.one-step-checkout .button-set {
+		width: calc(100% - 20px);
 	}
 }
 /*.one-step-checkout .checkout-agreements{border:1px solid #d9dde3;border-width:0 1px;padding:5px 20px}*/
@@ -239,6 +244,11 @@ p.forgot-link a span{background:url(../../../images/onestepcheckout/material/arr
 .main{position:static!important}
 .one-field{width:100%;float:left;}
 .two-fields{width:50%;float:left}
+@media (max-width: 450px) {
+	.two-fields {
+		width: 100%;
+	}
+}
 .one-field input{width:82%}
 .two-fields input{width:70%}
 .two-fields select{width:100%!important}
@@ -589,6 +599,13 @@ input.billing-region-input,input.shipping-region-input{padding:7px 10px 0 5px!im
     width: calc(69% - 120px);
     padding: 0 60px;
     /*margin-right: 2%;*/
+}
+@media (max-width: 860px) {
+	.one-step-checkout.three-columns-new-osc .onestepcheckout-order-review {
+		width: calc(100% - 120px);
+		float: none;
+		position: relative;
+	}
 }
 .one-step-checkout.three-columns-new-osc .order-review-section,
 .one-step-checkout.three-columns-new-osc .order-info-3-columns {
@@ -1466,6 +1483,12 @@ button.osc-ok-button,button.osc-edit-button
     padding-right: 20px;
     margin-bottom: 20px;
 }
+@media (max-width: 860px) {
+	.one-step-checkout .button-set {
+		margin-bottom: auto;
+		padding-bottom: 20px;
+	}
+}
 #onestepcheckout-button-place-order,
 #onestepcheckout-button-continue-to-review {
 	display: none;
@@ -1564,6 +1587,11 @@ div[name*="company"]{
 .field.street {
 	width: 50%;
 }
+@media (max-width: 450px) {
+	.field.street {
+		width: 100%;
+	}
+}
 /*Billing Step*/
 .checkout-payment-method .billing-address-form {
 	max-width: inherit;
@@ -1599,7 +1627,7 @@ div[name*="company"]{
 .carrier-select-container select {
 	height: 38px;
 }
-@media(min-width: 768px) {
+@media(min-width: 860px) {
 	.column-left {
 	    position: absolute;
 	    top: 0;
