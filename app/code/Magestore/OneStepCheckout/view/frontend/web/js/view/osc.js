@@ -128,7 +128,7 @@ define(
                         $('.onestepcheckout-shipping-payment-review').show();
                         $('#onestepcheckout-button-continue-to-review').css('display', 'block');;
                     } else {
-                        this.showErrorMessage($t('Please fill all the fields correctly.'));
+                        this.showErrorMessage($t('Please check your address.'));
                     }
                 }
                     
@@ -172,7 +172,7 @@ define(
                 var payment = quote.paymentMethod();
                 if(payment) {
                     var paymentTitle = payment.title;
-                    console.log(paymentTitle);
+                    console.log(payment);
                     $('#onestepcheckout-button-continue-to-review').hide();
                     $('.onestepcheckout-shipping-payment-review').hide();
                     $('#billing_step').addClass('done');
@@ -180,13 +180,18 @@ define(
                     $('#review_step').addClass('active');
                     $('.onestepcheckout-order-review').show();
                     $('#onestepcheckout-button-place-order').css('display', 'block');
-                    $('#payment-method-review').text($(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text())
+                    var paymentReviewText = $(".payment-method input[type=radio]:checked").parent('.payment-method-title').find('.label').find('span').text();
+                    $('#payment-method-review').text(paymentReviewText);
                 }
             },
             prepareToPlaceOrder: function(){
                 var self = this;
+                // Disable button
+                $("#onestepcheckout-button-place-order").prop('disabled',true);
+
                 if(!($("#agree_terms").is(":checked"))) {
                     this.showErrorMessage($t('Please agree to terms and conditions.'));
+                    $("#onestepcheckout-button-place-order").prop('disabled',false);
                     return false;
                 }
                 if (!quote.paymentMethod()) {
@@ -201,6 +206,8 @@ define(
                             }
                         }
                     });
+                    self.continueBillingStep();
+                    $("#onestepcheckout-button-place-order").prop('disabled',false);
                 }
                 if(self.validateInformation() == true){
                     self.placingOrder(true);
@@ -231,6 +238,7 @@ define(
                         });
                     }
                 }else{
+                    $("#onestepcheckout-button-place-order").prop('disabled',false);
                     //false
                 }
             },
