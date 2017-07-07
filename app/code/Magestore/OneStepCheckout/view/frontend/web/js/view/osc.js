@@ -119,7 +119,15 @@ define(
                 if(payment) {
                     var shippingFormData = checkoutData.getShippingAddressFromData();
                     console.log(this.validateFormData(shippingFormData));
-                    if(this.validateFormData(shippingFormData)) {
+                    if(typeof($(".shipping-address-item")) != 'undefined' && $(".shipping-address-item").length > 0) {
+                        $('#onestepcheckout-button-continue-to-billing').hide();
+                        $('.address-information.address-info-3-columns').hide();
+                        $('#shipping_step').addClass('done');
+                        $('.nav-step').removeClass('active');
+                        $('#billing_step').addClass('active');
+                        $('.onestepcheckout-shipping-payment-review').show();
+                        $('#onestepcheckout-button-continue-to-review').css('display', 'block');
+                    } else if(this.validateFormData(shippingFormData)) {
                         $('#onestepcheckout-button-continue-to-billing').hide();
                         $('.address-information.address-info-3-columns').hide();
                         $('#shipping_step').addClass('done');

@@ -134,11 +134,18 @@
             &:after {
                 left: auto;
                 right: 25px;
+                display: none;
             }
 
             &:before {
                 left: auto;
-                right: 26px;
+                right: 0;
+                top: -1px;
+                border: 0;
+                height: 1px;
+                width: 32px;
+                background: #fff;
+                /*display: none;*/
             }
         }
         .product {
@@ -430,8 +437,9 @@
         margin-left: 13px;
 
         .block-minicart {
-            right: -15px;
+            right: 0;
             width: 390px;
+            margin-top: 0;
         }
     }
     .minilist .action.delete,

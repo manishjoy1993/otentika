@@ -28,13 +28,17 @@ class Index extends \Magento\Checkout\Controller\Index\Index
                 $resultRedirect->setPath('login');
                 return $resultRedirect;
             }
-            if(empty($this->getRequest()->getParam('username'))){
+            if(empty($this->getRequest()->getParam('username')) && !($this->_customerSession->isLoggedIn())){
                 $resultRedirect = $this->resultRedirectFactory->create();
                 // $this->messageManager->addNotice(__('Please select any of the following method.'));
                 $resultRedirect->setPath('login');
                 return $resultRedirect;
             } else {
-                $this->_coreRegistry->register('username', $this->getRequest()->getParam('username'));
+                if($this->_customerSession->isLoggedIn()) {
+                    $this->_coreRegistry->register('username', $this->_customerSession->getCustomer()->getEmail());
+                } else {
+                    $this->_coreRegistry->register('username', $this->getRequest()->getParam('username'));
+                }
             }
         }
         if ($this->_objectManager->get('Magestore\OneStepCheckout\Helper\Config')->isEnabledOneStep()) {

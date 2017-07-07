@@ -65,6 +65,15 @@
     background: url(../images/cart/minicart-icon.png);
     background-size: contain;
     background-repeat: no-repeat;
+    border: 1px solid;
+    border-color: transparent;
+}
+.minicart-wrapper .action.showcart.active:before{
+    border: 1px solid #bbb;
+    border-bottom: 0;
+    padding-bottom: 2px;
+    z-index: 999999999;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
 }
 .block-search .action.search:before,
 .block-search .action.search.active:before{
